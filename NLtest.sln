@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NLtest", "NLtest\NLtest.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLTrace2", "GLTrace23a2\GLTrace2.vcxproj", "{21579528-6CD6-E662-39BE-1AF5A9B02680}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakNetServer", "RakNetServer\RakNetServer.vcxproj", "{6239F536-E2F4-4026-B05A-E089A3F097DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{21579528-6CD6-E662-39BE-1AF5A9B02680}.Debug|Win32.Build.0 = Debug|Win32
 		{21579528-6CD6-E662-39BE-1AF5A9B02680}.Release|Win32.ActiveCfg = Release|Win32
 		{21579528-6CD6-E662-39BE-1AF5A9B02680}.Release|Win32.Build.0 = Release|Win32
+		{6239F536-E2F4-4026-B05A-E089A3F097DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6239F536-E2F4-4026-B05A-E089A3F097DF}.Debug|Win32.Build.0 = Debug|Win32
+		{6239F536-E2F4-4026-B05A-E089A3F097DF}.Release|Win32.ActiveCfg = Release|Win32
+		{6239F536-E2F4-4026-B05A-E089A3F097DF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
