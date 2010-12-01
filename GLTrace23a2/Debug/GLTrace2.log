@@ -1,22 +1,143 @@
-﻿Build started 11/30/2010 1:04:01 PM.
-     1>Project "C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\GLTrace2.vcxproj" on node 3 (build target(s)).
+﻿Build started 12/1/2010 2:00:07 PM.
+     1>Project "C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\GLTrace2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating ".\Debug\GLTrace2.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching ".\Debug\GLTrace2.unsuccessfulbuild".
        ClCompile:
+         All outputs are up-to-date.
          All outputs are up-to-date.
        ManifestResourceCompile:
          All outputs are up-to-date.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\.\Debug\GLTrace2.dll) does not match the Linker's OutputFile property value (C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\opengl32.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(992,5): warning MSB8012: TargetName(GLTrace2) does not match the Linker's OutputFile property value (opengl32). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
        Link:
-         All outputs are up-to-date.
-       Manifest:
-         All outputs are up-to-date.
-       FinalizeBuildStatus:
-         Deleting file ".\Debug\GLTrace2.unsuccessfulbuild".
-         Touching ".\Debug\GLTrace2.lastbuildstate".
-     1>Done Building Project "C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\GLTrace2.vcxproj" (build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug/opengl32.dll" /INCREMENTAL /NOLOGO winmm.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib HawkNL.lib RakNetLibStaticDebug.lib ws2_32.lib /DEF:".\gltrace.def" /MANIFEST /ManifestFile:".\Debug\GLTrace2.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\GLTrace2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\opengl32.lib" /MACHINE:X86 /DLL .\Debug\GLTrace2.dll.embed.manifest.res
+         .\Debug\BitStream.obj
+         .\Debug\CCRakNetSlidingWindow.obj
+         .\Debug\CCRakNetUDT.obj
+         .\Debug\CheckSum.obj
+         .\Debug\CommandParserInterface.obj
+         .\Debug\ConnectionGraph2.obj
+         .\Debug\ConsoleServer.obj
+         .\Debug\DataCompressor.obj
+         .\Debug\DirectoryDeltaTransfer.obj
+         .\Debug\DS_BytePool.obj
+         .\Debug\DS_ByteQueue.obj
+         .\Debug\DS_HuffmanEncodingTree.obj
+         .\Debug\DS_Table.obj
+         .\Debug\EmailSender.obj
+         .\Debug\EncodeClassName.obj
+         .\Debug\EpochTimeToString.obj
+         .\Debug\FileList.obj
+         .\Debug\FileListTransfer.obj
+         .\Debug\FileOperations.obj
+         .\Debug\FormatString.obj
+         .\Debug\FullyConnectedMesh2.obj
+         .\Debug\Getche.obj
+         .\Debug\Gets.obj
+         .\Debug\GetTime.obj
+         .\Debug\gettimeofday.obj
+         .\Debug\GridSectorizer.obj
+         .\Debug\HTTPConnection.obj
+         .\Debug\IncrementalReadInterface.obj
+         .\Debug\Itoa.obj
+         .\Debug\LinuxStrings.obj
+         .\Debug\LogCommandParser.obj
+         .\Debug\MessageFilter.obj
+         .\Debug\NatPunchthroughClient.obj
+         .\Debug\NatPunchthroughServer.obj
+         .\Debug\NatTypeDetectionClient.obj
+         .\Debug\NatTypeDetectionCommon.obj
+         .\Debug\NatTypeDetectionServer.obj
+         .\Debug\NetworkIDManager.obj
+         .\Debug\NetworkIDObject.obj
+         .\Debug\PacketConsoleLogger.obj
+         .\Debug\PacketFileLogger.obj
+         .\Debug\PacketizedTCP.obj
+         .\Debug\PacketLogger.obj
+         .\Debug\PacketOutputWindowLogger.obj
+         .\Debug\PluginInterface2.obj
+         .\Debug\RakMemoryOverride.obj
+         .\Debug\RakNetCommandParser.obj
+         .\Debug\RakNetSocket.obj
+         .\Debug\RakNetStatistics.obj
+         .\Debug\RakNetTransport2.obj
+         .\Debug\RakNetTypes.obj
+         .\Debug\RakPeer.obj
+         .\Debug\RakSleep.obj
+         .\Debug\RakString.obj
+         .\Debug\RakThread.obj
+         .\Debug\Rand.obj
+         .\Debug\rdlmalloc.obj
+         .\Debug\ReadyEvent.obj
+         .\Debug\ReliabilityLayer.obj
+         .\Debug\ReplicaManager3.obj
+         .\Debug\Router2.obj
+         .\Debug\RPC4Plugin.obj
+         .\Debug\SecureHandshake.obj
+         .\Debug\SendToThread.obj
+         .\Debug\SHA1.obj
+         .\Debug\SignaledEvent.obj
+         .\Debug\SimpleMutex.obj
+         .\Debug\SocketLayer.obj
+         .\Debug\StringCompressor.obj
+         .\Debug\StringTable.obj
+         .\Debug\SuperFastHash.obj
+         .\Debug\TableSerializer.obj
+         .\Debug\TCPInterface.obj
+         .\Debug\TeamBalancer.obj
+         .\Debug\TelnetTransport.obj
+         .\Debug\ThreadsafePacketLogger.obj
+         .\Debug\UDPForwarder.obj
+         .\Debug\UDPProxyClient.obj
+         .\Debug\UDPProxyCoordinator.obj
+         .\Debug\UDPProxyServer.obj
+         .\Debug\VariableDeltaSerializer.obj
+         .\Debug\VariableListDeltaTracker.obj
+         .\Debug\VariadicSQLParser.obj
+         .\Debug\WSAStartupSingleton.obj
+         .\Debug\_FindFirst.obj
+         .\Debug\dll.obj
+         .\Debug\font.obj
+         .\Debug\gltrace.obj
+         .\Debug\glwrapper.obj
+         .\Debug\input.obj
+         .\Debug\log.obj
+            Creating library .\Debug\opengl32.lib and object .\Debug\opengl32.exp
+     1>gltrace.obj : error LNK2019: unresolved external symbol "void __cdecl print(char const *,...)" (?print@@YAXPBDZZ) referenced in function "unsigned char __cdecl gltraceInit(void)" (?gltraceInit@@YAEXZ)
+     1>gltrace.obj : error LNK2001: unresolved external symbol "int * show_status_EXT" (?show_status_EXT@@3PAHA)
+     1>gltrace.obj : error LNK2019: unresolved external symbol "int __cdecl GetEXTProcIndex(char const *)" (?GetEXTProcIndex@@YAHPBD@Z) referenced in function "unsigned char __cdecl gltraceInit(void)" (?gltraceInit@@YAEXZ)
+     1>gltrace.obj : error LNK2019: unresolved external symbol "void __cdecl InitCallCount(void)" (?InitCallCount@@YAXXZ) referenced in function "unsigned char __cdecl gltraceInit(void)" (?gltraceInit@@YAEXZ)
+     1>gltrace.obj : error LNK2019: unresolved external symbol "void __cdecl PrintCallCounts(void)" (?PrintCallCounts@@YAXXZ) referenced in function _DllMain@12
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _bVerbose
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _bLogTime
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _bCountCalls
+     1>log.obj : error LNK2001: unresolved external symbol _bCountCalls
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _show_status
+     1>glwrapper.obj : error LNK2019: unresolved external symbol _SendStream referenced in function _glAccum@8
+     1>glwrapper.obj : error LNK2019: unresolved external symbol _AddIntToStream referenced in function _glAccum@8
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _GLN
+     1>log.obj : error LNK2001: unresolved external symbol _GLN
+     1>glwrapper.obj : error LNK2019: unresolved external symbol _AddByteToStream referenced in function _glBitmap@28
+     1>log.obj : error LNK2001: unresolved external symbol _AddByteToStream
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _count
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _useZeroOne
+     1>log.obj : error LNK2001: unresolved external symbol _useZeroOne
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _bFSPenable
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _fpsColor
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _bLogEnable
+     1>glwrapper.obj : error LNK2019: unresolved external symbol _gltraceInit referenced in function _wglChoosePixelFormat@8
+     1>glwrapper.obj : error LNK2001: unresolved external symbol _bDisableExt
+     1>log.obj : error LNK2001: unresolved external symbol _text_file
+     1>log.obj : error LNK2001: unresolved external symbol _GLenum_names
+     1>log.obj : error LNK2019: unresolved external symbol _AddFloatToStream referenced in function _print_value
+     1>log.obj : error LNK2019: unresolved external symbol _AddLongToStream referenced in function _print_value
+     1>log.obj : error LNK2019: unresolved external symbol _AddShortToStream referenced in function _print_value
+     1>log.obj : error LNK2019: unresolved external symbol _AddToStream referenced in function _print_value
+     1>log.obj : error LNK2019: unresolved external symbol _AddDoubleToStream referenced in function _print_value
+     1>log.obj : error LNK2001: unresolved external symbol _starttime
+     1>Debug/opengl32.dll : fatal error LNK1120: 28 unresolved externals
+     1>Done Building Project "C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\GLTrace2.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.05
+Time Elapsed 00:00:00.56

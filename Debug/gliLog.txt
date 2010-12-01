@@ -1,14 +1,6 @@
-GL Intercept Log. Version : 0.5    Compile Date: Dec  3 2005    Run on: Tue Nov 30 13:04:01 2010
+GL Intercept Log. Version : 0.5    Compile Date: Dec  3 2005    Run on: Wed Dec 01 13:36:10 2010
 
 ===================================================
-glEnd called whithout a glBegin
-GL ERROR - Function glEnd generated error GL_INVALID_OPERATION
-glEnd called whithout a glBegin
-GL ERROR - Function glEnd generated error GL_INVALID_OPERATION
-glEnd called whithout a glBegin
-GL ERROR - Function glEnd generated error GL_INVALID_OPERATION
-glEnd called whithout a glBegin
-GL ERROR - Function glEnd generated error GL_INVALID_OPERATION
 GLDriver - Shutdown - Current OpenGL context 0x10000?
 GLDriver - Shutdown - Outstanding OpenGL context 0x10000 ?
 ===================================================
