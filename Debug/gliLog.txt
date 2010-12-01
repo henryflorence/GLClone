@@ -1,4 +1,4 @@
-GL Intercept Log. Version : 0.5    Compile Date: Dec  3 2005    Run on: Wed Dec 01 14:51:46 2010
+GL Intercept Log. Version : 0.5    Compile Date: Dec  3 2005    Run on: Wed Dec 01 13:36:10 2010
 
 ===================================================
 GLDriver - Shutdown - Current OpenGL context 0x10000?

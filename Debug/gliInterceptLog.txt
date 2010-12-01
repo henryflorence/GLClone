@@ -1,27 +1,27 @@
 ===============================================================================
- GLIntercept version 0.5 Log generated on: Wed Dec 01 14:51:46 2010
+ GLIntercept version 0.5 Log generated on: Wed Dec 01 13:36:11 2010
  
 ===============================================================================
 
-wglChoosePixelFormat(0x440116be,0x4cf8ec)=2 
-wglDescribePixelFormat(0x440116be,2,40,0x780a08)=66 
-wglChoosePixelFormat(0x440116be,0x780a08)=2 
-wglSetPixelFormat(0x440116be,2,0x780a08)=true 
-wglCreateContext(0x440116be)
------>wglGetPixelFormat(0x440116be)=2 
------>wglDescribePixelFormat(0x440116be,2,40,0x4cf890)=66 
------>wglGetPixelFormat(0x440116be)=2 =0x10000 
+wglChoosePixelFormat(0x8f0113f3,0x44f58c)=2 
+wglDescribePixelFormat(0x8f0113f3,2,40,0xef0a08)=66 
+wglChoosePixelFormat(0x8f0113f3,0xef0a08)=2 
+wglSetPixelFormat(0x8f0113f3,2,0xef0a08)=true 
+wglCreateContext(0x8f0113f3)
+----->wglGetPixelFormat(0x8f0113f3)=2 
+----->wglDescribePixelFormat(0x8f0113f3,2,40,0x44f530)=66 
+----->wglGetPixelFormat(0x8f0113f3)=2 =0x10000 
 wglGetCurrentContext()=0x0000 
 wglGetCurrentDC()=0x0000 
-wglMakeCurrent(0x440116be,0x10000)
------>wglGetPixelFormat(0x440116be)=2 
------>wglGetPixelFormat(0x440116be)=2 =true 
+wglMakeCurrent(0x8f0113f3,0x10000)
+----->wglGetPixelFormat(0x8f0113f3)=2 
+----->wglGetPixelFormat(0x8f0113f3)=2 =true 
 wglGetCurrentContext()=0x10000 
-wglGetCurrentDC()=0x440116be 
+wglGetCurrentDC()=0x8f0113f3 
 wglGetCurrentContext()=0x10000 
-wglGetCurrentDC()=0x440116be 
+wglGetCurrentDC()=0x8f0113f3 
 glViewport(0,0,640,480)
 wglGetCurrentContext()=0x10000 
-wglGetCurrentDC()=0x440116be 
+wglGetCurrentDC()=0x8f0113f3 
 wglGetCurrentContext()=0x10000 
-wglGetCurrentDC()=0x440116be 
+wglGetCurrentDC()=0x8f0113f3 

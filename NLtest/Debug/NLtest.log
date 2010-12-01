@@ -1,4 +1,4 @@
-﻿Build started 12/1/2010 2:57:50 PM.
+﻿Build started 12/1/2010 2:00:07 PM.
      1>Project "C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\NLtest\NLtest.vcxproj" on node 3 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\NLtest.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -17,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.18
+Time Elapsed 00:00:00.06

@@ -23,6 +23,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -45,6 +46,7 @@
     <OutDir>.\Debug\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -60,6 +62,7 @@
       <PrecompiledHeaderOutputFile>.\Release\GLTrace2.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalIncludeDirectories>C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\raknet\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -83,7 +86,7 @@
       <SubSystem>Windows</SubSystem>
       <OutputFile>Release/opengl32.dll</OutputFile>
       <ImportLibrary>.\Release\opengl32.lib</ImportLibrary>
-      <AdditionalDependencies>winmm.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);;ws2_32.lib</AdditionalDependencies>
       <ModuleDefinitionFile>.\gltrace.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
@@ -102,7 +105,7 @@
       <PrecompiledHeaderOutputFile>.\Debug\GLTrace2.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Debug\</ObjectFileName>
       <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
-      <AdditionalIncludeDirectories>..\RakNetHeaders</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\raknet\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -132,6 +135,91 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\raknet\Source\BitStream.cpp" />
+    <ClCompile Include="..\raknet\Source\CCRakNetSlidingWindow.cpp" />
+    <ClCompile Include="..\raknet\Source\CCRakNetUDT.cpp" />
+    <ClCompile Include="..\raknet\Source\CheckSum.cpp" />
+    <ClCompile Include="..\raknet\Source\CommandParserInterface.cpp" />
+    <ClCompile Include="..\raknet\Source\ConnectionGraph2.cpp" />
+    <ClCompile Include="..\raknet\Source\ConsoleServer.cpp" />
+    <ClCompile Include="..\raknet\Source\DataCompressor.cpp" />
+    <ClCompile Include="..\raknet\Source\DirectoryDeltaTransfer.cpp" />
+    <ClCompile Include="..\raknet\Source\DS_BytePool.cpp" />
+    <ClCompile Include="..\raknet\Source\DS_ByteQueue.cpp" />
+    <ClCompile Include="..\raknet\Source\DS_HuffmanEncodingTree.cpp" />
+    <ClCompile Include="..\raknet\Source\DS_Table.cpp" />
+    <ClCompile Include="..\raknet\Source\EmailSender.cpp" />
+    <ClCompile Include="..\raknet\Source\EncodeClassName.cpp" />
+    <ClCompile Include="..\raknet\Source\EpochTimeToString.cpp" />
+    <ClCompile Include="..\raknet\Source\FileList.cpp" />
+    <ClCompile Include="..\raknet\Source\FileListTransfer.cpp" />
+    <ClCompile Include="..\raknet\Source\FileOperations.cpp" />
+    <ClCompile Include="..\raknet\Source\FormatString.cpp" />
+    <ClCompile Include="..\raknet\Source\FullyConnectedMesh2.cpp" />
+    <ClCompile Include="..\raknet\Source\Getche.cpp" />
+    <ClCompile Include="..\raknet\Source\Gets.cpp" />
+    <ClCompile Include="..\raknet\Source\GetTime.cpp" />
+    <ClCompile Include="..\raknet\Source\gettimeofday.cpp" />
+    <ClCompile Include="..\raknet\Source\GridSectorizer.cpp" />
+    <ClCompile Include="..\raknet\Source\HTTPConnection.cpp" />
+    <ClCompile Include="..\raknet\Source\IncrementalReadInterface.cpp" />
+    <ClCompile Include="..\raknet\Source\Itoa.cpp" />
+    <ClCompile Include="..\raknet\Source\LinuxStrings.cpp" />
+    <ClCompile Include="..\raknet\Source\LogCommandParser.cpp" />
+    <ClCompile Include="..\raknet\Source\MessageFilter.cpp" />
+    <ClCompile Include="..\raknet\Source\NatPunchthroughClient.cpp" />
+    <ClCompile Include="..\raknet\Source\NatPunchthroughServer.cpp" />
+    <ClCompile Include="..\raknet\Source\NatTypeDetectionClient.cpp" />
+    <ClCompile Include="..\raknet\Source\NatTypeDetectionCommon.cpp" />
+    <ClCompile Include="..\raknet\Source\NatTypeDetectionServer.cpp" />
+    <ClCompile Include="..\raknet\Source\NetworkIDManager.cpp" />
+    <ClCompile Include="..\raknet\Source\NetworkIDObject.cpp" />
+    <ClCompile Include="..\raknet\Source\PacketConsoleLogger.cpp" />
+    <ClCompile Include="..\raknet\Source\PacketFileLogger.cpp" />
+    <ClCompile Include="..\raknet\Source\PacketizedTCP.cpp" />
+    <ClCompile Include="..\raknet\Source\PacketLogger.cpp" />
+    <ClCompile Include="..\raknet\Source\PacketOutputWindowLogger.cpp" />
+    <ClCompile Include="..\raknet\Source\PluginInterface2.cpp" />
+    <ClCompile Include="..\raknet\Source\RakMemoryOverride.cpp" />
+    <ClCompile Include="..\raknet\Source\RakNetCommandParser.cpp" />
+    <ClCompile Include="..\raknet\Source\RakNetSocket.cpp" />
+    <ClCompile Include="..\raknet\Source\RakNetStatistics.cpp" />
+    <ClCompile Include="..\raknet\Source\RakNetTransport2.cpp" />
+    <ClCompile Include="..\raknet\Source\RakNetTypes.cpp" />
+    <ClCompile Include="..\raknet\Source\RakPeer.cpp" />
+    <ClCompile Include="..\raknet\Source\RakSleep.cpp" />
+    <ClCompile Include="..\raknet\Source\RakString.cpp" />
+    <ClCompile Include="..\raknet\Source\RakThread.cpp" />
+    <ClCompile Include="..\raknet\Source\Rand.cpp" />
+    <ClCompile Include="..\raknet\Source\rdlmalloc.cpp" />
+    <ClCompile Include="..\raknet\Source\ReadyEvent.cpp" />
+    <ClCompile Include="..\raknet\Source\ReliabilityLayer.cpp" />
+    <ClCompile Include="..\raknet\Source\ReplicaManager3.cpp" />
+    <ClCompile Include="..\raknet\Source\Router2.cpp" />
+    <ClCompile Include="..\raknet\Source\RPC4Plugin.cpp" />
+    <ClCompile Include="..\raknet\Source\SecureHandshake.cpp" />
+    <ClCompile Include="..\raknet\Source\SendToThread.cpp" />
+    <ClCompile Include="..\raknet\Source\SHA1.cpp" />
+    <ClCompile Include="..\raknet\Source\SignaledEvent.cpp" />
+    <ClCompile Include="..\raknet\Source\SimpleMutex.cpp" />
+    <ClCompile Include="..\raknet\Source\SocketLayer.cpp" />
+    <ClCompile Include="..\raknet\Source\StringCompressor.cpp" />
+    <ClCompile Include="..\raknet\Source\StringTable.cpp" />
+    <ClCompile Include="..\raknet\Source\SuperFastHash.cpp" />
+    <ClCompile Include="..\raknet\Source\TableSerializer.cpp" />
+    <ClCompile Include="..\raknet\Source\TCPInterface.cpp" />
+    <ClCompile Include="..\raknet\Source\TeamBalancer.cpp" />
+    <ClCompile Include="..\raknet\Source\TelnetTransport.cpp" />
+    <ClCompile Include="..\raknet\Source\ThreadsafePacketLogger.cpp" />
+    <ClCompile Include="..\raknet\Source\UDPForwarder.cpp" />
+    <ClCompile Include="..\raknet\Source\UDPProxyClient.cpp" />
+    <ClCompile Include="..\raknet\Source\UDPProxyCoordinator.cpp" />
+    <ClCompile Include="..\raknet\Source\UDPProxyServer.cpp" />
+    <ClCompile Include="..\raknet\Source\VariableDeltaSerializer.cpp" />
+    <ClCompile Include="..\raknet\Source\VariableListDeltaTracker.cpp" />
+    <ClCompile Include="..\raknet\Source\VariadicSQLParser.cpp" />
+    <ClCompile Include="..\raknet\Source\WSAStartupSingleton.cpp" />
+    <ClCompile Include="..\raknet\Source\_FindFirst.cpp" />
     <ClCompile Include="dll.c">
       <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DisableLanguageExtensions>
     </ClCompile>
@@ -290,7 +378,11 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="readme.txt" />
-    <CustomBuild Include="gltrace.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\raknet\Source\CMakeLists.txt" />
+    <None Include="..\raknet\Source\RakNet.vcproj" />
+    <None Include="..\raknet\Source\RakNet_vc8.vcproj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
