@@ -1,3 +1,5 @@
+#include "RakPeerInterface.h"
+#include "BitStream.h"
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,6 +7,9 @@
 #include "nl.h"
 #include "glut.h"
 #include <gl/glu.h>
+#include "MessageIdentifiers.h"
+#include "RakNetStatistics.h"
+#include "RakSleep.h"
 
 #if defined WIN32 || defined WIN64
 #define WIN32_LEAN_AND_MEAN
@@ -18,29 +23,34 @@
 //#define readDouble(x, y, z)     {z = nlSwapd(*(NLdouble *)((NLbyte *)&x[y])); y += 8;}
 /* MACRO NAMEs to be completed*/
 //used 21 times
-#define readByte(x,y,z)		{z = *(NLbyte *)((NLbyte *)&x[y]);y += 1; } //print("%i, ",z);}
+#define readByte(x,y,z) {z = *(NLbyte *)((NLbyte *)&x[y]);y += 1; } //print("%i, ",z);}
 //used 6 times
-#define readByteV(x,y,z,n)		{z = (NLbyte *)((NLbyte *)&x[y]);y += n;}
+#define readByteV(x,y,z,n) {z = (NLbyte *)((NLbyte *)&x[y]);y += n;}
 //used 81 times
-#define readDouble(x,y,z)		{z = *(NLdouble *)((NLbyte *)&x[y]);y += 8; }// print("%f, ",z);}
+#define readDouble(x,y,z) {z = *(NLdouble *)((NLbyte *)&x[y]);y += 8; }// print("%f, ",z);}
 //used 28 times
-#define readDoubleV(x,y,z,n)		{z = (NLdouble *)((NLbyte *)&x[y]);y += 8*n; }// for(int hen = 0; hen < n; hen++) print("%f, ",z[hen]); }
+#define readDoubleV(x,y,z,n) {z = (NLdouble *)((NLbyte *)&x[y]);y += 8*n; }// for(int hen = 0; hen < n; hen++) print("%f, ",z[hen]); }
 //used 103 times
-#define readFloat(x,y,z)		{z = *(NLfloat  *)((NLbyte *)&x[y]);y += 4; }// print("%f, ",z);}
+#define readFloat(x,y,z) {z = *(NLfloat *)((NLbyte *)&x[y]);y += 4; }// print("%f, ",z);}
 //used 41 times
-#define readFloatV(x,y,z,n)		{z = (NLfloat  *)((NLbyte *)&x[y]);y += 4*n; }// for(int hen = 0; hen < n; hen++) print("%f, ",z[hen]);}
+#define readFloatV(x,y,z,n) {z = (NLfloat *)((NLbyte *)&x[y]);y += 4*n; }// for(int hen = 0; hen < n; hen++) print("%f, ",z[hen]);}
 //used 179 times
-#define readInt(x,y,z)		{z = *(NLushort *)((NLbyte *)&x[y]);y += 2; }//print("%i, ",z);}
+#define readInt(x,y,z) {z = *(NLshort *)((NLbyte *)&x[y]);y += 2; }//print("%i, ",z);}
 //used 56 times
-#define readIntV(x,y,z,n)		{z = (NLushort *)((NLbyte *)&x[y]);y += 2*n; }//for(int hen = 0; hen < n; hen++) print("%i, ",z[hen]);}
+#define readIntV(x,y,z,n) {z = (NLushort *)((NLbyte *)&x[y]);y += 2*n; }//for(int hen = 0; hen < n; hen++) print("%i, ",z[hen]);}
 //used 47 times
-#define readLong(x,y,z)		{z = *(NLulong  *)((NLbyte *)&x[y]);y += 4; }//print("%i, ",z);}
+#define readLong(x,y,z) {z = *(NLulong *)((NLbyte *)&x[y]);y += 4; }//print("%i, ",z);}
 //used 1 times
-#define readLongV(x,y,z,n)		{z = (NLulong  *)((NLbyte *)&x[y]);y += 4*n;}
+#define readLongV(x,y,z,n) {z = (NLulong *)((NLbyte *)&x[y]);y += 4*n;}
 //used 243 times
-#define readShort(x,y,z)		{z = *(NLushort *)((NLbyte *)&x[y]);y += 2; }//print("%i, ",z);}
+#define readShort(x,y,z) {z = *(NLshort *)((NLbyte *)&x[y]);y += 2; }//print("%i, ",z);}
 
+NLbyte *buffer;
 FILE *text_file = NULL; 
+
+using namespace RakNet;
+
+RakPeerInterface *client;
 
 void parseFunctions();
 void print(const char *fmt, ...);
@@ -457,9 +467,8 @@ char *GLN[] =
 
 #define MAX_CLIENTS 10
 NLsocket    serversock;
-NLsocket    client;
+NLsocket    NLclient;
 NLint       clientnum = 0;
-NLbyte		buffer[NL_MAX_PACKET_LENGTH];
 bool		data = false;
 
 void printErrorExit(void)
@@ -480,47 +489,48 @@ void printErrorExit(void)
 
 void mainServerLoop()
 {
-    NLchar      string[NL_MAX_STRING_LENGTH];
+	RakNet::Packet *packet;
+	//RakNetStatistics rssSender;
+	//char *text = new char [100000000];
 
-    //memset(client, 0, sizeof(client));
+	for (packet = client->Receive(); packet; client->DeallocatePacket(packet), packet=client->Receive())
+	{
+		if (packet->data[0]==ID_CONNECTION_LOST)
+			printf("ID_CONNECTION_LOST from %s\n", packet->systemAddress.ToString());
+		else if (packet->data[0]==ID_DISCONNECTION_NOTIFICATION)
+			printf("ID_DISCONNECTION_NOTIFICATION from %s\n", packet->systemAddress.ToString());
+		else if (packet->data[0]==ID_NEW_INCOMING_CONNECTION)
+			printf("ID_NEW_INCOMING_CONNECTION from %s\n", packet->systemAddress.ToString());
+		else if (packet->data[0]==ID_CONNECTION_REQUEST_ACCEPTED)
+			printf("ID_CONNECTION_REQUEST_ACCEPTED from %s\n", packet->systemAddress.ToString());
+		else if (packet->data[0]==ID_USER_PACKET_ENUM) {
+			//RakNet::BitStream *myStream = new BitStream(packet->data, packet->length, false);
+			buffer = (NLbyte *)packet->data;
+			
+			//unsigned char c;
+			//myStream->Read(c);
+			//printf("%u\n", c);
+			
+			/*int i;
+			while(myStream->Read(i)) {
+				printf("%i\n",i);
+			}*/
 
-    NLint   i;
+			//myStream->Read(i);
+			//printf("%i\n",i);
 
-    /* check for a new client */
-    NLsocket newsock = nlAcceptConnection(serversock);
+			//myStream->Read(i);
+			parseFunctions();
+			//printf("\n");
+		}
+		//client->GetStatistics(packet->systemAddress);
+		//StatisticsToString(&rssSender, text,0);
+		//printf("==== RakNet Statistics ====\n");
+		//printf("%s\n\n", text);
+	}
 
-    if(newsock != NL_INVALID)
-    {
-        NLaddress   addr;
-
-        nlGetRemoteAddr(newsock, &addr);
-        client = newsock;
-        printf("Client %d connected from %s\n", clientnum, nlAddrToString(&addr, string));
-        clientnum++;
-    }
-    else
-    {
-        if(nlGetError() == NL_SYSTEM_ERROR)
-        {
-            printErrorExit();
-        }
-    }
-	/*if (clientnum > 0) {
-		NLaddress   addr;
-		nlGetRemoteAddr(client[clientnum-1], &addr);
-		print("Client %d still connected from %s\n", clientnum, nlAddrToString(&addr, string));
-	}*/
-
-    /* loop through the clients and read the packets */
-    if(nlRead(client, buffer, sizeof(buffer)) > 0)
-    {
-		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        //buffer[NL_MAX_PACKET_LENGTH-1] = 0; /* null terminate the char string */
-		//glutPostRedisplay();
-		parseFunctions();
-		//glutSwapBuffers();
-	} //else print("nothing to read\n");
-}
+	//delete text;
+}	
 /*
   Send output to file or debug console
 */
@@ -556,12 +566,12 @@ void print(const char *fmt, ...)
 void parseFunctions()
 {
 	data = false;
-	NLushort index;
-	NLuint count = 0;
+	NLshort index;
+	NLint count = 1;
 /*DECLARATIONS CREATED BY PERL SCRIPT*/
 	GLvoid* pixels;
 	HDC a;
-	NLbyte* bitmap;
+	unsigned char* bitmap;
 	NLbyte* v_ByteV;
 	NLdouble bottom;
 	NLdouble left;
@@ -624,11 +634,12 @@ void parseFunctions()
 	NLushort texture;
 	NLushort type;
 	NLushort* textures;
-	NLuint packetCount;
+	int packetCount;
 
 	readInt(buffer,count,index);
 	while (count < NL_MAX_PACKET_LENGTH) {
-		if(index < 400) print("%s (",GLN[index]);
+		//printf("%i\n", index);
+		if(index < 400 && index > 0) print("%s (",GLN[index]);
 
 /*SWITCH CREATED BY PERL SCRIPT*/
 		switch(index) {
@@ -639,7 +650,7 @@ void parseFunctions()
 				glAlphaFunc((GLenum) func,(GLclampf) ref);
 			break;
 			case 4: //glBegin
-				readShort(buffer,count,mode);
+				readInt(buffer,count,mode);
 				print("%i",(short) mode);
 				glBegin((GLenum) mode);
 			break;
@@ -662,7 +673,7 @@ void parseFunctions()
 					print("-----size error------");
 					break;
 				}
-				bitmap = &(buffer[count]);
+				//bitmap = &(buffer[count]);
 				count += width * height;
 				glBitmap((GLsizei) width,(GLsizei) height,(GLfloat) xorig,(GLfloat) yorig,(GLfloat) xmove,(GLfloat) ymove,(GLubyte*) bitmap);
 			break;
@@ -700,7 +711,7 @@ void parseFunctions()
 				print("%f, %f, %f, %f",(float) red, (float) green, (float) blue, (float) alpha);
 				glColor4f((GLfloat) red,(GLfloat) green,(GLfloat) blue,(GLfloat) alpha);
 			break;
-			case 38: //glColor4fv
+			/*case 38: //glColor4fv
 				readFloatV(buffer,count,v,4);
 				print("%f, %f, %f, %f",(float) v[0],(float) v[1],(float) v[2],(float) v[3]);
 				glColor4fv((GLfloat*) v);
@@ -709,18 +720,18 @@ void parseFunctions()
 				readByteV(buffer,count,v_ByteV,4);
 				//print("%i",*(byte) v_ByteV);
 				glColor4ubv((GLubyte*) v_ByteV);
-			break;
+			break;*/
 			case 57: //glCullFace
 				readShort(buffer,count,mode);
 				print("%i",(short) mode);
 				glCullFace((GLenum) mode);
 			break;
-			case 59: //glDeleteTextures
+			/*case 59: //glDeleteTextures
 				readLong(buffer,count,n);
 				readIntV(buffer,count,textures,1);
 				//print("%i, %i",(long) n, *(int*) textures);
 				//glDeleteTextures((GLsizei) n,(GLuint*) textures);
-			break;
+			break;*/
 			case 60: //glDepthFunc
 				readShort(buffer,count,func);
 				print("%i",(short) func);
@@ -768,12 +779,12 @@ void parseFunctions()
 			case 102: //glGetError
 				glGetError();
 			break;
-			case 103: //glGetFloatv
+			/*case 103: //glGetFloatv
 				readShort(buffer,count,pname);
 				readFloatV(buffer,count,params,1);
 				//print("%i, %f",(short) pname, *(float) params);
 				glGetFloatv((GLenum) pname,(GLfloat*) params);
-			break;
+			break;*/
 			case 117: //glGetString
 				readShort(buffer,count,name);
 				print("%i",(short) name);
@@ -877,10 +888,13 @@ void parseFunctions()
 				readShort(buffer,count,format);
 				readShort(buffer,count,type);
 				// unknown type for: pixels
-				pixels = &(buffer[count]);
-				count += width * height;
+				pixels = malloc(width * height);
+				//for(int i = 0; i < width * height; i++)
+				//	((NLbyte*)pixels)[i] = (NLbyte)buffer[count++];
+	
 				print("%i, %i, %i, %i, %i, %i, %i, %i, ",(short) target, (long) level, (long) internalformat, (long) width, (long) height, (long) border, (short) format, (short) type );
-				glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
+				//glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
+				free(pixels);
 			break;
 			case 302: //glTexParameterf
 				readShort(buffer,count,target);
@@ -908,7 +922,7 @@ void parseFunctions()
 				readShort(buffer,count,format);
 				readShort(buffer,count,type);
 				// unknown type for: pixels
-				pixels = &buffer[count];
+				//pixels = &buffer[count];
 				count += width * height;
 				print("%i, %i, %i, %i, %i, %i, %i, %i, ",(short) target, (long) level, (long) xoffset, (long) yoffset, (long) width, (long) height, (short) format, (short) type );
 				glTexSubImage2D((GLenum) target,(GLint) level,(GLint) xoffset,(GLint) yoffset,(GLsizei) width,(GLsizei) height,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
@@ -948,6 +962,7 @@ void parseFunctions()
 			break;
 			case 354: //wglSwapBuffers
 				// unknown type for: a
+				print("swapping those buffers\n");
 				glutSwapBuffers();
 			break;
 			case 400:
@@ -958,13 +973,13 @@ void parseFunctions()
 			case 500:
 				print("----End Packet-----\n");
 				readShort(buffer,count,packetCount);
-				print("packet no: %i\n",packetCount);
+				print("packet no: %i\n\n",packetCount);
 			return;
 		}
 /* FINISHED CREATION (<6 days)*/
 
-		if(index < 400) print(") %i\n",count);
-		readShort(buffer,count,index);
+		if(index < 400 && index > 0) print(") %i\n",count);
+		readInt(buffer,count,index);
 	}
 	
 }
@@ -977,38 +992,45 @@ display(void)
 }
 int main(int argc, char **argv)
 {
-    NLboolean   isserver = NL_FALSE;
-    NLsocket    clientsock;
-    NLaddress   addr;
-    NLenum      type = NL_RELIABLE; /* Change this to NL_RELIABLE for reliable connection */
-    NLchar      string[NL_MAX_STRING_LENGTH];
+    //NLboolean   isserver = NL_FALSE;
+    //NLsocket    clientsock;
+    //NLaddress   addr;
+    //NLenum      type = NL_RELIABLE; /* Change this to NL_RELIABLE for reliable connection */
+    //NLchar      string[NL_MAX_STRING_LENGTH];
 
 	//strcpy(server, "127.0.0.1:25000");
-    if(!nlInit())
-        printErrorExit();
-
-
-    print("nlGetString(NL_VERSION) = %s\n\n", nlGetString(NL_VERSION));
-    print("nlGetString(NL_NETWORK_TYPES) = %s\n\n", nlGetString(NL_NETWORK_TYPES));
+    //if(!nlInit())
+    //    printErrorExit();
+    //print("nlGetString(NL_VERSION) = %s\n\n", nlGetString(NL_VERSION));
+    //print("nlGetString(NL_NETWORK_TYPES) = %s\n\n", nlGetString(NL_NETWORK_TYPES));
 
 	text_file = fopen("output.txt", "w");
 
-    if(!nlSelectNetwork(NL_IP))
-        printErrorExit();
+    //if(!nlSelectNetwork(NL_IP))
+    //    printErrorExit();
 
     /* create a server socket */
-    serversock = nlOpen(25000, type); /* just a random port number ;) */
+    //serversock = nlOpen(25000, type); /* just a random port number ;) */
 
-    if(serversock == NL_INVALID)
-        printErrorExit();
+    //if(serversock == NL_INVALID)
+    //    printErrorExit();
 
-    if(!nlListen(serversock))       /* let's listen on this socket */
-    {
-        nlClose(serversock);
-        printErrorExit();
-    }
-    nlGetLocalAddr(serversock, &addr);
-    print("Server address is %s\n", nlAddrToString(&addr, string));
+    //if(!nlListen(serversock))       /* let's listen on this socket */
+    //{
+    //    nlClose(serversock);
+     //   printErrorExit();
+    //}
+    //nlGetLocalAddr(serversock, &addr);
+    //print("Server address is %s\n", nlAddrToString(&addr, string));
+	
+	client=RakNet::RakPeerInterface::GetInstance();
+	
+	client->SetTimeoutTime(5000,RakNet::UNASSIGNED_SYSTEM_ADDRESS);
+		
+	RakNet::SocketDescriptor socketDescriptor(60000,0);
+	client->SetMaximumIncomingConnections(4);
+	client->Startup(4, &socketDescriptor, 1);
+	RakSleep(500);
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
@@ -1018,7 +1040,7 @@ int main(int argc, char **argv)
 	glutIdleFunc(mainServerLoop);
 	glutMainLoop();
 
-    nlShutdown();
+    //nlShutdown();
     return 0;
 }
 

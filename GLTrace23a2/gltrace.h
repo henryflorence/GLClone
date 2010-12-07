@@ -581,7 +581,7 @@ enum GLID
 
 /* Jump table vectors to GLTRACE entries (aka "real" OpenGL driver) */
 
-struct
+struct glv
 {
 	void (GLAPIENTRY *glAccum) (GLenum op, GLfloat value);
 	void (GLAPIENTRY *glAlphaFunc) (GLenum func, GLclampf ref);
@@ -990,8 +990,7 @@ struct
     int (*glXQueryContextInfoEXT) (Display *dpy, GLXContext ctx, int attribute, int *value);
     void (*(*glXGetProcAddressARB)(const GLubyte *procName)) (void);
 #endif
-}
-GLV;
+};
 
 
 /* GLenum values from Win32 GL.H */
@@ -1022,7 +1021,7 @@ void write_time(void);
 
 /* this is the format for printing the call counts */
 /* to change it, see log.c */
-const char *fmt;
+//const char *fmt;
 
 extern int show_status[];
 extern int show_status_EXT[];

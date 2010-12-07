@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLTrace2", "GLTrace2.vcxproj", "{9FD0F5EF-6799-6E68-E0FC-64BAA6C77267}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLTrace2", "GLTrace2.vcxproj", "{74D6A9C3-BC34-E9A8-C189-D347035A4A85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9FD0F5EF-6799-6E68-E0FC-64BAA6C77267}.Debug|Win32.ActiveCfg = Debug|Win32
-		{9FD0F5EF-6799-6E68-E0FC-64BAA6C77267}.Debug|Win32.Build.0 = Debug|Win32
-		{9FD0F5EF-6799-6E68-E0FC-64BAA6C77267}.Release|Win32.ActiveCfg = Release|Win32
-		{9FD0F5EF-6799-6E68-E0FC-64BAA6C77267}.Release|Win32.Build.0 = Release|Win32
+		{74D6A9C3-BC34-E9A8-C189-D347035A4A85}.Debug|Win32.ActiveCfg = Debug|Win32
+		{74D6A9C3-BC34-E9A8-C189-D347035A4A85}.Debug|Win32.Build.0 = Debug|Win32
+		{74D6A9C3-BC34-E9A8-C189-D347035A4A85}.Release|Win32.ActiveCfg = Release|Win32
+		{74D6A9C3-BC34-E9A8-C189-D347035A4A85}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
