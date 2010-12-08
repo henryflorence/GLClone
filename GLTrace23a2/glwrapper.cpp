@@ -57,10 +57,10 @@ extern glv GLV;
 	{\
 		if(1)\
 		{\
-			if (strcmp (GLN[FP_##X],"wglSwapBuffers") == 0) {\
+			if (FP_##X == 354) {\
 				AddIntToStream(FP_##X);\
 				SendStream();\
-			} if(show_status[FP_##X] == SUPPRESS) {\
+			} else if(show_status[FP_##X] == SUPPRESS) {\
 				print("%s(",GLN[FP_##X]);\
 				AddIntToStream(FP_##X);\
 
@@ -245,8 +245,8 @@ void GLAPIENTRY glBindTexture (GLenum target, GLuint texture)
 
 void GLAPIENTRY glBitmap (GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, const GLubyte *bitmap)
 {
-	int i;
-	if(NL_MAX_PACKET_LENGTH < count + width * height) SendStream();
+	//int i;
+	//if(NL_MAX_PACKET_LENGTH < count + width * height) SendStream();
 	START(glBitmap);
 	print_value(_GLsizei, &width);
 	PRINT_COMMA
@@ -262,9 +262,9 @@ void GLAPIENTRY glBitmap (GLsizei width, GLsizei height, GLfloat xorig, GLfloat 
 	PRINT_COMMA
 	//print_value(HEX, &bitmap);
 	//StreamBytes(bitmap, width*height);
-	for(i = 0; i < width * height; i++) {
-		AddByteToStream((((NLbyte*)bitmap)[i]));
-	}
+	//for(i = 0; i < width * height; i++) {
+	//	AddByteToStream((((NLbyte*)bitmap)[i]));
+	//}
 	END;
 	GLV.glBitmap (width, height, xorig, yorig, xmove, ymove, bitmap);
 }
@@ -3974,7 +3974,7 @@ void GLAPIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, 
 	int i;
 	//if(texCount > 5) return;
 	//	texCount++;
-	if(NL_MAX_PACKET_LENGTH < count + width * height) SendStream();
+	//if(NL_MAX_PACKET_LENGTH < count + width * height) SendStream();
 
 	START(glTexImage2D);
 	print_value(_GLenum, &target);
@@ -3999,7 +3999,7 @@ void GLAPIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, 
 	//	AddByteToStream((((NLbyte*)pixels)[i]));
 	//}
 	END;
-	//GLV.glTexImage2D (target, level, internalformat, width, height, border, format, type, pixels);
+	GLV.glTexImage2D (target, level, internalformat, width, height, border, format, type, pixels);
 }
 
 void GLAPIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param)
@@ -4118,14 +4118,14 @@ void GLAPIENTRY glTexSubImage1D (GLenum target, GLint level, GLint xoffset, GLsi
 
 void GLAPIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels)
 {
-	int i;
+	//int i;
 	//if(texCount > 5) return;
 	//	texCount++;
-	if( width * height > NL_MAX_PACKET_LENGTH) {
-		print("---TEXTURE TOO LARGE - OMITTING---\n");
-		return;
-	}
-	if(NL_MAX_PACKET_LENGTH < count + width * height) SendStream();
+	//if( width * height > NL_MAX_PACKET_LENGTH) {
+	//	print("---TEXTURE TOO LARGE - OMITTING---\n");
+	//	return;
+	//}
+	//if(NL_MAX_PACKET_LENGTH < count + width * height) SendStream();
 	
 	START(glTexSubImage2D);
 	print_value(_GLenum, &target);
@@ -4144,9 +4144,9 @@ void GLAPIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLin
 	PRINT_COMMA
 	print_value(_GLenum, &type);
 	PRINT_COMMA
-	for(i = 0; i < width * height; i++) {
-		AddByteToStream((((NLbyte*)pixels)[i]));
-	}
+	//for(i = 0; i < width * height; i++) {
+	//	AddByteToStream((((NLbyte*)pixels)[i]));
+	//}
 	END;
 	GLV.glTexSubImage2D (target, level, xoffset, yoffset, width, height, format, type, pixels);
 }

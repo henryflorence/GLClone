@@ -499,9 +499,13 @@ void mainServerLoop()
 			printf("ID_CONNECTION_LOST from %s\n", packet->systemAddress.ToString());
 		else if (packet->data[0]==ID_DISCONNECTION_NOTIFICATION)
 			printf("ID_DISCONNECTION_NOTIFICATION from %s\n", packet->systemAddress.ToString());
-		else if (packet->data[0]==ID_NEW_INCOMING_CONNECTION)
+		else if (packet->data[0]==ID_NEW_INCOMING_CONNECTION) {
 			printf("ID_NEW_INCOMING_CONNECTION from %s\n", packet->systemAddress.ToString());
-		else if (packet->data[0]==ID_CONNECTION_REQUEST_ACCEPTED)
+			glMatrixMode (5889);
+			glLoadIdentity (); 
+			glMatrixMode (5888);
+			glLoadIdentity (); 
+		} else if (packet->data[0]==ID_CONNECTION_REQUEST_ACCEPTED)
 			printf("ID_CONNECTION_REQUEST_ACCEPTED from %s\n", packet->systemAddress.ToString());
 		else if (packet->data[0]==ID_USER_PACKET_ENUM) {
 			//RakNet::BitStream *myStream = new BitStream(packet->data, packet->length, false);
@@ -635,6 +639,8 @@ void parseFunctions()
 	NLushort type;
 	NLushort* textures;
 	int packetCount;
+	int packetSize;
+	int typeModifier;
 
 	readInt(buffer,count,index);
 	while (count < NL_MAX_PACKET_LENGTH) {
@@ -674,8 +680,10 @@ void parseFunctions()
 					break;
 				}
 				//bitmap = &(buffer[count]);
-				count += width * height;
+				//count += width * height;
+				bitmap = (unsigned char *)malloc(width * height);
 				glBitmap((GLsizei) width,(GLsizei) height,(GLfloat) xorig,(GLfloat) yorig,(GLfloat) xmove,(GLfloat) ymove,(GLubyte*) bitmap);
+				free (bitmap);
 			break;
 			case 7: //glBlendFunc
 				readShort(buffer,count,sfactor);
@@ -888,13 +896,22 @@ void parseFunctions()
 				readShort(buffer,count,format);
 				readShort(buffer,count,type);
 				// unknown type for: pixels
-				pixels = malloc(width * height);
-				//for(int i = 0; i < width * height; i++)
-				//	((NLbyte*)pixels)[i] = (NLbyte)buffer[count++];
-	
+				
+				typeModifier = 1;
+				switch(type) {
+					case GL_UNSIGNED_SHORT:
+					case GL_SHORT:
+						typeModifier = 2;
+						break;
+					case GL_UNSIGNED_INT:
+						typeModifier = 4;
+				}
+				pixels = new char[width * height * 4];
+				
+				//count += width * height;
 				print("%i, %i, %i, %i, %i, %i, %i, %i, ",(short) target, (long) level, (long) internalformat, (long) width, (long) height, (long) border, (short) format, (short) type );
-				//glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
-				free(pixels);
+				glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
+				delete pixels;
 			break;
 			case 302: //glTexParameterf
 				readShort(buffer,count,target);
@@ -922,10 +939,11 @@ void parseFunctions()
 				readShort(buffer,count,format);
 				readShort(buffer,count,type);
 				// unknown type for: pixels
-				//pixels = &buffer[count];
-				count += width * height;
+				pixels = new char[width * height * 4];
+				//count += width * height;
 				print("%i, %i, %i, %i, %i, %i, %i, %i, ",(short) target, (long) level, (long) xoffset, (long) yoffset, (long) width, (long) height, (short) format, (short) type );
 				glTexSubImage2D((GLenum) target,(GLint) level,(GLint) xoffset,(GLint) yoffset,(GLsizei) width,(GLsizei) height,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
+				delete pixels;
 			break;
 			case 308: //glTranslated
 				readDouble(buffer,count,x_Double);
@@ -969,11 +987,14 @@ void parseFunctions()
 				print("------Start Packet-----\n");
 				readShort(buffer,count,packetCount);
 				print("packet no: %i\n",packetCount);
+				printf("start packet: %i\n",packetCount);
 			break;
 			case 500:
 				print("----End Packet-----\n");
 				readShort(buffer,count,packetCount);
-				print("packet no: %i\n\n",packetCount);
+				readShort(buffer,count,packetSize);
+				print("packet no: %i, sent reason: %i\n\n",packetCount,packetSize);
+				printf("finish packet: %i\n",packetCount);
 			return;
 		}
 /* FINISHED CREATION (<6 days)*/
@@ -1028,7 +1049,7 @@ int main(int argc, char **argv)
 	client->SetTimeoutTime(5000,RakNet::UNASSIGNED_SYSTEM_ADDRESS);
 		
 	RakNet::SocketDescriptor socketDescriptor(60000,0);
-	client->SetMaximumIncomingConnections(4);
+	client->SetMaximumIncomingConnections(1);
 	client->Startup(4, &socketDescriptor, 1);
 	RakSleep(500);
 

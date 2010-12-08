@@ -1,370 +1,207 @@
-GL Intercept Log. Version : 0.5    Compile Date: Dec  3 2005    Run on: Wed Dec 08 02:43:35 2010
+GL Intercept Log. Version : 0.5    Compile Date: Dec  3 2005    Run on: Wed Dec 08 23:30:52 2010
 
 ===================================================
-FunctionParser::Parse - Unable to open file C:\Program Files (x86)\GLIntercept0_5\GLFunctions\gliIncludes.h
-Diagnostic: Unknown function glBegin being logged.
-Diagnostic: Unknown function glEnd being logged.
-Diagnostic: Unknown function glNewList being logged.
-Diagnostic: Unknown function glEndList being logged.
-Diagnostic: Unknown function glGetError being logged.
-Diagnostic: Unknown function glClearIndex being logged.
-Diagnostic: Unknown function glClearColor being logged.
-Diagnostic: Unknown function glClear being logged.
-Diagnostic: Unknown function glIndexMask being logged.
-Diagnostic: Unknown function glColorMask being logged.
-Diagnostic: Unknown function glAlphaFunc being logged.
-Diagnostic: Unknown function glBlendFunc being logged.
-Diagnostic: Unknown function glLogicOp being logged.
-Diagnostic: Unknown function glCullFace being logged.
-Diagnostic: Unknown function glFrontFace being logged.
-Diagnostic: Unknown function glPointSize being logged.
-Diagnostic: Unknown function glLineWidth being logged.
-Diagnostic: Unknown function glLineStipple being logged.
-Diagnostic: Unknown function glPolygonMode being logged.
-Diagnostic: Unknown function glPolygonOffset being logged.
-Diagnostic: Unknown function glPolygonStipple being logged.
-Diagnostic: Unknown function glGetPolygonStipple being logged.
-Diagnostic: Unknown function glEdgeFlag being logged.
-Diagnostic: Unknown function glEdgeFlagv being logged.
-Diagnostic: Unknown function glScissor being logged.
-Diagnostic: Unknown function glClipPlane being logged.
-Diagnostic: Unknown function glGetClipPlane being logged.
-Diagnostic: Unknown function glDrawBuffer being logged.
-Diagnostic: Unknown function glReadBuffer being logged.
-Diagnostic: Unknown function glEnable being logged.
-Diagnostic: Unknown function glDisable being logged.
-Diagnostic: Unknown function glIsEnabled being logged.
-Diagnostic: Unknown function glEnableClientState being logged.
-Diagnostic: Unknown function glDisableClientState being logged.
-Diagnostic: Unknown function glGetBooleanv being logged.
-Diagnostic: Unknown function glGetDoublev being logged.
-Diagnostic: Unknown function glGetFloatv being logged.
-Diagnostic: Unknown function glGetIntegerv being logged.
-Diagnostic: Unknown function glPushAttrib being logged.
-Diagnostic: Unknown function glPopAttrib being logged.
-Diagnostic: Unknown function glPushClientAttrib being logged.
-Diagnostic: Unknown function glPopClientAttrib being logged.
-Diagnostic: Unknown function glRenderMode being logged.
-Diagnostic: Unknown function glGetString being logged.
-Diagnostic: Unknown function glFinish being logged.
-Diagnostic: Unknown function glFlush being logged.
-Diagnostic: Unknown function glHint being logged.
-Diagnostic: Unknown function glClearDepth being logged.
-Diagnostic: Unknown function glDepthFunc being logged.
-Diagnostic: Unknown function glDepthMask being logged.
-Diagnostic: Unknown function glDepthRange being logged.
-Diagnostic: Unknown function glClearAccum being logged.
-Diagnostic: Unknown function glAccum being logged.
-Diagnostic: Unknown function glMatrixMode being logged.
-Diagnostic: Unknown function glOrtho being logged.
-Diagnostic: Unknown function glFrustum being logged.
-Diagnostic: Unknown function glViewport being logged.
-Diagnostic: Unknown function glPushMatrix being logged.
-Diagnostic: Unknown function glPopMatrix being logged.
-Diagnostic: Unknown function glLoadIdentity being logged.
-Diagnostic: Unknown function glLoadMatrixd being logged.
-Diagnostic: Unknown function glLoadMatrixf being logged.
-Diagnostic: Unknown function glMultMatrixd being logged.
-Diagnostic: Unknown function glMultMatrixf being logged.
-Diagnostic: Unknown function glRotated being logged.
-Diagnostic: Unknown function glRotatef being logged.
-Diagnostic: Unknown function glScaled being logged.
-Diagnostic: Unknown function glScalef being logged.
-Diagnostic: Unknown function glTranslated being logged.
-Diagnostic: Unknown function glTranslatef being logged.
-Diagnostic: Unknown function glIsList being logged.
-Diagnostic: Unknown function glDeleteLists being logged.
-Diagnostic: Unknown function glGenLists being logged.
-Diagnostic: Unknown function glCallList being logged.
-Diagnostic: Unknown function glCallLists being logged.
-Diagnostic: Unknown function glListBase being logged.
-Diagnostic: Unknown function glVertex2d being logged.
-Diagnostic: Unknown function glVertex2f being logged.
-Diagnostic: Unknown function glVertex2i being logged.
-Diagnostic: Unknown function glVertex2s being logged.
-Diagnostic: Unknown function glVertex3d being logged.
-Diagnostic: Unknown function glVertex3f being logged.
-Diagnostic: Unknown function glVertex3i being logged.
-Diagnostic: Unknown function glVertex3s being logged.
-Diagnostic: Unknown function glVertex4d being logged.
-Diagnostic: Unknown function glVertex4f being logged.
-Diagnostic: Unknown function glVertex4i being logged.
-Diagnostic: Unknown function glVertex4s being logged.
-Diagnostic: Unknown function glVertex2dv being logged.
-Diagnostic: Unknown function glVertex2fv being logged.
-Diagnostic: Unknown function glVertex2iv being logged.
-Diagnostic: Unknown function glVertex2sv being logged.
-Diagnostic: Unknown function glVertex3dv being logged.
-Diagnostic: Unknown function glVertex3fv being logged.
-Diagnostic: Unknown function glVertex3iv being logged.
-Diagnostic: Unknown function glVertex3sv being logged.
-Diagnostic: Unknown function glVertex4dv being logged.
-Diagnostic: Unknown function glVertex4fv being logged.
-Diagnostic: Unknown function glVertex4iv being logged.
-Diagnostic: Unknown function glVertex4sv being logged.
-Diagnostic: Unknown function glNormal3b being logged.
-Diagnostic: Unknown function glNormal3d being logged.
-Diagnostic: Unknown function glNormal3f being logged.
-Diagnostic: Unknown function glNormal3i being logged.
-Diagnostic: Unknown function glNormal3s being logged.
-Diagnostic: Unknown function glNormal3bv being logged.
-Diagnostic: Unknown function glNormal3dv being logged.
-Diagnostic: Unknown function glNormal3fv being logged.
-Diagnostic: Unknown function glNormal3iv being logged.
-Diagnostic: Unknown function glNormal3sv being logged.
-Diagnostic: Unknown function glIndexd being logged.
-Diagnostic: Unknown function glIndexf being logged.
-Diagnostic: Unknown function glIndexi being logged.
-Diagnostic: Unknown function glIndexs being logged.
-Diagnostic: Unknown function glIndexub being logged.
-Diagnostic: Unknown function glIndexdv being logged.
-Diagnostic: Unknown function glIndexfv being logged.
-Diagnostic: Unknown function glIndexiv being logged.
-Diagnostic: Unknown function glIndexsv being logged.
-Diagnostic: Unknown function glIndexubv being logged.
-Diagnostic: Unknown function glColor3b being logged.
-Diagnostic: Unknown function glColor3d being logged.
-Diagnostic: Unknown function glColor3f being logged.
-Diagnostic: Unknown function glColor3i being logged.
-Diagnostic: Unknown function glColor3s being logged.
-Diagnostic: Unknown function glColor3ub being logged.
-Diagnostic: Unknown function glColor3ui being logged.
-Diagnostic: Unknown function glColor3us being logged.
-Diagnostic: Unknown function glColor4b being logged.
-Diagnostic: Unknown function glColor4d being logged.
-Diagnostic: Unknown function glColor4f being logged.
-Diagnostic: Unknown function glColor4i being logged.
-Diagnostic: Unknown function glColor4s being logged.
-Diagnostic: Unknown function glColor4ub being logged.
-Diagnostic: Unknown function glColor4ui being logged.
-Diagnostic: Unknown function glColor4us being logged.
-Diagnostic: Unknown function glColor3bv being logged.
-Diagnostic: Unknown function glColor3dv being logged.
-Diagnostic: Unknown function glColor3fv being logged.
-Diagnostic: Unknown function glColor3iv being logged.
-Diagnostic: Unknown function glColor3sv being logged.
-Diagnostic: Unknown function glColor3ubv being logged.
-Diagnostic: Unknown function glColor3uiv being logged.
-Diagnostic: Unknown function glColor3usv being logged.
-Diagnostic: Unknown function glColor4bv being logged.
-Diagnostic: Unknown function glColor4dv being logged.
-Diagnostic: Unknown function glColor4fv being logged.
-Diagnostic: Unknown function glColor4iv being logged.
-Diagnostic: Unknown function glColor4sv being logged.
-Diagnostic: Unknown function glColor4ubv being logged.
-Diagnostic: Unknown function glColor4uiv being logged.
-Diagnostic: Unknown function glColor4usv being logged.
-Diagnostic: Unknown function glTexCoord1d being logged.
-Diagnostic: Unknown function glTexCoord1f being logged.
-Diagnostic: Unknown function glTexCoord1i being logged.
-Diagnostic: Unknown function glTexCoord1s being logged.
-Diagnostic: Unknown function glTexCoord2d being logged.
-Diagnostic: Unknown function glTexCoord2f being logged.
-Diagnostic: Unknown function glTexCoord2i being logged.
-Diagnostic: Unknown function glTexCoord2s being logged.
-Diagnostic: Unknown function glTexCoord3d being logged.
-Diagnostic: Unknown function glTexCoord3f being logged.
-Diagnostic: Unknown function glTexCoord3i being logged.
-Diagnostic: Unknown function glTexCoord3s being logged.
-Diagnostic: Unknown function glTexCoord4d being logged.
-Diagnostic: Unknown function glTexCoord4f being logged.
-Diagnostic: Unknown function glTexCoord4i being logged.
-Diagnostic: Unknown function glTexCoord4s being logged.
-Diagnostic: Unknown function glTexCoord1dv being logged.
-Diagnostic: Unknown function glTexCoord1fv being logged.
-Diagnostic: Unknown function glTexCoord1iv being logged.
-Diagnostic: Unknown function glTexCoord1sv being logged.
-Diagnostic: Unknown function glTexCoord2dv being logged.
-Diagnostic: Unknown function glTexCoord2fv being logged.
-Diagnostic: Unknown function glTexCoord2iv being logged.
-Diagnostic: Unknown function glTexCoord2sv being logged.
-Diagnostic: Unknown function glTexCoord3dv being logged.
-Diagnostic: Unknown function glTexCoord3fv being logged.
-Diagnostic: Unknown function glTexCoord3iv being logged.
-Diagnostic: Unknown function glTexCoord3sv being logged.
-Diagnostic: Unknown function glTexCoord4dv being logged.
-Diagnostic: Unknown function glTexCoord4fv being logged.
-Diagnostic: Unknown function glTexCoord4iv being logged.
-Diagnostic: Unknown function glTexCoord4sv being logged.
-Diagnostic: Unknown function glRasterPos2d being logged.
-Diagnostic: Unknown function glRasterPos2f being logged.
-Diagnostic: Unknown function glRasterPos2i being logged.
-Diagnostic: Unknown function glRasterPos2s being logged.
-Diagnostic: Unknown function glRasterPos3d being logged.
-Diagnostic: Unknown function glRasterPos3f being logged.
-Diagnostic: Unknown function glRasterPos3i being logged.
-Diagnostic: Unknown function glRasterPos3s being logged.
-Diagnostic: Unknown function glRasterPos4d being logged.
-Diagnostic: Unknown function glRasterPos4f being logged.
-Diagnostic: Unknown function glRasterPos4i being logged.
-Diagnostic: Unknown function glRasterPos4s being logged.
-Diagnostic: Unknown function glRasterPos2dv being logged.
-Diagnostic: Unknown function glRasterPos2fv being logged.
-Diagnostic: Unknown function glRasterPos2iv being logged.
-Diagnostic: Unknown function glRasterPos2sv being logged.
-Diagnostic: Unknown function glRasterPos3dv being logged.
-Diagnostic: Unknown function glRasterPos3fv being logged.
-Diagnostic: Unknown function glRasterPos3iv being logged.
-Diagnostic: Unknown function glRasterPos3sv being logged.
-Diagnostic: Unknown function glRasterPos4dv being logged.
-Diagnostic: Unknown function glRasterPos4fv being logged.
-Diagnostic: Unknown function glRasterPos4iv being logged.
-Diagnostic: Unknown function glRasterPos4sv being logged.
-Diagnostic: Unknown function glRectd being logged.
-Diagnostic: Unknown function glRectf being logged.
-Diagnostic: Unknown function glRecti being logged.
-Diagnostic: Unknown function glRects being logged.
-Diagnostic: Unknown function glRectdv being logged.
-Diagnostic: Unknown function glRectfv being logged.
-Diagnostic: Unknown function glRectiv being logged.
-Diagnostic: Unknown function glRectsv being logged.
-Diagnostic: Unknown function glVertexPointer being logged.
-Diagnostic: Unknown function glNormalPointer being logged.
-Diagnostic: Unknown function glColorPointer being logged.
-Diagnostic: Unknown function glIndexPointer being logged.
-Diagnostic: Unknown function glTexCoordPointer being logged.
-Diagnostic: Unknown function glEdgeFlagPointer being logged.
-Diagnostic: Unknown function glGetPointerv being logged.
-Diagnostic: Unknown function glArrayElement being logged.
-Diagnostic: Unknown function glDrawArrays being logged.
-Diagnostic: Unknown function glDrawElements being logged.
-Diagnostic: Unknown function glInterleavedArrays being logged.
-Diagnostic: Unknown function glShadeModel being logged.
-Diagnostic: Unknown function glLightf being logged.
-Diagnostic: Unknown function glLighti being logged.
-Diagnostic: Unknown function glLightfv being logged.
-Diagnostic: Unknown function glLightiv being logged.
-Diagnostic: Unknown function glGetLightfv being logged.
-Diagnostic: Unknown function glGetLightiv being logged.
-Diagnostic: Unknown function glLightModelf being logged.
-Diagnostic: Unknown function glLightModeli being logged.
-Diagnostic: Unknown function glLightModelfv being logged.
-Diagnostic: Unknown function glLightModeliv being logged.
-Diagnostic: Unknown function glMaterialf being logged.
-Diagnostic: Unknown function glMateriali being logged.
-Diagnostic: Unknown function glMaterialfv being logged.
-Diagnostic: Unknown function glMaterialiv being logged.
-Diagnostic: Unknown function glGetMaterialfv being logged.
-Diagnostic: Unknown function glGetMaterialiv being logged.
-Diagnostic: Unknown function glColorMaterial being logged.
-Diagnostic: Unknown function glPixelZoom being logged.
-Diagnostic: Unknown function glPixelStoref being logged.
-Diagnostic: Unknown function glPixelStorei being logged.
-Diagnostic: Unknown function glPixelTransferf being logged.
-Diagnostic: Unknown function glPixelTransferi being logged.
-Diagnostic: Unknown function glPixelMapfv being logged.
-Diagnostic: Unknown function glPixelMapuiv being logged.
-Diagnostic: Unknown function glPixelMapusv being logged.
-Diagnostic: Unknown function glGetPixelMapfv being logged.
-Diagnostic: Unknown function glGetPixelMapuiv being logged.
-Diagnostic: Unknown function glGetPixelMapusv being logged.
-Diagnostic: Unknown function glBitmap being logged.
-Diagnostic: Unknown function glReadPixels being logged.
-Diagnostic: Unknown function glDrawPixels being logged.
-Diagnostic: Unknown function glCopyPixels being logged.
-Diagnostic: Unknown function glStencilFunc being logged.
-Diagnostic: Unknown function glStencilMask being logged.
-Diagnostic: Unknown function glStencilOp being logged.
-Diagnostic: Unknown function glClearStencil being logged.
-Diagnostic: Unknown function glTexGend being logged.
-Diagnostic: Unknown function glTexGenf being logged.
-Diagnostic: Unknown function glTexGeni being logged.
-Diagnostic: Unknown function glTexGendv being logged.
-Diagnostic: Unknown function glTexGenfv being logged.
-Diagnostic: Unknown function glTexGeniv being logged.
-Diagnostic: Unknown function glGetTexGendv being logged.
-Diagnostic: Unknown function glGetTexGenfv being logged.
-Diagnostic: Unknown function glGetTexGeniv being logged.
-Diagnostic: Unknown function glTexEnvf being logged.
-Diagnostic: Unknown function glTexEnvi being logged.
-Diagnostic: Unknown function glTexEnvfv being logged.
-Diagnostic: Unknown function glTexEnviv being logged.
-Diagnostic: Unknown function glGetTexEnvfv being logged.
-Diagnostic: Unknown function glGetTexEnviv being logged.
-Diagnostic: Unknown function glTexParameterf being logged.
-Diagnostic: Unknown function glTexParameteri being logged.
-Diagnostic: Unknown function glTexParameterfv being logged.
-Diagnostic: Unknown function glTexParameteriv being logged.
-Diagnostic: Unknown function glGetTexParameterfv being logged.
-Diagnostic: Unknown function glGetTexParameteriv being logged.
-Diagnostic: Unknown function glGetTexLevelParameterfv being logged.
-Diagnostic: Unknown function glGetTexLevelParameteriv being logged.
-Diagnostic: Unknown function glTexImage1D being logged.
-Diagnostic: Unknown function glTexImage2D being logged.
-Diagnostic: Unknown function glGetTexImage being logged.
-Diagnostic: Unknown function glGenTextures being logged.
-Diagnostic: Unknown function glDeleteTextures being logged.
-Diagnostic: Unknown function glBindTexture being logged.
-Diagnostic: Unknown function glPrioritizeTextures being logged.
-Diagnostic: Unknown function glAreTexturesResident being logged.
-Diagnostic: Unknown function glIsTexture being logged.
-Diagnostic: Unknown function glTexSubImage1D being logged.
-Diagnostic: Unknown function glTexSubImage2D being logged.
-Diagnostic: Unknown function glCopyTexImage1D being logged.
-Diagnostic: Unknown function glCopyTexImage2D being logged.
-Diagnostic: Unknown function glCopyTexSubImage1D being logged.
-Diagnostic: Unknown function glCopyTexSubImage2D being logged.
-Diagnostic: Unknown function glMap1d being logged.
-Diagnostic: Unknown function glMap1f being logged.
-Diagnostic: Unknown function glMap2d being logged.
-Diagnostic: Unknown function glMap2f being logged.
-Diagnostic: Unknown function glGetMapdv being logged.
-Diagnostic: Unknown function glGetMapfv being logged.
-Diagnostic: Unknown function glGetMapiv being logged.
-Diagnostic: Unknown function glEvalCoord1d being logged.
-Diagnostic: Unknown function glEvalCoord1f being logged.
-Diagnostic: Unknown function glEvalCoord1dv being logged.
-Diagnostic: Unknown function glEvalCoord1fv being logged.
-Diagnostic: Unknown function glEvalCoord2d being logged.
-Diagnostic: Unknown function glEvalCoord2f being logged.
-Diagnostic: Unknown function glEvalCoord2dv being logged.
-Diagnostic: Unknown function glEvalCoord2fv being logged.
-Diagnostic: Unknown function glMapGrid1d being logged.
-Diagnostic: Unknown function glMapGrid1f being logged.
-Diagnostic: Unknown function glMapGrid2d being logged.
-Diagnostic: Unknown function glMapGrid2f being logged.
-Diagnostic: Unknown function glEvalPoint1 being logged.
-Diagnostic: Unknown function glEvalPoint2 being logged.
-Diagnostic: Unknown function glEvalMesh1 being logged.
-Diagnostic: Unknown function glEvalMesh2 being logged.
-Diagnostic: Unknown function glFogf being logged.
-Diagnostic: Unknown function glFogi being logged.
-Diagnostic: Unknown function glFogfv being logged.
-Diagnostic: Unknown function glFogiv being logged.
-Diagnostic: Unknown function glFeedbackBuffer being logged.
-Diagnostic: Unknown function glPassThrough being logged.
-Diagnostic: Unknown function glSelectBuffer being logged.
-Diagnostic: Unknown function glInitNames being logged.
-Diagnostic: Unknown function glLoadName being logged.
-Diagnostic: Unknown function glPushName being logged.
-Diagnostic: Unknown function glPopName being logged.
-Diagnostic: Unknown function wglChoosePixelFormat being logged.
-Diagnostic: Unknown function wglCopyContext being logged.
-Diagnostic: Unknown function wglCreateContext being logged.
-Diagnostic: Unknown function wglCreateLayerContext being logged.
-Diagnostic: Unknown function wglDeleteContext being logged.
-Diagnostic: Unknown function wglDescribeLayerPlane being logged.
-Diagnostic: Unknown function wglDescribePixelFormat being logged.
-Diagnostic: Unknown function wglGetCurrentContext being logged.
-Diagnostic: Unknown function wglGetCurrentDC being logged.
-Diagnostic: Unknown function wglGetDefaultProcAddress being logged.
-Diagnostic: Unknown function wglGetLayerPaletteEntries being logged.
-Diagnostic: Unknown function wglGetPixelFormat being logged.
-Diagnostic: Unknown function wglGetProcAddress being logged.
-Diagnostic: Unknown function wglMakeCurrent being logged.
-Diagnostic: Unknown function wglRealizeLayerPalette being logged.
-Diagnostic: Unknown function wglSetLayerPaletteEntries being logged.
-Diagnostic: Unknown function wglSetPixelFormat being logged.
-Diagnostic: Unknown function wglShareLists being logged.
-Diagnostic: Unknown function wglSwapBuffers being logged.
-Diagnostic: Unknown function wglSwapLayerBuffers being logged.
-Diagnostic: Unknown function wglUseFontBitmapsA being logged.
-Diagnostic: Unknown function wglUseFontBitmapsW being logged.
-Diagnostic: Unknown function wglUseFontOutlinesA being logged.
-Diagnostic: Unknown function wglUseFontOutlinesW being logged.
-Need OpenGL version 1.1 or greater for image logging
-The GLSL logger needs OpenGL 2.0 or better to run
-GLDriver - Shutdown - Current OpenGL context 0x10000?
-GLDriver - Shutdown - Outstanding OpenGL context 0x10000 ?
-===================================================
-Log End.
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+glBegin called while previous glBegin was not closed
+GL ERROR - Function glEnd generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glBindTexture generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glAlphaFunc generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+glEnd called whithout a glBegin
+GL ERROR - Function glEnd generated error GL_INVALID_OPERATION
+GL ERROR - Function glPopMatrix generated error GL_STACK_UNDERFLOW
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM
+GL ERROR - Function glDisable generated error GL_INVALID_ENUM

@@ -1475,7 +1475,7 @@ void OpenRakNetSocket()
 	RakNet::SocketDescriptor socketDescriptor(0,0);
 	server->Startup(1, &socketDescriptor, 1);
 	server->SetSplitMessageProgressInterval(10000); // Get ID_DOWNLOAD_PROGRESS notifications
-	server->Connect("192.168.1.112", 60000, 0, 0);
+	server->Connect("127.0.0.1", 60000, 0, 0);
 
 	RakSleep(500);
 }
