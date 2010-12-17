@@ -1,0 +1,568 @@
+void GLAPIENTRY glBegin (GLenum mode)
+{
+	START(glBegin);
+	print_value(_GLenum, &mode);
+	END;
+	GLV.glBegin (mode);
+}
+
+void GLAPIENTRY glClear (GLbitfield mask)
+{
+	START(glClear);
+	print_value(_GLbitfield, &mask);
+	END;
+	GLV.glClear (mask);
+}
+
+void GLAPIENTRY glEnd ()
+{
+	START(glEnd);
+	END;
+	GLV.glEnd();;
+}
+
+void GLAPIENTRY glLoadIdentity ()
+{
+	START(glLoadIdentity);
+	END;
+	GLV.glLoadIdentity();
+}
+
+void GLAPIENTRY glNormal3fv (const GLfloat *v)
+{
+	START(glNormal3fv);
+	print_value(_GLfloat3, &v);
+	END;
+	GLV.glNormal3fv (v);
+}
+
+void GLAPIENTRY glPopMatrix ()
+{
+	START(glPopMatrix);
+	END;
+	GLV.glPopMatrix();
+}
+void GLAPIENTRY glPushMatrix ()
+{
+	START(glPushMatrix);
+	END;
+	GLV.glPushMatrix();
+}
+
+void GLAPIENTRY glRotatef (GLfloat angle, GLfloat x, GLfloat y, GLfloat z)
+{
+	START(glRotatef);
+	print_value(_GLfloat, &angle);
+	print(",");
+	print_value(_GLfloat, &x);
+	print(",");
+	print_value(_GLfloat, &y);
+	print(",");
+	print_value(_GLfloat, &z);
+	END;
+	GLV.glRotatef (angle, x, y, z);
+}
+
+void GLAPIENTRY glTranslatef (GLfloat x, GLfloat y, GLfloat z)
+{
+	START(glTranslated);
+	print_value(_GLfloat, &x);
+	print(",");
+	print_value(_GLfloat, &y);
+	print(",");
+	print_value(_GLfloat, &z);
+	END;
+	GLV.glTranslatef (x, y, z);
+}
+
+void GLAPIENTRY glTranslated (GLdouble x, GLdouble y, GLdouble z)
+{
+	START(glTranslated);
+	print_value(_GLdouble, &x);
+	print(",");
+	print_value(_GLdouble, &y);
+	print(",");
+	print_value(_GLdouble, &z);
+	END;
+	GLV.glTranslated (x, y, z);
+}
+
+void GLAPIENTRY glVertex3fv (const GLfloat *v)
+{
+	START(glVertex3fv);
+	print_value(_GLfloat3, &v);
+	END;
+	GLV.glVertex3fv (v);
+}
+
+void GLAPIENTRY glMultMatrixf (const GLfloat *m)
+{
+	START(glMultMatrixf);
+	print_value(_GLfloat16, &m);
+	END;
+	GLV.glMultMatrixf (m);
+}
+
+void GLAPIENTRY glMultMatrixd (const GLdouble *m)
+{
+	START(glMultMatrixd);
+	print_value(_GLdouble16, &m);
+	END;
+	GLV.glMultMatrixd (m);
+}
+BOOL  GLAPIENTRY wglSwapBuffers (HDC a)
+{
+	BOOL result;
+	
+    if(bFSPenable == GL_TRUE)
+    {
+        renderFPS();
+    }
+	result = GLV.wglSwapBuffers(a);
+	START(wglSwapBuffers);
+	print_value(HEX, &a);
+    RESULT;
+	print_value(_GLboolean, &result);
+    ENDRESULT;
+
+    updateKeys();
+	return result;
+}
+
+void GLAPIENTRY glMatrixMode (GLenum mode)
+{
+	START(glMatrixMode);
+	print_value(_GLenum, &mode);
+	END;
+	GLV.glMatrixMode (mode);
+}
+
+void GLAPIENTRY glViewport (GLint x, GLint y, GLsizei width, GLsizei height)
+{
+	START(glViewport);
+	print_value(_GLint, &x);
+	print(",");
+	print_value(_GLint, &y);
+	print(",");
+	print_value(_GLsizei, &width);
+	print(",");
+	print_value(_GLsizei, &height);
+	END;
+	GLV.glViewport (x, y, width, height);
+}
+
+void GLAPIENTRY glClear (GLbitfield mask)
+{
+	START(glClear);
+	print_value(_GLbitfield, &mask);
+	END;
+	GLV.glClear (mask);
+}
+
+void GLAPIENTRY glScalef (GLfloat x, GLfloat y, GLfloat z)
+{
+	START(glScalef);
+	print_value(_GLfloat, &x);
+	print(",");
+	print_value(_GLfloat, &y);
+	print(",");
+	print_value(_GLfloat, &z);
+	END;
+	GLV.glScalef (x, y, z);
+}
+void GLAPIENTRY glAlphaFunc (GLenum func, GLclampf ref)
+{
+	START(glAlphaFunc);
+	print_value(_GLenum, &func);
+	print(",");
+	print_value(_GLclampf, &ref);
+	END;
+	GLV.glAlphaFunc (func, ref);
+}
+void GLAPIENTRY glBindTexture (GLenum target, GLuint texture)
+{
+	START(glBindTexture);
+	print_value(_GLenum, &target);
+	print(",");
+	print_value(_GLuint, &texture);
+	END;
+	GLV.glBindTexture (target, texture);
+}
+void GLAPIENTRY glBlendFunc (GLenum sfactor, GLenum dfactor)
+{
+	useZeroOne = GL_TRUE;
+	START(glBlendFunc);
+	print_value(_GLenum, &sfactor);
+	print(",");
+	print_value(_GLenum, &dfactor);
+	END;
+	GLV.glBlendFunc (sfactor, dfactor);
+	useZeroOne = GL_FALSE;
+}
+void GLAPIENTRY glClearColor (GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha)
+{
+	START(glClearColor);
+	print_value(_GLclampf, &red);
+	print(",");
+	print_value(_GLclampf, &green);
+	print(",");
+	print_value(_GLclampf, &blue);
+	print(",");
+	print_value(_GLclampf, &alpha);
+	END;
+	GLV.glClearColor (red, green, blue, alpha);
+}
+void GLAPIENTRY glColor3f (GLfloat red, GLfloat green, GLfloat blue)
+{
+	START(glColor3f);
+	print_value(_GLfloat, &red);
+	print(",");
+	print_value(_GLfloat, &green);
+	print(",");
+	print_value(_GLfloat, &blue);
+	END;
+	GLV.glColor3f (red, green, blue);
+}
+
+void GLAPIENTRY glColor4f (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
+{
+	START(glColor4f);
+	print_value(_GLfloat, &red);
+	print(",");
+	print_value(_GLfloat, &green);
+	print(",");
+	print_value(_GLfloat, &blue);
+	print(",");
+	print_value(_GLfloat, &alpha);
+	END;
+	GLV.glColor4f (red, green, blue, alpha);
+}
+void GLAPIENTRY glColor4ubv (const GLubyte *v)
+{
+	START(glColor4ubv);
+	print_value(_GLubyte4, &v);
+	END;
+	GLV.glColor4ubv (v);
+}
+void GLAPIENTRY glCullFace (GLenum mode)
+{
+	START(glCullFace);
+	print_value(_GLenum, &mode);
+	END;
+	GLV.glCullFace (mode);
+}
+
+void GLAPIENTRY glDeleteTextures (GLsizei n, const GLuint *textures)
+{
+	START(glDeleteTextures);
+	print_value(_GLsizei, &n);
+	print(",");
+	print_value(_GLvoid, &textures);
+	END;
+	GLV.glDeleteTextures (n, textures);
+}
+void GLAPIENTRY glDepthFunc (GLenum func)
+{
+	START(glDepthFunc);
+	print_value(_GLenum, &func);
+	END;
+	GLV.glDepthFunc (func);
+}
+void GLAPIENTRY glDepthMask (GLboolean flag)
+{
+	START(glDepthMask);
+	print_value(_GLboolean, &flag);
+	END;
+	GLV.glDepthMask (flag);
+}
+void GLAPIENTRY glDepthRange (GLclampd zNear, GLclampd zFar)
+{
+	START(glDepthRange);
+	print_value(_GLclampd, &zNear);
+	print(",");
+	print_value(_GLclampd, &zFar);
+	END;
+	GLV.glDepthRange (zNear, zFar);
+}
+
+void GLAPIENTRY glDisable (GLenum cap)
+{
+	START(glDisable);
+	print_value(_GLenum, &cap);
+	END;
+	GLV.glDisable (cap);
+}
+void GLAPIENTRY glDrawBuffer (GLenum mode)
+{
+	START(glDrawBuffer);
+	print_value(_GLenum, &mode);
+	END;
+	GLV.glDrawBuffer (mode);
+}
+
+void GLAPIENTRY glEnable (GLenum cap)
+{
+	START(glEnable);
+	print_value(_GLenum, &cap);
+	END;
+	GLV.glEnable (cap);
+}
+void GLAPIENTRY glFrustum (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar)
+{
+	START(glFrustum);
+	print_value(_GLdouble, &left);
+	print(",");
+	print_value(_GLdouble, &right);
+	print(",");
+	print_value(_GLdouble, &bottom);
+	print(",");
+	print_value(_GLdouble, &top);
+	print(",");
+	print_value(_GLdouble, &zNear);
+	print(",");
+	print_value(_GLdouble, &zFar);
+	END;
+	GLV.glFrustum (left, right, bottom, top, zNear, zFar);
+}
+GLenum GLAPIENTRY glGetError ()
+{
+	GLenum result;
+
+    result = GLV.glGetError();
+	START(glGetError);
+    RESULT;
+	print_value(_GLenum, &result);
+    ENDRESULT;
+	return result;
+}
+
+void GLAPIENTRY glGetFloatv (GLenum pname, GLfloat *params)
+{
+	GLV.glGetFloatv (pname, params);
+	START(glGetFloatv);
+	print_value(_GLenum, &pname);
+	print(",");
+	if((pname == GL_MODELVIEW_MATRIX)||(pname == GL_PROJECTION_MATRIX)||
+		(pname == GL_TEXTURE_MATRIX))
+	{
+		print_value(_GLfloat16, &params);
+	}
+	else if((pname == GL_ACCUM_CLEAR_VALUE)||(pname == GL_COLOR_CLEAR_VALUE)||
+		(pname == GL_CURRENT_COLOR)||(pname == GL_CURRENT_RASTER_COLOR)||
+		(pname == GL_CURRENT_RASTER_POSITION)||(pname == GL_CURRENT_RASTER_TEXTURE_COORDS)||
+		(pname == GL_CURRENT_TEXTURE_COORDS)||(pname == GL_FOG_COLOR)||
+		(pname == GL_LIGHT_MODEL_AMBIENT)||(pname == GL_MAP2_GRID_DOMAIN)||
+		(pname == GL_SCISSOR_BOX)||(pname == GL_VIEWPORT))
+	{
+		print_value(_GLfloat4, &params);
+	}
+	else if((pname == GL_DEPTH_RANGE)||(pname == GL_LINE_WIDTH_RANGE)||
+		(pname == GL_MAP1_GRID_DOMAIN)||(pname == GL_MAP2_GRID_SEGMENTS)||
+		(pname == GL_MAX_VIEWPORT_DIMS)||(pname == GL_POINT_SIZE_RANGE)||
+		(pname == GL_POLYGON_MODE))
+	{
+		print_value(_GLfloat2, &params);
+	}
+	else
+	{
+		print_value(_GLfloat1, &params);
+	}
+	END;
+}
+
+const GLubyte* GLAPIENTRY glGetString (GLenum name)
+{
+	const GLubyte* result;
+
+	result = GLV.glGetString(name);
+	START(glGetString);
+	print_value(_GLenum, &name);
+    RESULT;
+	print_value(STR, &result);
+    ENDRESULT;
+	return result;
+}
+void GLAPIENTRY glLoadMatrixf (const GLfloat *m)
+{
+	START(glLoadMatrixf);
+	print_value(_GLfloat16, &m);
+	END;
+	GLV.glLoadMatrixf (m);
+}
+void GLAPIENTRY glOrtho (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar)
+{
+	START(glOrtho);
+	print_value(_GLdouble, &left);
+	print(",");
+	print_value(_GLdouble, &right);
+	print(",");
+	print_value(_GLdouble, &bottom);
+	print(",");
+	print_value(_GLdouble, &top);
+	print(",");
+	print_value(_GLdouble, &zNear);
+	print(",");
+	print_value(_GLdouble, &zFar);
+	print(",");
+	END;
+	GLV.glOrtho (left, right, bottom, top, zNear, zFar);
+}
+void GLAPIENTRY glPointSize (GLfloat size)
+{
+	START(glPointSize);
+	print_value(_GLfloat, &size);
+	END;
+	GLV.glPointSize (size);
+}
+void GLAPIENTRY glPolygonMode (GLenum face, GLenum mode)
+{
+	START(glPolygonMode);
+	print_value(_GLenum, &face);
+	print(",");
+	print_value(_GLenum, &mode);
+	END;
+	GLV.glPolygonMode (face, mode);
+}
+void GLAPIENTRY glShadeModel (GLenum mode)
+{
+	START(glShadeModel);
+	print_value(_GLenum, &mode);
+	END;
+	GLV.glShadeModel (mode);
+}
+void GLAPIENTRY glTexCoord2f (GLfloat s, GLfloat t)
+{
+	START(glTexCoord2f);
+	print_value(_GLfloat, &s);
+	print(",");
+	print_value(_GLfloat, &t);
+	END;
+	GLV.glTexCoord2f (s, t);
+}
+void GLAPIENTRY glTexEnvf (GLenum target, GLenum pname, GLfloat param)
+{
+    GLenum p = (GLenum)param;
+
+	START(glTexEnvf);
+	print_value(_GLenum, &target);
+	print(",");
+	print_value(_GLenum, &pname);
+	print(",");
+	print_value(_GLenum, &p);
+	END;
+	GLV.glTexEnvf (target, pname, param);
+}
+void GLAPIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
+{
+	START(glTexImage2D);
+	print_value(_GLenum, &target);
+	print(",");
+	print_value(_GLint, &level);
+	print(",");
+	print_value(_GLint, &internalformat);
+	print(",");
+	print_value(_GLsizei, &width);
+	print(",");
+	print_value(_GLsizei, &height);
+	print(",");
+	print_value(_GLint, &border);
+	print(",");
+	print_value(_GLenum, &format);
+	print(",");
+	print_value(_GLenum, &type);
+	print(",");
+	print_value(_GLvoid, &pixels);
+	END;
+	GLV.glTexImage2D (target, level, internalformat, width, height, border, format, type, pixels);
+}
+void GLAPIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param)
+{
+    GLenum p = (GLenum)param;
+
+	START(glTexParameterf);
+	print_value(_GLenum, &target);
+	print(",");
+	print_value(_GLenum, &pname);
+	print(",");
+    switch (pname) {
+    case GL_TEXTURE_PRIORITY:
+        print_value(_GLfloat, &param);
+        break;
+    default:
+        print_value(_GLenum, &p);
+        break;
+    }
+	END;
+	GLV.glTexParameterf (target, pname, param);
+}
+void GLAPIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels)
+{
+	START(glTexSubImage2D);
+	print_value(_GLenum, &target);
+	print(",");
+	print_value(_GLint, &level);
+	print(",");
+	print_value(_GLint, &xoffset);
+	print(",");
+	print_value(_GLint, &yoffset);
+	print(",");
+	print_value(_GLsizei, &width);
+	print(",");
+	print_value(_GLsizei, &height);
+	print(",");
+	print_value(_GLenum, &format);
+	print(",");
+	print_value(_GLenum, &type);
+	print(",");
+	print_value(_GLvoid, &pixels);
+	END;
+	GLV.glTexSubImage2D (target, level, xoffset, yoffset, width, height, format, type, pixels);
+}
+
+void GLAPIENTRY glVertex2f (GLfloat x, GLfloat y)
+{
+	START(glVertex2f);
+	print_value(_GLfloat, &x);
+	print(",");
+	print_value(_GLfloat, &y);
+	END;
+	GLV.glVertex2f (x, y);
+}
+
+void GLAPIENTRY glBitmap (GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, const GLubyte *bitmap)
+{
+	START(glBitmap);
+	print_value(_GLsizei, &width);
+	print(",");
+	print_value(_GLsizei, &height);
+	print(",");
+	print_value(_GLfloat, &xorig);
+	print(",");
+	print_value(_GLfloat, &yorig);
+	print(",");
+	print_value(_GLfloat, &xmove);
+	print(",");
+	print_value(_GLfloat, &ymove);
+	print(",");
+	print_value(HEX, &bitmap);
+	END;
+	GLV.glBitmap (width, height, xorig, yorig, xmove, ymove, bitmap);
+}
+void GLAPIENTRY glColor4fv (const GLfloat *v)
+{
+	START(glColor4fv);
+	print_value(_GLfloat4, &v);
+	END;
+	GLV.glColor4fv (v);
+}
+void GLAPIENTRY glVertex3f (GLfloat x, GLfloat y, GLfloat z)
+{
+	START(glVertex3f);
+	print_value(_GLfloat, &x);
+	print(",");
+	print_value(_GLfloat, &y);
+	print(",");
+	print_value(_GLfloat, &z);
+	END;
+	GLV.glVertex3f (x, y, z);
+}

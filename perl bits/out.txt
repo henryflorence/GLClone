@@ -1,0 +1,400 @@
+/*DECLARATIONS CREATED BY PERL SCRIPT*/
+	GLvoid* pixels;
+	HDC a;
+	NLbyte* bitmap;
+	NLbyte* v_ByteV;
+	NLdouble bottom;
+	NLdouble left;
+	NLdouble right;
+	NLdouble top;
+	NLdouble x_Double;
+	NLdouble y_Double;
+	NLdouble zFar;
+	NLdouble zFar_Double;
+	NLdouble zNear;
+	NLdouble zNear_Double;
+	NLdouble z_Double;
+	NLdouble* m_DoubleV;
+	NLfloat alpha;
+	NLfloat alpha_Float;
+	NLfloat angle;
+	NLfloat blue;
+	NLfloat blue_Float;
+	NLfloat green;
+	NLfloat green_Float;
+	NLfloat param;
+	NLfloat red;
+	NLfloat red_Float;
+	NLfloat ref;
+	NLfloat s;
+	NLfloat size;
+	NLfloat t;
+	NLfloat x;
+	NLfloat xmove;
+	NLfloat xorig;
+	NLfloat y;
+	NLfloat ymove;
+	NLfloat yorig;
+	NLfloat z;
+	NLfloat* m;
+	NLfloat* params;
+	NLfloat* v;
+	NLulong border;
+	NLulong height;
+	NLulong internalformat;
+	NLulong level;
+	NLulong n;
+	NLulong width;
+	NLulong x_Long;
+	NLulong xoffset;
+	NLulong y_Long;
+	NLulong yoffset;
+	NLushort cap;
+	NLushort dfactor;
+	NLushort face;
+	NLushort flag;
+	NLushort format;
+	NLushort func;
+	NLushort mask;
+	NLushort mode;
+	NLushort name;
+	NLushort pname;
+	NLushort sfactor;
+	NLushort target;
+	NLushort texture;
+	NLushort type;
+	NLushort* textures;
+
+	readInt(buffer,count,index);
+	while (index < 500 && count < NL_MAX_PACKET_LENGTH) {
+	printf("%s (",GLN[index]);
+
+/*SWITCH CREATED BY PERL SCRIPT*/
+		switch(index) {
+			case 1: //glAlphaFunc
+				readShort(buffer,count,func);
+				readFloat(buffer,count,ref);
+				printf("%i, %f",(short) func, (float) ref);
+				glAlphaFunc((GLenum) func,(GLclampf) ref);
+			break;
+			case 4: //glBegin
+				readShort(buffer,count,mode);
+				printf("%i",(short) mode);
+				glBegin((GLenum) mode);
+			break;
+			case 5: //glBindTexture
+				readShort(buffer,count,target);
+				readInt(buffer,count,texture);
+				printf("%i, %i",(short) target, (int) texture);
+				glBindTexture((GLenum) target,(GLuint) texture);
+			break;
+			case 6: //glBitmap
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readFloat(buffer,count,xorig);
+				readFloat(buffer,count,yorig);
+				readFloat(buffer,count,xmove);
+				readFloat(buffer,count,ymove);
+				readByteV(buffer,count,bitmap,1);
+				printf("%i, %i, %f, %f, %f, %f, %i",(long) width, (long) height, (float) xorig, (float) yorig, (float) xmove, (float) ymove, *(byte) bitmap);
+				glBitmap((GLsizei) width,(GLsizei) height,(GLfloat) xorig,(GLfloat) yorig,(GLfloat) xmove,(GLfloat) ymove,(GLubyte*) bitmap);
+			break;
+			case 7: //glBlendFunc
+				readShort(buffer,count,sfactor);
+				readShort(buffer,count,dfactor);
+				printf("%i, %i",(short) sfactor, (short) dfactor);
+				glBlendFunc((GLenum) sfactor,(GLenum) dfactor);
+			break;
+			case 10: //glClear
+				readInt(buffer,count,mask);
+				printf("%i",(int) mask);
+				glClear((GLbitfield) mask);
+			break;
+			case 12: //glClearColor
+				readFloat(buffer,count,red_Float);
+				readFloat(buffer,count,green_Float);
+				readFloat(buffer,count,blue_Float);
+				readFloat(buffer,count,alpha_Float);
+				printf("%f, %f, %f, %f",(float) red_Float, (float) green_Float, (float) blue_Float, (float) alpha_Float);
+				glClearColor((GLclampf) red_Float,(GLclampf) green_Float,(GLclampf) blue_Float,(GLclampf) alpha_Float);
+			break;
+			case 21: //glColor3f
+				readFloat(buffer,count,red);
+				readFloat(buffer,count,green);
+				readFloat(buffer,count,blue);
+				printf("%f, %f, %f",(float) red, (float) green, (float) blue);
+				glColor3f((GLfloat) red,(GLfloat) green,(GLfloat) blue);
+			break;
+			case 37: //glColor4f
+				readFloat(buffer,count,red);
+				readFloat(buffer,count,green);
+				readFloat(buffer,count,blue);
+				readFloat(buffer,count,alpha);
+				printf("%f, %f, %f, %f",(float) red, (float) green, (float) blue, (float) alpha);
+				glColor4f((GLfloat) red,(GLfloat) green,(GLfloat) blue,(GLfloat) alpha);
+			break;
+			case 38: //glColor4fv
+				readFloatV(buffer,count,v,4);
+				printf("%f",*(float) v);
+				glColor4fv((GLfloat*) v);
+			break;
+			case 44: //glColor4ubv
+				readByteV(buffer,count,v_ByteV,4);
+				printf("%i",*(byte) v_ByteV);
+				glColor4ubv((GLubyte*) v_ByteV);
+			break;
+			case 57: //glCullFace
+				readShort(buffer,count,mode);
+				printf("%i",(short) mode);
+				glCullFace((GLenum) mode);
+			break;
+			case 59: //glDeleteTextures
+				readLong(buffer,count,n);
+				readIntV(buffer,count,textures,1);
+				printf("%i, %i",(long) n, *(int) textures);
+				glDeleteTextures((GLsizei) n,(GLuint*) textures);
+			break;
+			case 60: //glDepthFunc
+				readShort(buffer,count,func);
+				printf("%i",(short) func);
+				glDepthFunc((GLenum) func);
+			break;
+			case 61: //glDepthMask
+				readShort(buffer,count,flag);
+				printf("%i",(short) flag);
+				glDepthMask((GLboolean) flag);
+			break;
+			case 62: //glDepthRange
+				readDouble(buffer,count,zNear_Double);
+				readDouble(buffer,count,zFar_Double);
+				printf("%f, %f",(double) zNear_Double, (double) zFar_Double);
+				glDepthRange((GLclampd) zNear_Double,(GLclampd) zFar_Double);
+			break;
+			case 63: //glDisable
+				readShort(buffer,count,cap);
+				printf("%i",(short) cap);
+				glDisable((GLenum) cap);
+			break;
+			case 66: //glDrawBuffer
+				readShort(buffer,count,mode);
+				printf("%i",(short) mode);
+				glDrawBuffer((GLenum) mode);
+			break;
+			case 72: //glEnable
+				readShort(buffer,count,cap);
+				printf("%i",(short) cap);
+				glEnable((GLenum) cap);
+			break;
+			case 74: //glEnd
+				glEnd();
+			break;
+			case 96: //glFrustum
+				readDouble(buffer,count,left);
+				readDouble(buffer,count,right);
+				readDouble(buffer,count,bottom);
+				readDouble(buffer,count,top);
+				readDouble(buffer,count,zNear);
+				readDouble(buffer,count,zFar);
+				printf("%f, %f, %f, %f, %f, %f",(double) left, (double) right, (double) bottom, (double) top, (double) zNear, (double) zFar);
+				glFrustum((GLdouble) left,(GLdouble) right,(GLdouble) bottom,(GLdouble) top,(GLdouble) zNear,(GLdouble) zFar);
+			break;
+			case 102: //glGetError
+				glGetError();
+			break;
+			case 103: //glGetFloatv
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				printf("%i, %f",(short) pname, *(float) params);
+				glGetFloatv((GLenum) pname,(GLfloat*) params);
+			break;
+			case 117: //glGetString
+				readShort(buffer,count,name);
+				printf("%i",(short) name);
+				glGetString((GLenum) name);
+			break;
+			case 157: //glLoadIdentity
+				glLoadIdentity();
+			break;
+			case 159: //glLoadMatrixf
+				readFloatV(buffer,count,m,1);
+				printf("%f",*(float) m);
+				glLoadMatrixf((GLfloat*) m);
+			break;
+			case 174: //glMatrixMode
+				readShort(buffer,count,mode);
+				printf("%i",(short) mode);
+				glMatrixMode((GLenum) mode);
+			break;
+			case 175: //glMultMatrixd
+				readDoubleV(buffer,count,m_DoubleV,1);
+				printf("%f",*(double) m_DoubleV);
+				glMultMatrixd((GLdouble*) m_DoubleV);
+			break;
+			case 176: //glMultMatrixf
+				readFloatV(buffer,count,m,1);
+				printf("%f",*(float) m);
+				glMultMatrixf((GLfloat*) m);
+			break;
+			case 183: //glNormal3fv
+				readFloatV(buffer,count,v,3);
+				printf("%f",*(float) v);
+				glNormal3fv((GLfloat*) v);
+			break;
+			case 189: //glOrtho
+				readDouble(buffer,count,left);
+				readDouble(buffer,count,right);
+				readDouble(buffer,count,bottom);
+				readDouble(buffer,count,top);
+				readDouble(buffer,count,zNear);
+				readDouble(buffer,count,zFar);
+				printf("%f, %f, %f, %f, %f, %f",(double) left, (double) right, (double) bottom, (double) top, (double) zNear, (double) zFar);
+				glOrtho((GLdouble) left,(GLdouble) right,(GLdouble) bottom,(GLdouble) top,(GLdouble) zNear,(GLdouble) zFar);
+			break;
+			case 199: //glPointSize
+				readFloat(buffer,count,size);
+				printf("%f",(float) size);
+				glPointSize((GLfloat) size);
+			break;
+			case 200: //glPolygonMode
+				readShort(buffer,count,face);
+				readShort(buffer,count,mode);
+				printf("%i, %i",(short) face, (short) mode);
+				glPolygonMode((GLenum) face,(GLenum) mode);
+			break;
+			case 205: //glPopMatrix
+				glPopMatrix();
+			break;
+			case 210: //glPushMatrix
+				glPushMatrix();
+			break;
+			case 248: //glRotatef
+				readFloat(buffer,count,angle);
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				printf("%f, %f, %f, %f",(float) angle, (float) x, (float) y, (float) z);
+				glRotatef((GLfloat) angle,(GLfloat) x,(GLfloat) y,(GLfloat) z);
+			break;
+			case 250: //glScalef
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				printf("%f, %f, %f",(float) x, (float) y, (float) z);
+				glScalef((GLfloat) x,(GLfloat) y,(GLfloat) z);
+			break;
+			case 253: //glShadeModel
+				readShort(buffer,count,mode);
+				printf("%i",(short) mode);
+				glShadeModel((GLenum) mode);
+			break;
+			case 267: //glTexCoord2f
+				readFloat(buffer,count,s);
+				readFloat(buffer,count,t);
+				printf("%f, %f",(float) s, (float) t);
+				glTexCoord2f((GLfloat) s,(GLfloat) t);
+			break;
+			case 290: //glTexEnvf
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				printf("%i, %i, %f",(short) target, (short) pname, (float) param);
+				glTexEnvf((GLenum) target,(GLenum) pname,(GLfloat) param);
+			break;
+			case 301: //glTexImage2D
+				readShort(buffer,count,target);
+				readLong(buffer,count,level);
+				readLong(buffer,count,internalformat);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readLong(buffer,count,border);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				// unknown type for: pixels
+				printf("%i, %i, %i, %i, %i, %i, %i, %i, ",(short) target, (long) level, (long) internalformat, (long) width, (long) height, (long) border, (short) format, (short) type, );
+				glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
+			break;
+			case 302: //glTexParameterf
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				printf("%i, %i, %f",(short) target, (short) pname, (float) param);
+				glTexParameterf((GLenum) target,(GLenum) pname,(GLfloat) param);
+			break;
+			case 307: //glTexSubImage2D
+				readShort(buffer,count,target);
+				readLong(buffer,count,level);
+				readLong(buffer,count,xoffset);
+				readLong(buffer,count,yoffset);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				// unknown type for: pixels
+				printf("%i, %i, %i, %i, %i, %i, %i, %i, ",(short) target, (long) level, (long) xoffset, (long) yoffset, (long) width, (long) height, (short) format, (short) type, );
+				glTexSubImage2D((GLenum) target,(GLint) level,(GLint) xoffset,(GLint) yoffset,(GLsizei) width,(GLsizei) height,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
+			break;
+			case 308: //glTranslated
+				readDouble(buffer,count,x_Double);
+				readDouble(buffer,count,y_Double);
+				readDouble(buffer,count,z_Double);
+				printf("%f, %f, %f",(double) x_Double, (double) y_Double, (double) z_Double);
+				glTranslated((GLdouble) x_Double,(GLdouble) y_Double,(GLdouble) z_Double);
+			break;
+			case 309: //glTranslatef
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				printf("%f, %f, %f",(float) x, (float) y, (float) z);
+				glTranslatef((GLfloat) x,(GLfloat) y,(GLfloat) z);
+			break;
+			case 312: //glVertex2f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				printf("%f, %f",(float) x, (float) y);
+				glVertex2f((GLfloat) x,(GLfloat) y);
+			break;
+			case 320: //glVertex3f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				printf("%f, %f, %f",(float) x, (float) y, (float) z);
+				glVertex3f((GLfloat) x,(GLfloat) y,(GLfloat) z);
+			break;
+			case 321: //glVertex3fv
+				readFloatV(buffer,count,v,3);
+				printf("%f",*(float) v);
+				glVertex3fv((GLfloat*) v);
+			break;
+			case 335: //glViewport
+				readLong(buffer,count,x_Long);
+				readLong(buffer,count,y_Long);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				printf("%i, %i, %i, %i",(long) x_Long, (long) y_Long, (long) width, (long) height);
+				glViewport((GLint) x_Long,(GLint) y_Long,(GLsizei) width,(GLsizei) height);
+			break;
+			case 354: //wglSwapBuffers
+				// unknown type for: a
+				wglSwapBuffers((HDC) a);
+			break;
+		}
+/* FINISHED CREATION (<6 days)*/
+/* MACRO NAMEs to be completed*/
+//used 2 times
+#define readByteV(x,y,z,n)		{z = 0;y += 1}
+//used 17 times
+#define readDouble(x,y,z)		{z = 0;y += 1}
+//used 1 times
+#define readDoubleV(x,y,z,n)		{z = 0;y += 1}
+//used 36 times
+#define readFloat(x,y,z)		{z = 0;y += 1}
+//used 6 times
+#define readFloatV(x,y,z,n)		{z = 0;y += 1}
+//used 2 times
+#define readInt(x,y,z)		{z = 0;y += 1}
+//used 1 times
+#define readIntV(x,y,z,n)		{z = 0;y += 1}
+//used 17 times
+#define readLong(x,y,z)		{z = 0;y += 1}
+//used 27 times
+#define readShort(x,y,z)		{z = 0;y += 1}

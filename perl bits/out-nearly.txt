@@ -1,0 +1,2169 @@
+/*DECLARATIONS CREATED BY PERL SCRIPT*/
+	Bool direct;
+	DWORD d;
+	Display* dpy;
+	FLOAT e;
+	FLOAT f;
+	Font font;
+	GLXContext shareList;
+	GLXContext share_list;
+	GLXContext dst;
+	GLXContext ctx;
+	GLXContext src;
+	GLXContextID contextID;
+	GLXDrawable draw;
+	GLXDrawable drawable;
+	GLXDrawable read;
+	GLXFBConfig config;
+	GLXPbuffer pbuf;
+	GLXPixmap pix;
+	GLXWindow win;
+	GLboolean flag;
+	GLboolean* residences;
+	GLbyte nx;
+	GLbyte nz;
+	GLbyte ny;
+	GLclampd depth;
+	GLclampf* priorities;
+	GLdouble zNear;
+	GLdouble w;
+	GLdouble x1;
+	GLdouble v1;
+	GLdouble right;
+	GLdouble v2;
+	GLdouble left;
+	GLdouble u;
+	GLdouble u1;
+	GLdouble y1;
+	GLdouble zFar;
+	GLdouble u2;
+	GLdouble top;
+	GLdouble z;
+	GLdouble bottom;
+	GLdouble x2;
+	GLdouble y2;
+	GLdouble* equation;
+	GLdouble* points;
+	GLenum target;
+	GLenum fail;
+	GLenum light;
+	GLenum zpass;
+	GLenum dfactor;
+	GLenum pname;
+	GLenum type;
+	GLenum query;
+	GLenum sfactor;
+	GLenum mode;
+	GLenum map;
+	GLenum coord;
+	GLenum cap;
+	GLenum zfail;
+	GLenum face;
+	GLenum array;
+	GLenum opcode;
+	GLenum op;
+	GLenum internalFormat;
+	GLenum plane;
+	GLenum format;
+	GLenum func;
+	GLfloat xorig;
+	GLfloat xmove;
+	GLfloat yorig;
+	GLfloat ymove;
+	GLfloat units;
+	GLfloat xfactor;
+	GLfloat s;
+	GLfloat factor;
+	GLfloat yfactor;
+	GLfloat angle;
+	GLfloat param;
+	GLfloat t;
+	GLfloat token;
+	GLfloat* m;
+	GLfloat* v;
+	GLint y;
+	GLint yoffset;
+	GLint j2;
+	GLint vstride;
+	GLint i2;
+	GLint uorder;
+	GLint ustride;
+	GLint order;
+	GLint red;
+	GLint i;
+	GLint border;
+	GLint green;
+	GLint ref;
+	GLint level;
+	GLint size;
+	GLint alpha;
+	GLint internalformat;
+	GLint j;
+	GLint i1;
+	GLint xoffset;
+	GLint un;
+	GLint x;
+	GLint vorder;
+	GLint blue;
+	GLint j1;
+	GLint vn;
+	GLint first;
+	GLint* params;
+	GLshort q;
+	GLshort r;
+	GLsizei count;
+	GLsizei mapsize;
+	GLsizei height;
+	GLsizei width;
+	GLsizei range;
+	GLsizei stride;
+	GLsizei n;
+	GLubyte* bitmap;
+	GLuint texture;
+	GLuint mask;
+	GLuint list;
+	GLuint base;
+	GLuint* buffer;
+	GLuint* values;
+	GLuint* textures;
+	GLushort pattern;
+	GLvoid* indices;
+	GLvoid* pixels;
+	GLvoid* pointer;
+	GLvoid* lists;
+	HDC a;
+	LPGLYPHMETRICSFLOAT h;
+	PIXELFORMATDESCRIPTOR* c;
+	Pixmap pixmap;
+	XVisualInfo* vis;
+	int g;
+	int render_type;
+	int name;
+	int attrib;
+	int listBase;
+	int attribute;
+	int b;
+	int screen;
+	int* errorBase;
+	int* minor;
+	int* value;
+	int* attrib_list;
+	int* attribList;
+	int* nelements;
+	int* major;
+	int* eventBase;
+	long event_mask;
+
+/*SWITCH CREATED BY PERL SCRIPT*/
+		switch(index) {
+			case 0: //glAccum
+				readShort(buffer,count,op);
+				readFloat(buffer,count,value);
+				glAccum(op,value);
+			break;
+			case 1: //glAlphaFunc
+				readShort(buffer,count,func);
+				glAlphaFunc(func,ref);
+			break;
+			case 2: //glAreTexturesResident
+				readLong(buffer,count,n);
+				readIntV(buffer,count,textures);
+				readShort(buffer,count,residences);
+				glAreTexturesResident(n,textures,residences);
+			break;
+			case 3: //glArrayElement
+				readInt(buffer,count,i);
+				glArrayElement(i);
+			break;
+			case 4: //glBegin
+				readShort(buffer,count,mode);
+				glBegin(mode);
+			break;
+			case 5: //glBindTexture
+				readShort(buffer,count,target);
+				readInt(buffer,count,texture);
+				glBindTexture(target,texture);
+			break;
+			case 6: //glBitmap
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readFloat(buffer,count,xorig);
+				readFloat(buffer,count,yorig);
+				readFloat(buffer,count,xmove);
+				readFloat(buffer,count,ymove);
+				readByteV(buffer,count,bitmap);
+				glBitmap(width,height,xorig,yorig,xmove,ymove,bitmap);
+			break;
+			case 7: //glBlendFunc
+				readShort(buffer,count,sfactor);
+				readShort(buffer,count,dfactor);
+				glBlendFunc(sfactor,dfactor);
+			break;
+			case 8: //glCallList
+				readInt(buffer,count,list);
+				glCallList(list);
+			break;
+			case 9: //glCallLists
+				readLong(buffer,count,n);
+				readShort(buffer,count,type);
+				glCallLists(n,type,lists);
+			break;
+			case 10: //glClear
+				glClear(mask);
+			break;
+			case 11: //glClearAccum
+				readFloat(buffer,count,red);
+				readFloat(buffer,count,green);
+				readFloat(buffer,count,blue);
+				readFloat(buffer,count,alpha);
+				glClearAccum(red,green,blue,alpha);
+			break;
+			case 12: //glClearColor
+				glClearColor(red,green,blue,alpha);
+			break;
+			case 13: //glClearDepth
+				glClearDepth(depth);
+			break;
+			case 14: //glClearIndex
+				readFloat(buffer,count,c);
+				glClearIndex(c);
+			break;
+			case 15: //glClearStencil
+				readInt(buffer,count,s);
+				glClearStencil(s);
+			break;
+			case 16: //glClipPlane
+				readShort(buffer,count,plane);
+				readDoubleV(buffer,count,equation);
+				glClipPlane(plane,equation);
+			break;
+			case 17: //glColor3b
+				readByte(buffer,count,red);
+				readByte(buffer,count,green);
+				readByte(buffer,count,blue);
+				glColor3b(red,green,blue);
+			break;
+			case 18: //glColor3bv
+				readByte(buffer,count,v);
+				glColor3bv(v);
+			break;
+			case 19: //glColor3d
+				readDouble(buffer,count,red);
+				readDouble(buffer,count,green);
+				readDouble(buffer,count,blue);
+				glColor3d(red,green,blue);
+			break;
+			case 20: //glColor3dv
+				readDoubleV(buffer,count,v,3);
+				glColor3dv(v);
+			break;
+			case 21: //glColor3f
+				readFloat(buffer,count,red);
+				readFloat(buffer,count,green);
+				readFloat(buffer,count,blue);
+				glColor3f(red,green,blue);
+			break;
+			case 22: //glColor3fv
+				readFloatV(buffer,count,v,3);
+				glColor3fv(v);
+			break;
+			case 23: //glColor3i
+				readInt(buffer,count,red);
+				readInt(buffer,count,green);
+				readInt(buffer,count,blue);
+				glColor3i(red,green,blue);
+			break;
+			case 24: //glColor3iv
+				readIntV(buffer,count,v,3);
+				glColor3iv(v);
+			break;
+			case 25: //glColor3s
+				readShort(buffer,count,red);
+				readShort(buffer,count,green);
+				readShort(buffer,count,blue);
+				glColor3s(red,green,blue);
+			break;
+			case 26: //glColor3sv
+				glColor3sv(v);
+			break;
+			case 27: //glColor3ub
+				readByte(buffer,count,red);
+				readByte(buffer,count,green);
+				readByte(buffer,count,blue);
+				glColor3ub(red,green,blue);
+			break;
+			case 28: //glColor3ubv
+				readByteV(buffer,count,v,3);
+				glColor3ubv(v);
+			break;
+			case 29: //glColor3ui
+				readInt(buffer,count,red);
+				readInt(buffer,count,green);
+				readInt(buffer,count,blue);
+				glColor3ui(red,green,blue);
+			break;
+			case 30: //glColor3uiv
+				readIntV(buffer,count,v,3);
+				glColor3uiv(v);
+			break;
+			case 31: //glColor3us
+				readShort(buffer,count,red);
+				readShort(buffer,count,green);
+				readShort(buffer,count,blue);
+				glColor3us(red,green,blue);
+			break;
+			case 32: //glColor3usv
+				readShort(buffer,count,v);
+				glColor3usv(v);
+			break;
+			case 33: //glColor4b
+				readByte(buffer,count,red);
+				readByte(buffer,count,green);
+				readByte(buffer,count,blue);
+				readByte(buffer,count,alpha);
+				glColor4b(red,green,blue,alpha);
+			break;
+			case 34: //glColor4bv
+				readByte(buffer,count,v);
+				glColor4bv(v);
+			break;
+			case 35: //glColor4d
+				readDouble(buffer,count,red);
+				readDouble(buffer,count,green);
+				readDouble(buffer,count,blue);
+				readDouble(buffer,count,alpha);
+				glColor4d(red,green,blue,alpha);
+			break;
+			case 36: //glColor4dv
+				readDoubleV(buffer,count,v,4);
+				glColor4dv(v);
+			break;
+			case 37: //glColor4f
+				readFloat(buffer,count,red);
+				readFloat(buffer,count,green);
+				readFloat(buffer,count,blue);
+				readFloat(buffer,count,alpha);
+				glColor4f(red,green,blue,alpha);
+			break;
+			case 38: //glColor4fv
+				readFloatV(buffer,count,v,4);
+				glColor4fv(v);
+			break;
+			case 39: //glColor4i
+				readInt(buffer,count,red);
+				readInt(buffer,count,green);
+				readInt(buffer,count,blue);
+				readInt(buffer,count,alpha);
+				glColor4i(red,green,blue,alpha);
+			break;
+			case 40: //glColor4iv
+				readIntV(buffer,count,v,4);
+				glColor4iv(v);
+			break;
+			case 41: //glColor4s
+				readShort(buffer,count,red);
+				readShort(buffer,count,green);
+				readShort(buffer,count,blue);
+				readShort(buffer,count,alpha);
+				glColor4s(red,green,blue,alpha);
+			break;
+			case 42: //glColor4sv
+				glColor4sv(v);
+			break;
+			case 43: //glColor4ub
+				readByte(buffer,count,red);
+				readByte(buffer,count,green);
+				readByte(buffer,count,blue);
+				readByte(buffer,count,alpha);
+				glColor4ub(red,green,blue,alpha);
+			break;
+			case 44: //glColor4ubv
+				readByteV(buffer,count,v,4);
+				glColor4ubv(v);
+			break;
+			case 45: //glColor4ui
+				readInt(buffer,count,red);
+				readInt(buffer,count,green);
+				readInt(buffer,count,blue);
+				readInt(buffer,count,alpha);
+				glColor4ui(red,green,blue,alpha);
+			break;
+			case 46: //glColor4uiv
+				readIntV(buffer,count,v,4);
+				glColor4uiv(v);
+			break;
+			case 47: //glColor4us
+				readShort(buffer,count,red);
+				readShort(buffer,count,green);
+				readShort(buffer,count,blue);
+				readShort(buffer,count,alpha);
+				glColor4us(red,green,blue,alpha);
+			break;
+			case 48: //glColor4usv
+				readShort(buffer,count,v);
+				glColor4usv(v);
+			break;
+			case 49: //glColorMask
+				readShort(buffer,count,red);
+				readShort(buffer,count,green);
+				readShort(buffer,count,blue);
+				readShort(buffer,count,alpha);
+				glColorMask(red,green,blue,alpha);
+			break;
+			case 50: //glColorMaterial
+				readShort(buffer,count,face);
+				readShort(buffer,count,mode);
+				glColorMaterial(face,mode);
+			break;
+			case 51: //glColorPointer
+				readInt(buffer,count,size);
+				readShort(buffer,count,type);
+				readLong(buffer,count,stride);
+				glColorPointer(size,type,stride,pointer);
+			break;
+			case 52: //glCopyPixels
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readShort(buffer,count,type);
+				glCopyPixels(x,y,width,height,type);
+			break;
+			case 53: //glCopyTexImage1D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readShort(buffer,count,internalFormat);
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				readInt(buffer,count,border);
+				glCopyTexImage1D(target,level,internalFormat,x,y,width,border);
+			break;
+			case 54: //glCopyTexImage2D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readShort(buffer,count,internalFormat);
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readInt(buffer,count,border);
+				glCopyTexImage2D(target,level,internalFormat,x,y,width,height,border);
+			break;
+			case 55: //glCopyTexSubImage1D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readInt(buffer,count,xoffset);
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				glCopyTexSubImage1D(target,level,xoffset,x,y,width);
+			break;
+			case 56: //glCopyTexSubImage2D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readInt(buffer,count,xoffset);
+				readInt(buffer,count,yoffset);
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				glCopyTexSubImage2D(target,level,xoffset,yoffset,x,y,width,height);
+			break;
+			case 57: //glCullFace
+				readShort(buffer,count,mode);
+				glCullFace(mode);
+			break;
+			case 58: //glDeleteLists
+				readInt(buffer,count,list);
+				readLong(buffer,count,range);
+				glDeleteLists(list,range);
+			break;
+			case 59: //glDeleteTextures
+				readLong(buffer,count,n);
+				readIntV(buffer,count,textures);
+				glDeleteTextures(n,textures);
+			break;
+			case 60: //glDepthFunc
+				readShort(buffer,count,func);
+				glDepthFunc(func);
+			break;
+			case 61: //glDepthMask
+				readShort(buffer,count,flag);
+				glDepthMask(flag);
+			break;
+			case 62: //glDepthRange
+				glDepthRange(zNear,zFar);
+			break;
+			case 63: //glDisable
+				readShort(buffer,count,cap);
+				glDisable(cap);
+			break;
+			case 64: //glDisableClientState
+				readShort(buffer,count,array);
+				glDisableClientState(array);
+			break;
+			case 65: //glDrawArrays
+				readShort(buffer,count,mode);
+				readInt(buffer,count,first);
+				readLong(buffer,count,count);
+				glDrawArrays(mode,first,count);
+			break;
+			case 66: //glDrawBuffer
+				readShort(buffer,count,mode);
+				glDrawBuffer(mode);
+			break;
+			case 67: //glDrawElements
+				readShort(buffer,count,mode);
+				readLong(buffer,count,count);
+				readShort(buffer,count,type);
+				glDrawElements(mode,count,type,indices);
+			break;
+			case 68: //glDrawPixels
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				glDrawPixels(width,height,format,type,pixels);
+			break;
+			case 69: //glEdgeFlag
+				readShort(buffer,count,flag);
+				glEdgeFlag(flag);
+			break;
+			case 70: //glEdgeFlagPointer
+				readLong(buffer,count,stride);
+				glEdgeFlagPointer(stride,pointer);
+			break;
+			case 71: //glEdgeFlagv
+				readShort(buffer,count,flag);
+				glEdgeFlagv(flag);
+			break;
+			case 72: //glEnable
+				readShort(buffer,count,cap);
+				glEnable(cap);
+			break;
+			case 73: //glEnableClientState
+				readShort(buffer,count,array);
+				glEnableClientState(array);
+			break;
+			case 74: //glEnd
+				glEnd();
+			break;
+			case 75: //glEndList
+				glEndList();
+			break;
+			case 76: //glEvalCoord1d
+				readDouble(buffer,count,u);
+				glEvalCoord1d(u);
+			break;
+			case 77: //glEvalCoord1dv
+				readDoubleV(buffer,count,u,1);
+				glEvalCoord1dv(u);
+			break;
+			case 78: //glEvalCoord1f
+				readFloat(buffer,count,u);
+				glEvalCoord1f(u);
+			break;
+			case 79: //glEvalCoord1fv
+				readFloatV(buffer,count,u,1);
+				glEvalCoord1fv(u);
+			break;
+			case 80: //glEvalCoord2d
+				readDouble(buffer,count,u);
+				readDouble(buffer,count,v);
+				glEvalCoord2d(u,v);
+			break;
+			case 81: //glEvalCoord2dv
+				readDoubleV(buffer,count,u,2);
+				glEvalCoord2dv(u);
+			break;
+			case 82: //glEvalCoord2f
+				readFloat(buffer,count,u);
+				readFloat(buffer,count,v);
+				glEvalCoord2f(u,v);
+			break;
+			case 83: //glEvalCoord2fv
+				readFloatV(buffer,count,u,2);
+				glEvalCoord2fv(u);
+			break;
+			case 84: //glEvalMesh1
+				readShort(buffer,count,mode);
+				readInt(buffer,count,i1);
+				readInt(buffer,count,i2);
+				glEvalMesh1(mode,i1,i2);
+			break;
+			case 85: //glEvalMesh2
+				readShort(buffer,count,mode);
+				readInt(buffer,count,i1);
+				readInt(buffer,count,i2);
+				readInt(buffer,count,j1);
+				readInt(buffer,count,j2);
+				glEvalMesh2(mode,i1,i2,j1,j2);
+			break;
+			case 86: //glEvalPoint1
+				readInt(buffer,count,i);
+				glEvalPoint1(i);
+			break;
+			case 87: //glEvalPoint2
+				readInt(buffer,count,i);
+				readInt(buffer,count,j);
+				glEvalPoint2(i,j);
+			break;
+			case 88: //glFeedbackBuffer
+				readLong(buffer,count,size);
+				readShort(buffer,count,type);
+				readFloatV(buffer,count,buffer);
+				glFeedbackBuffer(size,type,buffer);
+			break;
+			case 89: //glFinish
+				glFinish();
+			break;
+			case 90: //glFlush
+				glFlush();
+			break;
+			case 91: //glFogf
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glFogf(pname,param);
+			break;
+			case 92: //glFogfv
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glFogfv(pname,params);
+			break;
+			case 93: //glFogi
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glFogi(pname,param);
+			break;
+			case 94: //glFogiv
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glFogiv(pname,params);
+			break;
+			case 95: //glFrontFace
+				readShort(buffer,count,mode);
+				glFrontFace(mode);
+			break;
+			case 96: //glFrustum
+				readDouble(buffer,count,left);
+				readDouble(buffer,count,right);
+				readDouble(buffer,count,bottom);
+				readDouble(buffer,count,top);
+				readDouble(buffer,count,zNear);
+				readDouble(buffer,count,zFar);
+				glFrustum(left,right,bottom,top,zNear,zFar);
+			break;
+			case 97: //glGenLists
+				readLong(buffer,count,range);
+				glGenLists(range);
+			break;
+			case 98: //glGenTextures
+				readLong(buffer,count,n);
+				readIntV(buffer,count,textures);
+				glGenTextures(n,textures);
+			break;
+			case 99: //glGetBooleanv
+				readShort(buffer,count,pname);
+				readShort(buffer,count,params);
+				glGetBooleanv(pname,params);
+			break;
+			case 100: //glGetClipPlane
+				readShort(buffer,count,plane);
+				readDoubleV(buffer,count,equation);
+				glGetClipPlane(plane,equation);
+			break;
+			case 101: //glGetDoublev
+				readShort(buffer,count,pname);
+				readDoubleV(buffer,count,params,1);
+				glGetDoublev(pname,params);
+			break;
+			case 102: //glGetError
+				glGetError();
+			break;
+			case 103: //glGetFloatv
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glGetFloatv(pname,params);
+			break;
+			case 104: //glGetIntegerv
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glGetIntegerv(pname,params);
+			break;
+			case 105: //glGetLightfv
+				readShort(buffer,count,light);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glGetLightfv(light,pname,params);
+			break;
+			case 106: //glGetLightiv
+				readShort(buffer,count,light);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glGetLightiv(light,pname,params);
+			break;
+			case 107: //glGetMapdv
+				readShort(buffer,count,target);
+				readShort(buffer,count,query);
+				readDoubleV(buffer,count,v,1);
+				glGetMapdv(target,query,v);
+			break;
+			case 108: //glGetMapfv
+				readShort(buffer,count,target);
+				readShort(buffer,count,query);
+				readFloatV(buffer,count,v,1);
+				glGetMapfv(target,query,v);
+			break;
+			case 109: //glGetMapiv
+				readShort(buffer,count,target);
+				readShort(buffer,count,query);
+				readIntV(buffer,count,v,1);
+				glGetMapiv(target,query,v);
+			break;
+			case 110: //glGetMaterialfv
+				readShort(buffer,count,face);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glGetMaterialfv(face,pname,params);
+			break;
+			case 111: //glGetMaterialiv
+				readShort(buffer,count,face);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glGetMaterialiv(face,pname,params);
+			break;
+			case 112: //glGetPixelMapfv
+				readShort(buffer,count,map);
+				readFloatV(buffer,count,values,1);
+				glGetPixelMapfv(map,values);
+			break;
+			case 113: //glGetPixelMapuiv
+				readShort(buffer,count,map);
+				readIntV(buffer,count,values,1);
+				glGetPixelMapuiv(map,values);
+			break;
+			case 114: //glGetPixelMapusv
+				readShort(buffer,count,map);
+				readShort(buffer,count,values);
+				glGetPixelMapusv(map,values);
+			break;
+			case 115: //glGetPointerv
+				readShort(buffer,count,pname);
+				glGetPointerv(pname,params);
+			break;
+			case 116: //glGetPolygonStipple
+				readByteV(buffer,count,mask);
+				glGetPolygonStipple(mask);
+			break;
+			case 117: //glGetString
+				readShort(buffer,count,name);
+				glGetString(name);
+			break;
+			case 118: //glGetTexEnvfv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glGetTexEnvfv(target,pname,params);
+			break;
+			case 119: //glGetTexEnviv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glGetTexEnviv(target,pname,params);
+			break;
+			case 120: //glGetTexGendv
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readDoubleV(buffer,count,params,1);
+				glGetTexGendv(coord,pname,params);
+			break;
+			case 121: //glGetTexGenfv
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glGetTexGenfv(coord,pname,params);
+			break;
+			case 122: //glGetTexGeniv
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glGetTexGeniv(coord,pname,params);
+			break;
+			case 123: //glGetTexImage
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				glGetTexImage(target,level,format,type,pixels);
+			break;
+			case 124: //glGetTexLevelParameterfv
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glGetTexLevelParameterfv(target,level,pname,params);
+			break;
+			case 125: //glGetTexLevelParameteriv
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glGetTexLevelParameteriv(target,level,pname,params);
+			break;
+			case 126: //glGetTexParameterfv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glGetTexParameterfv(target,pname,params);
+			break;
+			case 127: //glGetTexParameteriv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glGetTexParameteriv(target,pname,params);
+			break;
+			case 128: //glHint
+				readShort(buffer,count,target);
+				readShort(buffer,count,mode);
+				glHint(target,mode);
+			break;
+			case 129: //glIndexMask
+				readInt(buffer,count,mask);
+				glIndexMask(mask);
+			break;
+			case 130: //glIndexPointer
+				readShort(buffer,count,type);
+				readLong(buffer,count,stride);
+				glIndexPointer(type,stride,pointer);
+			break;
+			case 131: //glIndexd
+				readDouble(buffer,count,c);
+				glIndexd(c);
+			break;
+			case 132: //glIndexdv
+				readDoubleV(buffer,count,c,1);
+				glIndexdv(c);
+			break;
+			case 133: //glIndexf
+				readFloat(buffer,count,c);
+				glIndexf(c);
+			break;
+			case 134: //glIndexfv
+				readFloatV(buffer,count,c,1);
+				glIndexfv(c);
+			break;
+			case 135: //glIndexi
+				readInt(buffer,count,c);
+				glIndexi(c);
+			break;
+			case 136: //glIndexiv
+				readIntV(buffer,count,c,1);
+				glIndexiv(c);
+			break;
+			case 137: //glIndexs
+				readShort(buffer,count,c);
+				glIndexs(c);
+			break;
+			case 138: //glIndexsv
+				glIndexsv(c);
+			break;
+			case 139: //glIndexub
+				readByte(buffer,count,c);
+				glIndexub(c);
+			break;
+			case 140: //glIndexubv
+				readByteV(buffer,count,c,1);
+				glIndexubv(c);
+			break;
+			case 141: //glInitNames
+				glInitNames();
+			break;
+			case 142: //glInterleavedArrays
+				readShort(buffer,count,format);
+				readLong(buffer,count,stride);
+				glInterleavedArrays(format,stride,pointer);
+			break;
+			case 143: //glIsEnabled
+				readShort(buffer,count,cap);
+				glIsEnabled(cap);
+			break;
+			case 144: //glIsList
+				readInt(buffer,count,list);
+				glIsList(list);
+			break;
+			case 145: //glIsTexture
+				readInt(buffer,count,texture);
+				glIsTexture(texture);
+			break;
+			case 146: //glLightModelf
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glLightModelf(pname,param);
+			break;
+			case 147: //glLightModelfv
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glLightModelfv(pname,params);
+			break;
+			case 148: //glLightModeli
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glLightModeli(pname,param);
+			break;
+			case 149: //glLightModeliv
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glLightModeliv(pname,params);
+			break;
+			case 150: //glLightf
+				readShort(buffer,count,light);
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glLightf(light,pname,param);
+			break;
+			case 151: //glLightfv
+				readShort(buffer,count,light);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glLightfv(light,pname,params);
+			break;
+			case 152: //glLighti
+				readShort(buffer,count,light);
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glLighti(light,pname,param);
+			break;
+			case 153: //glLightiv
+				readShort(buffer,count,light);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glLightiv(light,pname,params);
+			break;
+			case 154: //glLineStipple
+				readInt(buffer,count,factor);
+				readShort(buffer,count,pattern);
+				glLineStipple(factor,pattern);
+			break;
+			case 155: //glLineWidth
+				readFloat(buffer,count,width);
+				glLineWidth(width);
+			break;
+			case 156: //glListBase
+				readInt(buffer,count,base);
+				glListBase(base);
+			break;
+			case 157: //glLoadIdentity
+				glLoadIdentity();
+			break;
+			case 158: //glLoadMatrixd
+				readDoubleV(buffer,count,m);
+				glLoadMatrixd(m);
+			break;
+			case 159: //glLoadMatrixf
+				readFloatV(buffer,count,m);
+				glLoadMatrixf(m);
+			break;
+			case 160: //glLoadName
+				readInt(buffer,count,name);
+				glLoadName(name);
+			break;
+			case 161: //glLogicOp
+				readShort(buffer,count,opcode);
+				glLogicOp(opcode);
+			break;
+			case 162: //glMap1d
+				readShort(buffer,count,target);
+				readDouble(buffer,count,u1);
+				readDouble(buffer,count,u2);
+				readInt(buffer,count,stride);
+				readInt(buffer,count,order);
+				readDoubleV(buffer,count,points);
+				glMap1d(target,u1,u2,stride,order,points);
+			break;
+			case 163: //glMap1f
+				readShort(buffer,count,target);
+				readFloat(buffer,count,u1);
+				readFloat(buffer,count,u2);
+				readInt(buffer,count,stride);
+				readInt(buffer,count,order);
+				readFloatV(buffer,count,points);
+				glMap1f(target,u1,u2,stride,order,points);
+			break;
+			case 164: //glMap2d
+				readShort(buffer,count,target);
+				readDouble(buffer,count,u1);
+				readDouble(buffer,count,u2);
+				readInt(buffer,count,ustride);
+				readInt(buffer,count,uorder);
+				readDouble(buffer,count,v1);
+				readDouble(buffer,count,v2);
+				readInt(buffer,count,vstride);
+				readInt(buffer,count,vorder);
+				readDoubleV(buffer,count,points);
+				glMap2d(target,u1,u2,ustride,uorder,v1,v2,vstride,vorder,points);
+			break;
+			case 165: //glMap2f
+				readShort(buffer,count,target);
+				readFloat(buffer,count,u1);
+				readFloat(buffer,count,u2);
+				readInt(buffer,count,ustride);
+				readInt(buffer,count,uorder);
+				readFloat(buffer,count,v1);
+				readFloat(buffer,count,v2);
+				readInt(buffer,count,vstride);
+				readInt(buffer,count,vorder);
+				readFloatV(buffer,count,points);
+				glMap2f(target,u1,u2,ustride,uorder,v1,v2,vstride,vorder,points);
+			break;
+			case 166: //glMapGrid1d
+				readInt(buffer,count,un);
+				readDouble(buffer,count,u1);
+				readDouble(buffer,count,u2);
+				glMapGrid1d(un,u1,u2);
+			break;
+			case 167: //glMapGrid1f
+				readInt(buffer,count,un);
+				readFloat(buffer,count,u1);
+				readFloat(buffer,count,u2);
+				glMapGrid1f(un,u1,u2);
+			break;
+			case 168: //glMapGrid2d
+				readInt(buffer,count,un);
+				readDouble(buffer,count,u1);
+				readDouble(buffer,count,u2);
+				readInt(buffer,count,vn);
+				readDouble(buffer,count,v1);
+				readDouble(buffer,count,v2);
+				glMapGrid2d(un,u1,u2,vn,v1,v2);
+			break;
+			case 169: //glMapGrid2f
+				readInt(buffer,count,un);
+				readFloat(buffer,count,u1);
+				readFloat(buffer,count,u2);
+				readInt(buffer,count,vn);
+				readFloat(buffer,count,v1);
+				readFloat(buffer,count,v2);
+				glMapGrid2f(un,u1,u2,vn,v1,v2);
+			break;
+			case 170: //glMaterialf
+				readShort(buffer,count,face);
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glMaterialf(face,pname,param);
+			break;
+			case 171: //glMaterialfv
+				readShort(buffer,count,face);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glMaterialfv(face,pname,params);
+			break;
+			case 172: //glMateriali
+				readShort(buffer,count,face);
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glMateriali(face,pname,param);
+			break;
+			case 173: //glMaterialiv
+				readShort(buffer,count,face);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glMaterialiv(face,pname,params);
+			break;
+			case 174: //glMatrixMode
+				readShort(buffer,count,mode);
+				glMatrixMode(mode);
+			break;
+			case 175: //glMultMatrixd
+				readDoubleV(buffer,count,m);
+				glMultMatrixd(m);
+			break;
+			case 176: //glMultMatrixf
+				readFloatV(buffer,count,m);
+				glMultMatrixf(m);
+			break;
+			case 177: //glNewList
+				readInt(buffer,count,list);
+				readShort(buffer,count,mode);
+				glNewList(list,mode);
+			break;
+			case 178: //glNormal3b
+				readByte(buffer,count,nx);
+				readByte(buffer,count,ny);
+				readByte(buffer,count,nz);
+				glNormal3b(nx,ny,nz);
+			break;
+			case 179: //glNormal3bv
+				readByte(buffer,count,v);
+				glNormal3bv(v);
+			break;
+			case 180: //glNormal3d
+				readDouble(buffer,count,nx);
+				readDouble(buffer,count,ny);
+				readDouble(buffer,count,nz);
+				glNormal3d(nx,ny,nz);
+			break;
+			case 181: //glNormal3dv
+				readDoubleV(buffer,count,v,3);
+				glNormal3dv(v);
+			break;
+			case 182: //glNormal3f
+				readFloat(buffer,count,nx);
+				readFloat(buffer,count,ny);
+				readFloat(buffer,count,nz);
+				glNormal3f(nx,ny,nz);
+			break;
+			case 183: //glNormal3fv
+				readFloatV(buffer,count,v,3);
+				glNormal3fv(v);
+			break;
+			case 184: //glNormal3i
+				readInt(buffer,count,nx);
+				readInt(buffer,count,ny);
+				readInt(buffer,count,nz);
+				glNormal3i(nx,ny,nz);
+			break;
+			case 185: //glNormal3iv
+				readIntV(buffer,count,v,3);
+				glNormal3iv(v);
+			break;
+			case 186: //glNormal3s
+				readShort(buffer,count,nx);
+				readShort(buffer,count,ny);
+				readShort(buffer,count,nz);
+				glNormal3s(nx,ny,nz);
+			break;
+			case 187: //glNormal3sv
+				glNormal3sv(v);
+			break;
+			case 188: //glNormalPointer
+				readShort(buffer,count,type);
+				readLong(buffer,count,stride);
+				glNormalPointer(type,stride,pointer);
+			break;
+			case 189: //glOrtho
+				readDouble(buffer,count,left);
+				readDouble(buffer,count,right);
+				readDouble(buffer,count,bottom);
+				readDouble(buffer,count,top);
+				readDouble(buffer,count,zNear);
+				readDouble(buffer,count,zFar);
+				glOrtho(left,right,bottom,top,zNear,zFar);
+			break;
+			case 190: //glPassThrough
+				readFloat(buffer,count,token);
+				glPassThrough(token);
+			break;
+			case 191: //glPixelMapfv
+				readShort(buffer,count,map);
+				readLong(buffer,count,mapsize);
+				readFloatV(buffer,count,values,1);
+				glPixelMapfv(map,mapsize,values);
+			break;
+			case 192: //glPixelMapuiv
+				readShort(buffer,count,map);
+				readLong(buffer,count,mapsize);
+				readIntV(buffer,count,values,1);
+				glPixelMapuiv(map,mapsize,values);
+			break;
+			case 193: //glPixelMapusv
+				readShort(buffer,count,map);
+				readLong(buffer,count,mapsize);
+				readShort(buffer,count,values);
+				glPixelMapusv(map,mapsize,values);
+			break;
+			case 194: //glPixelStoref
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glPixelStoref(pname,param);
+			break;
+			case 195: //glPixelStorei
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glPixelStorei(pname,param);
+			break;
+			case 196: //glPixelTransferf
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glPixelTransferf(pname,param);
+			break;
+			case 197: //glPixelTransferi
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glPixelTransferi(pname,param);
+			break;
+			case 198: //glPixelZoom
+				readFloat(buffer,count,xfactor);
+				readFloat(buffer,count,yfactor);
+				glPixelZoom(xfactor,yfactor);
+			break;
+			case 199: //glPointSize
+				readFloat(buffer,count,size);
+				glPointSize(size);
+			break;
+			case 200: //glPolygonMode
+				readShort(buffer,count,face);
+				readShort(buffer,count,mode);
+				glPolygonMode(face,mode);
+			break;
+			case 201: //glPolygonOffset
+				readFloat(buffer,count,factor);
+				readFloat(buffer,count,units);
+				glPolygonOffset(factor,units);
+			break;
+			case 202: //glPolygonStipple
+				readByteV(buffer,count,mask);
+				glPolygonStipple(mask);
+			break;
+			case 203: //glPopAttrib
+				glPopAttrib();
+			break;
+			case 204: //glPopClientAttrib
+				glPopClientAttrib();
+			break;
+			case 205: //glPopMatrix
+				glPopMatrix();
+			break;
+			case 206: //glPopName
+				glPopName();
+			break;
+			case 207: //glPrioritizeTextures
+				readLong(buffer,count,n);
+				readIntV(buffer,count,textures);
+				glPrioritizeTextures(n,textures,priorities);
+			break;
+			case 208: //glPushAttrib
+				glPushAttrib(mask);
+			break;
+			case 209: //glPushClientAttrib
+				glPushClientAttrib(mask);
+			break;
+			case 210: //glPushMatrix
+				glPushMatrix();
+			break;
+			case 211: //glPushName
+				readInt(buffer,count,name);
+				glPushName(name);
+			break;
+			case 212: //glRasterPos2d
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				glRasterPos2d(x,y);
+			break;
+			case 213: //glRasterPos2dv
+				readDoubleV(buffer,count,v,2);
+				glRasterPos2dv(v);
+			break;
+			case 214: //glRasterPos2f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				glRasterPos2f(x,y);
+			break;
+			case 215: //glRasterPos2fv
+				readFloatV(buffer,count,v,2);
+				glRasterPos2fv(v);
+			break;
+			case 216: //glRasterPos2i
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				glRasterPos2i(x,y);
+			break;
+			case 217: //glRasterPos2iv
+				readIntV(buffer,count,v,2);
+				glRasterPos2iv(v);
+			break;
+			case 218: //glRasterPos2s
+				readShort(buffer,count,x);
+				readShort(buffer,count,y);
+				glRasterPos2s(x,y);
+			break;
+			case 219: //glRasterPos2sv
+				glRasterPos2sv(v);
+			break;
+			case 220: //glRasterPos3d
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				readDouble(buffer,count,z);
+				glRasterPos3d(x,y,z);
+			break;
+			case 221: //glRasterPos3dv
+				readDoubleV(buffer,count,v,3);
+				glRasterPos3dv(v);
+			break;
+			case 222: //glRasterPos3f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				glRasterPos3f(x,y,z);
+			break;
+			case 223: //glRasterPos3fv
+				readFloatV(buffer,count,v,3);
+				glRasterPos3fv(v);
+			break;
+			case 224: //glRasterPos3i
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readInt(buffer,count,z);
+				glRasterPos3i(x,y,z);
+			break;
+			case 225: //glRasterPos3iv
+				readIntV(buffer,count,v,3);
+				glRasterPos3iv(v);
+			break;
+			case 226: //glRasterPos3s
+				readShort(buffer,count,x);
+				readShort(buffer,count,y);
+				readShort(buffer,count,z);
+				glRasterPos3s(x,y,z);
+			break;
+			case 227: //glRasterPos3sv
+				glRasterPos3sv(v);
+			break;
+			case 228: //glRasterPos4d
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				readDouble(buffer,count,z);
+				readDouble(buffer,count,w);
+				glRasterPos4d(x,y,z,w);
+			break;
+			case 229: //glRasterPos4dv
+				readDoubleV(buffer,count,v,4);
+				glRasterPos4dv(v);
+			break;
+			case 230: //glRasterPos4f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				readFloat(buffer,count,w);
+				glRasterPos4f(x,y,z,w);
+			break;
+			case 231: //glRasterPos4fv
+				readFloatV(buffer,count,v,4);
+				glRasterPos4fv(v);
+			break;
+			case 232: //glRasterPos4i
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readInt(buffer,count,z);
+				readInt(buffer,count,w);
+				glRasterPos4i(x,y,z,w);
+			break;
+			case 233: //glRasterPos4iv
+				readIntV(buffer,count,v,4);
+				glRasterPos4iv(v);
+			break;
+			case 234: //glRasterPos4s
+				readShort(buffer,count,x);
+				readShort(buffer,count,y);
+				readShort(buffer,count,z);
+				readShort(buffer,count,w);
+				glRasterPos4s(x,y,z,w);
+			break;
+			case 235: //glRasterPos4sv
+				glRasterPos4sv(v);
+			break;
+			case 236: //glReadBuffer
+				readShort(buffer,count,mode);
+				glReadBuffer(mode);
+			break;
+			case 237: //glReadPixels
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				glReadPixels(x,y,width,height,format,type,pixels);
+			break;
+			case 238: //glRectd
+				readDouble(buffer,count,x1);
+				readDouble(buffer,count,y1);
+				readDouble(buffer,count,x2);
+				readDouble(buffer,count,y2);
+				glRectd(x1,y1,x2,y2);
+			break;
+			case 239: //glRectdv
+				readDoubleV(buffer,count,v1,1);
+				readDoubleV(buffer,count,v2,1);
+				glRectdv(v1,v2);
+			break;
+			case 240: //glRectf
+				readFloat(buffer,count,x1);
+				readFloat(buffer,count,y1);
+				readFloat(buffer,count,x2);
+				readFloat(buffer,count,y2);
+				glRectf(x1,y1,x2,y2);
+			break;
+			case 241: //glRectfv
+				readFloatV(buffer,count,v1,1);
+				readFloatV(buffer,count,v2,1);
+				glRectfv(v1,v2);
+			break;
+			case 242: //glRecti
+				readInt(buffer,count,x1);
+				readInt(buffer,count,y1);
+				readInt(buffer,count,x2);
+				readInt(buffer,count,y2);
+				glRecti(x1,y1,x2,y2);
+			break;
+			case 243: //glRectiv
+				readIntV(buffer,count,v1,1);
+				readIntV(buffer,count,v2,1);
+				glRectiv(v1,v2);
+			break;
+			case 244: //glRects
+				readShort(buffer,count,x1);
+				readShort(buffer,count,y1);
+				readShort(buffer,count,x2);
+				readShort(buffer,count,y2);
+				glRects(x1,y1,x2,y2);
+			break;
+			case 245: //glRectsv
+				glRectsv(v1,v2);
+			break;
+			case 246: //glRenderMode
+				readShort(buffer,count,mode);
+				glRenderMode(mode);
+			break;
+			case 247: //glRotated
+				readDouble(buffer,count,angle);
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				readDouble(buffer,count,z);
+				glRotated(angle,x,y,z);
+			break;
+			case 248: //glRotatef
+				readFloat(buffer,count,angle);
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				glRotatef(angle,x,y,z);
+			break;
+			case 249: //glScaled
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				readDouble(buffer,count,z);
+				glScaled(x,y,z);
+			break;
+			case 250: //glScalef
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				glScalef(x,y,z);
+			break;
+			case 251: //glScissor
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				glScissor(x,y,width,height);
+			break;
+			case 252: //glSelectBuffer
+				readLong(buffer,count,size);
+				readIntV(buffer,count,buffer);
+				glSelectBuffer(size,buffer);
+			break;
+			case 253: //glShadeModel
+				readShort(buffer,count,mode);
+				glShadeModel(mode);
+			break;
+			case 254: //glStencilFunc
+				readShort(buffer,count,func);
+				readInt(buffer,count,ref);
+				readInt(buffer,count,mask);
+				glStencilFunc(func,ref,mask);
+			break;
+			case 255: //glStencilMask
+				readInt(buffer,count,mask);
+				glStencilMask(mask);
+			break;
+			case 256: //glStencilOp
+				readShort(buffer,count,fail);
+				readShort(buffer,count,zfail);
+				readShort(buffer,count,zpass);
+				glStencilOp(fail,zfail,zpass);
+			break;
+			case 257: //glTexCoord1d
+				readDouble(buffer,count,s);
+				glTexCoord1d(s);
+			break;
+			case 258: //glTexCoord1dv
+				readDoubleV(buffer,count,v,1);
+				glTexCoord1dv(v);
+			break;
+			case 259: //glTexCoord1f
+				readFloat(buffer,count,s);
+				glTexCoord1f(s);
+			break;
+			case 260: //glTexCoord1fv
+				readFloatV(buffer,count,v,1);
+				glTexCoord1fv(v);
+			break;
+			case 261: //glTexCoord1i
+				readInt(buffer,count,s);
+				glTexCoord1i(s);
+			break;
+			case 262: //glTexCoord1iv
+				readIntV(buffer,count,v,1);
+				glTexCoord1iv(v);
+			break;
+			case 263: //glTexCoord1s
+				readShort(buffer,count,s);
+				glTexCoord1s(s);
+			break;
+			case 264: //glTexCoord1sv
+				glTexCoord1sv(v);
+			break;
+			case 265: //glTexCoord2d
+				readDouble(buffer,count,s);
+				readDouble(buffer,count,t);
+				glTexCoord2d(s,t);
+			break;
+			case 266: //glTexCoord2dv
+				readDoubleV(buffer,count,v,2);
+				glTexCoord2dv(v);
+			break;
+			case 267: //glTexCoord2f
+				readFloat(buffer,count,s);
+				readFloat(buffer,count,t);
+				glTexCoord2f(s,t);
+			break;
+			case 268: //glTexCoord2fv
+				readFloatV(buffer,count,v,2);
+				glTexCoord2fv(v);
+			break;
+			case 269: //glTexCoord2i
+				readInt(buffer,count,s);
+				readInt(buffer,count,t);
+				glTexCoord2i(s,t);
+			break;
+			case 270: //glTexCoord2iv
+				readIntV(buffer,count,v,2);
+				glTexCoord2iv(v);
+			break;
+			case 271: //glTexCoord2s
+				readShort(buffer,count,s);
+				readShort(buffer,count,t);
+				glTexCoord2s(s,t);
+			break;
+			case 272: //glTexCoord2sv
+				glTexCoord2sv(v);
+			break;
+			case 273: //glTexCoord3d
+				readDouble(buffer,count,s);
+				readDouble(buffer,count,t);
+				readDouble(buffer,count,r);
+				glTexCoord3d(s,t,r);
+			break;
+			case 274: //glTexCoord3dv
+				readDoubleV(buffer,count,v,3);
+				glTexCoord3dv(v);
+			break;
+			case 275: //glTexCoord3f
+				readFloat(buffer,count,s);
+				readFloat(buffer,count,t);
+				readFloat(buffer,count,r);
+				glTexCoord3f(s,t,r);
+			break;
+			case 276: //glTexCoord3fv
+				readFloatV(buffer,count,v,3);
+				glTexCoord3fv(v);
+			break;
+			case 277: //glTexCoord3i
+				readInt(buffer,count,s);
+				readInt(buffer,count,t);
+				readInt(buffer,count,r);
+				glTexCoord3i(s,t,r);
+			break;
+			case 278: //glTexCoord3iv
+				readIntV(buffer,count,v,3);
+				glTexCoord3iv(v);
+			break;
+			case 279: //glTexCoord3s
+				readShort(buffer,count,s);
+				readShort(buffer,count,t);
+				readShort(buffer,count,r);
+				glTexCoord3s(s,t,r);
+			break;
+			case 280: //glTexCoord3sv
+				glTexCoord3sv(v);
+			break;
+			case 281: //glTexCoord4d
+				readDouble(buffer,count,s);
+				readDouble(buffer,count,t);
+				readDouble(buffer,count,r);
+				readDouble(buffer,count,q);
+				glTexCoord4d(s,t,r,q);
+			break;
+			case 282: //glTexCoord4dv
+				readDoubleV(buffer,count,v,4);
+				glTexCoord4dv(v);
+			break;
+			case 283: //glTexCoord4f
+				readFloat(buffer,count,s);
+				readFloat(buffer,count,t);
+				readFloat(buffer,count,r);
+				readFloat(buffer,count,q);
+				glTexCoord4f(s,t,r,q);
+			break;
+			case 284: //glTexCoord4fv
+				readFloatV(buffer,count,v,4);
+				glTexCoord4fv(v);
+			break;
+			case 285: //glTexCoord4i
+				readInt(buffer,count,s);
+				readInt(buffer,count,t);
+				readInt(buffer,count,r);
+				readInt(buffer,count,q);
+				glTexCoord4i(s,t,r,q);
+			break;
+			case 286: //glTexCoord4iv
+				readIntV(buffer,count,v,4);
+				glTexCoord4iv(v);
+			break;
+			case 287: //glTexCoord4s
+				readShort(buffer,count,s);
+				readShort(buffer,count,t);
+				readShort(buffer,count,r);
+				readShort(buffer,count,q);
+				glTexCoord4s(s,t,r,q);
+			break;
+			case 288: //glTexCoord4sv
+				glTexCoord4sv(v);
+			break;
+			case 289: //glTexCoordPointer
+				readInt(buffer,count,size);
+				readShort(buffer,count,type);
+				readLong(buffer,count,stride);
+				glTexCoordPointer(size,type,stride,pointer);
+			break;
+			case 290: //glTexEnvf
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glTexEnvf(target,pname,param);
+			break;
+			case 291: //glTexEnvfv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glTexEnvfv(target,pname,params);
+			break;
+			case 292: //glTexEnvi
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glTexEnvi(target,pname,param);
+			break;
+			case 293: //glTexEnviv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glTexEnviv(target,pname,params);
+			break;
+			case 294: //glTexGend
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readDouble(buffer,count,param);
+				glTexGend(coord,pname,param);
+			break;
+			case 295: //glTexGendv
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readDoubleV(buffer,count,params,1);
+				glTexGendv(coord,pname,params);
+			break;
+			case 296: //glTexGenf
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glTexGenf(coord,pname,param);
+			break;
+			case 297: //glTexGenfv
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glTexGenfv(coord,pname,params);
+			break;
+			case 298: //glTexGeni
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glTexGeni(coord,pname,param);
+			break;
+			case 299: //glTexGeniv
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glTexGeniv(coord,pname,params);
+			break;
+			case 300: //glTexImage1D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readInt(buffer,count,internalformat);
+				readLong(buffer,count,width);
+				readInt(buffer,count,border);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				glTexImage1D(target,level,internalformat,width,border,format,type,pixels);
+			break;
+			case 301: //glTexImage2D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readInt(buffer,count,internalformat);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readInt(buffer,count,border);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				glTexImage2D(target,level,internalformat,width,height,border,format,type,pixels);
+			break;
+			case 302: //glTexParameterf
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloat(buffer,count,param);
+				glTexParameterf(target,pname,param);
+			break;
+			case 303: //glTexParameterfv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params,1);
+				glTexParameterfv(target,pname,params);
+			break;
+			case 304: //glTexParameteri
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readInt(buffer,count,param);
+				glTexParameteri(target,pname,param);
+			break;
+			case 305: //glTexParameteriv
+				readShort(buffer,count,target);
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				glTexParameteriv(target,pname,params);
+			break;
+			case 306: //glTexSubImage1D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readInt(buffer,count,xoffset);
+				readLong(buffer,count,width);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				glTexSubImage1D(target,level,xoffset,width,format,type,pixels);
+			break;
+			case 307: //glTexSubImage2D
+				readShort(buffer,count,target);
+				readInt(buffer,count,level);
+				readInt(buffer,count,xoffset);
+				readInt(buffer,count,yoffset);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				readShort(buffer,count,format);
+				readShort(buffer,count,type);
+				glTexSubImage2D(target,level,xoffset,yoffset,width,height,format,type,pixels);
+			break;
+			case 308: //glTranslated
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				readDouble(buffer,count,z);
+				glTranslated(x,y,z);
+			break;
+			case 309: //glTranslatef
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				glTranslatef(x,y,z);
+			break;
+			case 310: //glVertex2d
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				glVertex2d(x,y);
+			break;
+			case 311: //glVertex2dv
+				readDoubleV(buffer,count,v,2);
+				glVertex2dv(v);
+			break;
+			case 312: //glVertex2f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				glVertex2f(x,y);
+			break;
+			case 313: //glVertex2fv
+				readFloatV(buffer,count,v,2);
+				glVertex2fv(v);
+			break;
+			case 314: //glVertex2i
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				glVertex2i(x,y);
+			break;
+			case 315: //glVertex2iv
+				readIntV(buffer,count,v,2);
+				glVertex2iv(v);
+			break;
+			case 316: //glVertex2s
+				readShort(buffer,count,x);
+				readShort(buffer,count,y);
+				glVertex2s(x,y);
+			break;
+			case 317: //glVertex2sv
+				glVertex2sv(v);
+			break;
+			case 318: //glVertex3d
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				readDouble(buffer,count,z);
+				glVertex3d(x,y,z);
+			break;
+			case 319: //glVertex3dv
+				readDoubleV(buffer,count,v,3);
+				glVertex3dv(v);
+			break;
+			case 320: //glVertex3f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				glVertex3f(x,y,z);
+			break;
+			case 321: //glVertex3fv
+				readFloatV(buffer,count,v,3);
+				glVertex3fv(v);
+			break;
+			case 322: //glVertex3i
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readInt(buffer,count,z);
+				glVertex3i(x,y,z);
+			break;
+			case 323: //glVertex3iv
+				readIntV(buffer,count,v,3);
+				glVertex3iv(v);
+			break;
+			case 324: //glVertex3s
+				readShort(buffer,count,x);
+				readShort(buffer,count,y);
+				readShort(buffer,count,z);
+				glVertex3s(x,y,z);
+			break;
+			case 325: //glVertex3sv
+				glVertex3sv(v);
+			break;
+			case 326: //glVertex4d
+				readDouble(buffer,count,x);
+				readDouble(buffer,count,y);
+				readDouble(buffer,count,z);
+				readDouble(buffer,count,w);
+				glVertex4d(x,y,z,w);
+			break;
+			case 327: //glVertex4dv
+				readDoubleV(buffer,count,v,4);
+				glVertex4dv(v);
+			break;
+			case 328: //glVertex4f
+				readFloat(buffer,count,x);
+				readFloat(buffer,count,y);
+				readFloat(buffer,count,z);
+				readFloat(buffer,count,w);
+				glVertex4f(x,y,z,w);
+			break;
+			case 329: //glVertex4fv
+				readFloatV(buffer,count,v,4);
+				glVertex4fv(v);
+			break;
+			case 330: //glVertex4i
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readInt(buffer,count,z);
+				readInt(buffer,count,w);
+				glVertex4i(x,y,z,w);
+			break;
+			case 331: //glVertex4iv
+				readIntV(buffer,count,v,4);
+				glVertex4iv(v);
+			break;
+			case 332: //glVertex4s
+				readShort(buffer,count,x);
+				readShort(buffer,count,y);
+				readShort(buffer,count,z);
+				readShort(buffer,count,w);
+				glVertex4s(x,y,z,w);
+			break;
+			case 333: //glVertex4sv
+				glVertex4sv(v);
+			break;
+			case 334: //glVertexPointer
+				readInt(buffer,count,size);
+				readShort(buffer,count,type);
+				readLong(buffer,count,stride);
+				glVertexPointer(size,type,stride,pointer);
+			break;
+			case 335: //glViewport
+				readInt(buffer,count,x);
+				readInt(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				glViewport(x,y,width,height);
+			break;
+			case 336: //wglChoosePixelFormat
+				wglChoosePixelFormat(a,b);
+			break;
+			case 337: //wglCopyContext
+				readInt(buffer,count,c);
+				wglCopyContext(a,b,c);
+			break;
+			case 338: //wglCreateContext
+				wglCreateContext(a);
+			break;
+			case 339: //wglCreateLayerContext
+				readInt(buffer,count,b);
+				wglCreateLayerContext(a,b);
+			break;
+			case 340: //wglDeleteContext
+				wglDeleteContext(a);
+			break;
+			case 341: //wglDescribeLayerPlane
+				readInt(buffer,count,b);
+				readInt(buffer,count,c);
+				readInt(buffer,count,d);
+				wglDescribeLayerPlane(a,b,c,d,e);
+			break;
+			case 342: //wglDescribePixelFormat
+				readInt(buffer,count,b);
+				readInt(buffer,count,c);
+				wglDescribePixelFormat(a,b,c,d);
+			break;
+			case 343: //wglGetCurrentContext
+				wglGetCurrentContext();
+			break;
+			case 344: //wglGetCurrentDC
+				wglGetCurrentDC();
+			break;
+			case 345: //wglGetDefaultProcAddress
+				wglGetDefaultProcAddress(a);
+			break;
+			case 346: //wglGetLayerPaletteEntries
+				readInt(buffer,count,b);
+				readInt(buffer,count,c);
+				readInt(buffer,count,d);
+				wglGetLayerPaletteEntries(a,b,c,d,e);
+			break;
+			case 347: //wglGetPixelFormat
+				wglGetPixelFormat(a);
+			break;
+			case 348: //wglGetProcAddress
+				wglGetProcAddress(a);
+			break;
+			case 349: //wglMakeCurrent
+				wglMakeCurrent(a,b);
+			break;
+			case 350: //wglRealizeLayerPalette
+				readInt(buffer,count,b);
+				readSHort(buffer,count,c);
+				wglRealizeLayerPalette(a,b,c);
+			break;
+			case 351: //wglSetLayerPaletteEntries
+				readInt(buffer,count,b);
+				readInt(buffer,count,c);
+				readInt(buffer,count,d);
+				wglSetLayerPaletteEntries(a,b,c,d,e);
+			break;
+			case 352: //wglSetPixelFormat
+				readInt(buffer,count,b);
+				wglSetPixelFormat(a,b,c);
+			break;
+			case 353: //wglShareLists
+				wglShareLists(a,b);
+			break;
+			case 354: //wglSwapBuffers
+				wglSwapBuffers(a);
+			break;
+			case 355: //wglSwapLayerBuffers
+				readInt(buffer,count,b);
+				wglSwapLayerBuffers(a,b);
+			break;
+			case 356: //wglUseFontBitmapsA
+				wglUseFontBitmapsA(a,b,c,d);
+			break;
+			case 357: //wglUseFontBitmapsW
+				wglUseFontBitmapsW(a,b,c,d);
+			break;
+			case 358: //wglUseFontOutlinesA
+				readFloat(buffer,count,e);
+				readFloat(buffer,count,f);
+				readInt(buffer,count,g);
+				wglUseFontOutlinesA(a,b,c,d,e,f,g,h);
+			break;
+			case 359: //wglUseFontOutlinesW
+				readFloat(buffer,count,e);
+				readFloat(buffer,count,f);
+				readInt(buffer,count,g);
+				wglUseFontOutlinesW(a,b,c,d,e,f,g,h);
+			break;
+			case 360: //glXChooseVisual
+				readInt(buffer,count,screen);
+				readIntV(buffer,count,attribList);
+				glXChooseVisual(dpy,screen,attribList);
+			break;
+			case 361: //glXCopyContext
+				readLong(buffer,count,mask);
+				glXCopyContext(dpy,src,dst,mask);
+			break;
+			case 362: //glXCreateContext
+				readShort(buffer,count,direct);
+				glXCreateContext(dpy,vis,shareList,direct);
+			break;
+			case 363: //glXCreateGLXPixmap
+				glXCreateGLXPixmap(dpy,vis,pixmap);
+			break;
+			case 364: //glXDestroyContext
+				glXDestroyContext(dpy,ctx);
+			break;
+			case 365: //glXDestroyGLXPixmap
+				glXDestroyGLXPixmap(dpy,pix);
+			break;
+			case 366: //glXGetConfig
+				readInt(buffer,count,attrib);
+				readIntV(buffer,count,value);
+				glXGetConfig(dpy,vis,attrib,value);
+			break;
+			case 367: //glXGetCurrentContext
+				glXGetCurrentContext();
+			break;
+			case 368: //glXGetCurrentDrawable
+				glXGetCurrentDrawable();
+			break;
+			case 369: //glXIsDirect
+				glXIsDirect(dpy,ctx);
+			break;
+			case 370: //glXMakeCurrent
+				glXMakeCurrent(dpy,drawable,ctx);
+			break;
+			case 371: //glXQueryExtension
+				readIntV(buffer,count,errorBase);
+				readIntV(buffer,count,eventBase);
+				glXQueryExtension(dpy,errorBase,eventBase);
+			break;
+			case 372: //glXQueryVersion
+				readIntV(buffer,count,major);
+				readIntV(buffer,count,minor);
+				glXQueryVersion(dpy,major,minor);
+			break;
+			case 373: //glXSwapBuffers
+				glXSwapBuffers(dpy,drawable);
+			break;
+			case 374: //glXUseXFont
+				readInt(buffer,count,first);
+				readInt(buffer,count,count);
+				readInt(buffer,count,listBase);
+				glXUseXFont(font,first,count,listBase);
+			break;
+			case 375: //glXWaitGL
+				glXWaitGL();
+			break;
+			case 376: //glXWaitX
+				glXWaitX();
+			break;
+			case 377: //glXGetClientString
+				readInt(buffer,count,name);
+				glXGetClientString(dpy,name);
+			break;
+			case 378: //glXQueryServerString
+				readInt(buffer,count,screen);
+				readInt(buffer,count,name);
+				glXQueryServerString(dpy,screen,name);
+			break;
+			case 379: //glXQueryExtensionsString
+				readInt(buffer,count,screen);
+				glXQueryExtensionsString(dpy,screen);
+			break;
+			case 380: //glXGetFBConfigs
+				readInt(buffer,count,screen);
+				readIntV(buffer,count,nelements);
+				glXGetFBConfigs(dpy,screen,nelements);
+			break;
+			case 381: //glXChooseFBConfig
+				readInt(buffer,count,screen);
+				readIntV(buffer,count,attrib_list);
+				readIntV(buffer,count,nelements);
+				glXChooseFBConfig(dpy,screen,attrib_list,nelements);
+			break;
+			case 382: //glXGetFBConfigAttrib
+				readInt(buffer,count,attribute);
+				readIntV(buffer,count,value);
+				glXGetFBConfigAttrib(dpy,config,attribute,value);
+			break;
+			case 383: //glXGetVisualFromFBConfig
+				glXGetVisualFromFBConfig(dpy,config);
+			break;
+			case 384: //glXCreateWindow
+				readIntV(buffer,count,attrib_list);
+				glXCreateWindow(dpy,config,win,attrib_list);
+			break;
+			case 385: //glXDestroyWindow
+				glXDestroyWindow(dpy,win);
+			break;
+			case 386: //glXCreatePixmap
+				readIntV(buffer,count,attrib_list);
+				glXCreatePixmap(dpy,config,pixmap,attrib_list);
+			break;
+			case 387: //glXDestroyPixmap
+				glXDestroyPixmap(dpy,pixmap);
+			break;
+			case 388: //glXCreatePbuffer
+				readIntV(buffer,count,attrib_list);
+				glXCreatePbuffer(dpy,config,attrib_list);
+			break;
+			case 389: //glXDestroyPbuffer
+				glXDestroyPbuffer(dpy,pbuf);
+			break;
+			case 390: //glXQueryDrawable
+				readInt(buffer,count,attribute);
+				readIntV(buffer,count,value);
+				glXQueryDrawable(dpy,draw,attribute,value);
+			break;
+			case 391: //glXCreateNewContext
+				readInt(buffer,count,render_type);
+				readShort(buffer,count,direct);
+				glXCreateNewContext(dpy,config,render_type,share_list,direct);
+			break;
+			case 392: //glXMakeContextCurrent
+				glXMakeContextCurrent(dpy,draw,read,ctx);
+			break;
+			case 393: //glXGetCurrentReadDrawable
+				glXGetCurrentReadDrawable();
+			break;
+			case 394: //glXGetCurrentDisplay
+				glXGetCurrentDisplay();
+			break;
+			case 395: //glXQueryContext
+				readInt(buffer,count,attribute);
+				readIntV(buffer,count,value);
+				glXQueryContext(dpy,ctx,attribute,value);
+			break;
+			case 396: //glXSelectEvent
+				readLong(buffer,count,event_mask);
+				glXSelectEvent(dpy,draw,event_mask);
+			break;
+			case 397: //glXGetSelectedEvent
+				readLongV(buffer,count,event_mask);
+				glXGetSelectedEvent(dpy,draw,event_mask);
+			break;
+			case 398: //glXGetContextIDEXT
+				glXGetContextIDEXT(ctx);
+			break;
+			case 399: //glXGetCurrentDrawableEXT
+				glXGetCurrentDrawableEXT();
+			break;
+			case 400: //glXImportContextEXT
+				glXImportContextEXT(dpy,contextID);
+			break;
+			case 401: //glXFreeContextEXT
+				glXFreeContextEXT(dpy,ctx);
+			break;
+			case 402: //glXQueryContextInfoEXT
+				readInt(buffer,count,attribute);
+				readIntV(buffer,count,value);
+				glXQueryContextInfoEXT(dpy,ctx,attribute,value);
+			break;
+		}
+/* FINISHED CREATION (<6 days)*/
