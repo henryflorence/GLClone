@@ -23,6 +23,7 @@
 #endif
 
 DWORD WINAPI monitor(LPVOID);
+#define PACKET_LENGTH 100000
 
 //#define readShort(x, y, z)      {z = nlSwaps(*(NLushort *)((NLbyte *)&x[y])); y += 2;}
 //#define readLong(x, y, z)       {z = nlSwapl(*(NLulong  *)((NLbyte *)&x[y])); y += 4;}
@@ -52,7 +53,7 @@ DWORD WINAPI monitor(LPVOID);
 //used 243 times
 #define readShort(x,y,z) {z = *(NLshort *)((NLbyte *)&x[y]);y += 2; }//print("%i, ",z);}
 
-NLbyte buffer[NL_MAX_PACKET_LENGTH];
+NLbyte buffer[PACKET_LENGTH];
 FILE *text_file = NULL; 
 
 using namespace RakNet;
@@ -531,9 +532,9 @@ void mainServerLoop()
 		
 		int rsize = 0;
 		int rs;
-		while (rsize < NL_MAX_PACKET_LENGTH)
+		while (rsize < PACKET_LENGTH)
 		{
-		  if (UDT::ERROR == (rs = UDT::recv(recver, buffer + rsize, NL_MAX_PACKET_LENGTH - rsize, 0)))
+		  if (UDT::ERROR == (rs = UDT::recv(recver, buffer + rsize, PACKET_LENGTH - rsize, 0)))
 		  {
 			cout << "recv:" << UDT::getlasterror().getErrorMessage() << endl;
 			break;
@@ -689,7 +690,7 @@ void parseFunctions()
 	int typeModifier;
 
 	readInt(buffer,count,index);
-	while (count < NL_MAX_PACKET_LENGTH) {
+	while (count < PACKET_LENGTH) {
 		//printf("%i\n", index);
 		if(index < 400 && index > 0) print("%s (",GLN[index]);
 

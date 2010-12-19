@@ -55,9 +55,10 @@ using namespace RakNet;
 using namespace std;
 
 RakPeerInterface *server;
+#define PACKET_LENGTH 100000
 
 NLsocket    serversock;
-NLbyte		netBuffer[NL_MAX_PACKET_LENGTH];
+NLbyte		netBuffer[PACKET_LENGTH];
 NLuint		count = 0;
 NLuint		packetCount = 0;
 UDTSOCKET client;
@@ -1511,9 +1512,9 @@ void print_error(NLenum errCode) {
 int SendPacket() {
 	int ssize = 0;
 	int ss;
-	while (ssize < NL_MAX_PACKET_LENGTH)
+	while (ssize < PACKET_LENGTH)
 	{
-		if (UDT::ERROR == (ss = UDT::send(client, netBuffer + ssize, NL_MAX_PACKET_LENGTH - ssize, 0)))
+		if (UDT::ERROR == (ss = UDT::send(client, netBuffer + ssize, PACKET_LENGTH - ssize, 0)))
 		{
 			cout << "send:" << UDT::getlasterror().getErrorMessage() << endl;
 			break;
@@ -1527,7 +1528,7 @@ int SendStream() {
 	AddIntToStream(500);
 	AddIntToStream(packetCount++);
 
-	//uint32_t msgId = server->Send(netBuffer, NL_MAX_PACKET_LENGTH, HIGH_PRIORITY, UNRELIABLE_SEQUENCED, 0, RakNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+	//uint32_t msgId = server->Send(netBuffer, PACKET_LENGTH, HIGH_PRIORITY, UNRELIABLE_SEQUENCED, 0, RakNet::UNASSIGNED_SYSTEM_ADDRESS, true);
 	//char* hello = "hello world!\n";
 	//if (UDT::ERROR == UDT::send(client, hello, strlen(hello) + 1, 0))
 	//{
