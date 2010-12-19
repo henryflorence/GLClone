@@ -1,167 +1,260 @@
 .\Debug\GLTrace2.pdb
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\DLL.OBJ
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\FONT.OBJ
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE.OBJ
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST.RES
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE2.DLL.INTERMEDIATE.MANIFEST
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE2.PDB
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\GLWRAPPER.OBJ
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\INPUT.OBJ
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\LOG.OBJ
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\OPENGL32.DLL
-C:\Users\Administrator\Desktop\Projects\GLTrace23a2\Debug\opengl32.exp
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\OPENGL32.ILK
-C:\Users\Administrator\Desktop\Projects\GLTrace23a2\Debug\opengl32.lib
-C:\USERS\ADMINISTRATOR\DESKTOP\PROJECTS\GLTRACE23A2\DEBUG\VC100.PDB
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\DLL.OBJ
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\FONT.OBJ
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE.OBJ
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST.RES
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE2.DLL.INTERMEDIATE.MANIFEST
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\GLTRACE2.PDB
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\GLWRAPPER.OBJ
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\INPUT.OBJ
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\LOG.OBJ
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\OPENGL32.DLL
-C:\Users\henry\Documents\Visual Studio 2010\Projects\GLTrace23a2\Debug\opengl32.exp
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\OPENGL32.ILK
-C:\Users\henry\Documents\Visual Studio 2010\Projects\GLTrace23a2\Debug\opengl32.lib
-C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GLTRACE23A2\DEBUG\VC100.PDB
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\.\Debug\GLTrace2.dll.intermediate.manifest
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\cl.command.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\CL.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\CL.write.1.tlog
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\DLL.OBJ
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\FONT.OBJ
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLTRACE.OBJ
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\GLTrace2.dll.embed.manifest
+C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST.RES
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLTRACE2.DLL.INTERMEDIATE.MANIFEST
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLTRACE2.PDB
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\GLTrace2.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\GLTrace2_manifest.rc
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLWRAPPER.OBJ
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\INPUT.OBJ
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1260.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1260.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1260-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1260-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1396.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1396.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1396-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1396-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1464.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1464.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1464-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1464-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1548.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1548.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1548-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.1548-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2276.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2276.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2276-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2276-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2932.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2932.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2932-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2932-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2972.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2972.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2972-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.2972-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.3068.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.3068.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.3068-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.3068-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.4244.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.4244.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.4244-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.4244-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5172.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5172.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5172-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5172-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5476.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5476.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5476-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5476-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5740.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5740.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5740-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5740-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5992.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5992.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5992-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.5992-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6140.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6140.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6140-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6140-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6156.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6156.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6156-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6156-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6368.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6368.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6368-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.6368-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7456.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7456.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7456-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7456-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7492.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7492.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7492-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7492-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7640.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7640.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7640-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7640-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7744.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7744.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7744-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7744-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7832.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.7832.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8040.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8040.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8040-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8040-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8128.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8128.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8128-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.8128-cvtres.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.command.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link-cvtres.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\link-cvtres.write.1.tlog
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\LOG.OBJ
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\mt.command.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\mt.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\mt.write.1.tlog
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\OPENGL32.DLL
 C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\opengl32.exp
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\OPENGL32.ILK
 C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\opengl32.lib
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\rc.command.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\rc.read.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\rc.write.1.tlog
-C:\Users\henry\Documents\Visual Studio 2010\Projects\NLtest\GLTrace23a2\Debug\vc100.idb
 C:\USERS\HENRY\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\VC100.PDB
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\DLL.OBJ
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\FONT.OBJ
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\GLTRACE.OBJ
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST.RES
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\GLTRACE2.DLL.INTERMEDIATE.MANIFEST
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\GLTRACE2.PDB
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\GLWRAPPER.OBJ
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\INPUT.OBJ
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\LOG.OBJ
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\OPENGL32.DLL
-C:\Users\henry\GLTrace23a2\Debug\opengl32.exp
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\OPENGL32.ILK
-C:\Users\henry\GLTrace23a2\Debug\opengl32.lib
-C:\USERS\HENRY\GLTRACE23A2\DEBUG\VC100.PDB
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\DLL.OBJ
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\FONT.OBJ
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\GLTRACE.OBJ
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST.RES
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\GLTRACE2.DLL.INTERMEDIATE.MANIFEST
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\GLTRACE2.PDB
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\GLWRAPPER.OBJ
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\INPUT.OBJ
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\LOG.OBJ
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\OPENGL32.DLL
+C:\Users\henry\tempMirror\GLTrace23a2\Debug\opengl32.exp
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\OPENGL32.ILK
+C:\Users\henry\tempMirror\GLTrace23a2\Debug\opengl32.lib
+C:\USERS\HENRY\TEMPMIRROR\GLTRACE23A2\DEBUG\VC100.PDB
+Y:\Projects\NLtest\GLTrace23a2\.\Debug\GLTrace2.dll.intermediate.manifest
+Y:\Projects\NLtest\GLTrace23a2\Debug\_FindFirst.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\BitStream.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\CCRakNetSlidingWindow.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\CCRakNetUDT.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\CheckSum.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\cl.command.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\CL.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\CL.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\CommandParserInterface.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\ConnectionGraph2.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\ConsoleServer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\DataCompressor.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\DirectoryDeltaTransfer.obj
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\DLL.OBJ
+Y:\Projects\NLtest\GLTrace23a2\Debug\DS_BytePool.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\DS_ByteQueue.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\DS_HuffmanEncodingTree.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\DS_Table.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\EmailSender.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\EncodeClassName.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\EpochTimeToString.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\FileList.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\FileListTransfer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\FileOperations.obj
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\FONT.OBJ
+Y:\Projects\NLtest\GLTrace23a2\Debug\FormatString.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\FullyConnectedMesh2.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\Getche.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\Gets.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\GetTime.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\gettimeofday.obj
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLTRACE.OBJ
+Y:\Projects\NLtest\GLTrace23a2\Debug\GLTrace2.dll.embed.manifest
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLTRACE2.DLL.EMBED.MANIFEST.RES
+Y:\Projects\NLtest\GLTrace23a2\Debug\GLTrace2.dll.intermediate.manifest
+Y:\Projects\NLtest\GLTrace23a2\Debug\GLTrace2.pdb
+Y:\Projects\NLtest\GLTrace23a2\Debug\GLTrace2.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\GLTrace2_manifest.rc
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\GLWRAPPER.OBJ
+Y:\Projects\NLtest\GLTrace23a2\Debug\GridSectorizer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\HTTPConnection.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\IncrementalReadInterface.obj
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\INPUT.OBJ
+Y:\Projects\NLtest\GLTrace23a2\Debug\Itoa.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.4376.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.4376.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.4376-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.4376-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5068.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5068.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5068-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5068-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.512.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.512.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.512-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.512-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5464.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5464.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5464-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5464-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5772.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5772.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5772-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5772-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5800.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5800.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5800-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.5800-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6008.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6008.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6140.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6140.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6140-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6140-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6224.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6224.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6224-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6224-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6268.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6268.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6268-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6268-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6340.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6340.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6340-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6340-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6508.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6508.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6508-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6508-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6572.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6572.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6572-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6572-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6604.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6604.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6604-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6604-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6784.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6784.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6784-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6784-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6920.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6920.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6920-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.6920-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7008.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7008.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7008-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7008-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7416.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7416.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7416-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7416-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7596.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7596.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7596-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7596-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7600.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7600.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7600-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7600-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7636.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7636.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7636-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7636-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7836.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7836.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7836-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7836-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7908.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7908.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7908-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7908-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7984.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7984.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7984-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.7984-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8188.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8188.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8188-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8188-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8348.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8348.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8348-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8348-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8516.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8516.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8516-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8516-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8900.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8900.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8900-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.8900-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.9212.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.9212.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.9212-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.9212-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.command.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link-cvtres.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\link-cvtres.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\LinuxStrings.obj
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\LOG.OBJ
+Y:\Projects\NLtest\GLTrace23a2\Debug\LogCommandParser.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\MessageFilter.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\mt.command.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\mt.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\mt.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\NatPunchthroughClient.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\NatPunchthroughServer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\NatTypeDetectionClient.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\NatTypeDetectionCommon.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\NatTypeDetectionServer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\NetworkIDManager.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\NetworkIDObject.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\opengl32.exp
+Y:\Projects\NLtest\GLTrace23a2\Debug\opengl32.lib
+Y:\Projects\NLtest\GLTrace23a2\Debug\PacketConsoleLogger.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\PacketFileLogger.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\PacketizedTCP.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\PacketLogger.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\PacketOutputWindowLogger.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\PluginInterface2.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakMemoryOverride.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakNetCommandParser.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakNetSocket.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakNetStatistics.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakNetTransport2.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakNetTypes.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakPeer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakSleep.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakString.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RakThread.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\Rand.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\rc.command.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\rc.read.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\rc.write.1.tlog
+Y:\Projects\NLtest\GLTrace23a2\Debug\rdlmalloc.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\ReadyEvent.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\ReliabilityLayer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\ReplicaManager3.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\Router2.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\RPC4Plugin.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\SecureHandshake.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\SendToThread.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\SHA1.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\SignaledEvent.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\SimpleMutex.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\SocketLayer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\StringCompressor.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\StringTable.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\SuperFastHash.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\TableSerializer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\TCPInterface.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\TeamBalancer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\TelnetTransport.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\ThreadsafePacketLogger.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\UDPForwarder.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\UDPProxyClient.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\UDPProxyCoordinator.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\UDPProxyServer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\VariableDeltaSerializer.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\VariableListDeltaTracker.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\VariadicSQLParser.obj
+Y:\Projects\NLtest\GLTrace23a2\Debug\vc100.idb
+Y:\PROJECTS\NLTEST\GLTRACE23A2\DEBUG\VC100.PDB
+Y:\Projects\NLtest\GLTrace23a2\Debug\WSAStartupSingleton.obj

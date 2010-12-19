@@ -536,4 +536,3 @@ NL_INLINE void readStringWC(NLbyte *x, NLint *y, NLchar *z)
 #endif
 
 #endif /* NL_H */
-

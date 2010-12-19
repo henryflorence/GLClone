@@ -127,7 +127,7 @@
       <SubSystem>Windows</SubSystem>
       <OutputFile>Debug/opengl32.dll</OutputFile>
       <ImportLibrary>.\Debug\opengl32.lib</ImportLibrary>
-      <AdditionalDependencies>winmm.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);HawkNL.lib;ws2_32.lib;RakNetLibStaticDebug.lib</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);HawkNL.lib;ws2_32.lib;RakNetLibStaticDebug.lib;;udt.lib</AdditionalDependencies>
       <ModuleDefinitionFile>.\gltrace.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>

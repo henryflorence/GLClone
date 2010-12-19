@@ -4,6 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <wspiapi.h>
+#include "udt.h"
+//#include "cc.h"
 #include "nl.h"
 #include "glut.h"
 #include <gl/glu.h>
@@ -16,6 +21,8 @@
 #include <windows.h>
 #define sleep(x)    Sleep(1000 * (x))
 #endif
+
+DWORD WINAPI monitor(LPVOID);
 
 //#define readShort(x, y, z)      {z = nlSwaps(*(NLushort *)((NLbyte *)&x[y])); y += 2;}
 //#define readLong(x, y, z)       {z = nlSwapl(*(NLulong  *)((NLbyte *)&x[y])); y += 4;}
@@ -45,12 +52,14 @@
 //used 243 times
 #define readShort(x,y,z) {z = *(NLshort *)((NLbyte *)&x[y]);y += 2; }//print("%i, ",z);}
 
-NLbyte *buffer;
+NLbyte buffer[NL_MAX_PACKET_LENGTH];
 FILE *text_file = NULL; 
 
 using namespace RakNet;
+using namespace std;
 
-RakPeerInterface *client;
+//RakPeerInterface *client;
+UDTSOCKET client;
 
 void parseFunctions();
 void print(const char *fmt, ...);
@@ -489,13 +498,50 @@ void printErrorExit(void)
 
 void mainServerLoop()
 {
-	RakNet::Packet *packet;
-	//RakNetStatistics rssSender;
-	//char *text = new char [100000000];
+   sockaddr_storage clientaddr;
+   int addrlen = sizeof(clientaddr);
 
-	for (packet = client->Receive(); packet; client->DeallocatePacket(packet), packet=client->Receive())
-	{
-		if (packet->data[0]==ID_CONNECTION_LOST)
+   UDTSOCKET recver;
+
+   bool noConnection = true;
+   while (noConnection)
+   {
+   		if (UDT::INVALID_SOCK == (recver = UDT::accept(client, (sockaddr*)&clientaddr, &addrlen)))
+		{
+			cout << "accept: " << UDT::getlasterror().getErrorMessage() << endl;
+			return;
+		} else {
+			cout << "connection accepted" << endl;
+			noConnection = false;
+			CreateThread(NULL, 0, monitor, &recver, 0, NULL);
+		}
+   }
+   while (true)
+   {
+
+		/*char data[100];
+
+		if (UDT::ERROR == UDT::recv(recver, data, 100, 0))
+		{
+		  cout << "recv:" << UDT::getlasterror().getErrorMessage() << endl;
+		  return;
+		}
+
+		cout << data << endl;*/
+		
+		int rsize = 0;
+		int rs;
+		while (rsize < NL_MAX_PACKET_LENGTH)
+		{
+		  if (UDT::ERROR == (rs = UDT::recv(recver, buffer + rsize, NL_MAX_PACKET_LENGTH - rsize, 0)))
+		  {
+			cout << "recv:" << UDT::getlasterror().getErrorMessage() << endl;
+			break;
+		  }
+
+		  rsize += rs;
+		} 
+		/*if (packet->data[0]==ID_CONNECTION_LOST)
 			printf("ID_CONNECTION_LOST from %s\n", packet->systemAddress.ToString());
 		else if (packet->data[0]==ID_DISCONNECTION_NOTIFICATION)
 			printf("ID_DISCONNECTION_NOTIFICATION from %s\n", packet->systemAddress.ToString());
@@ -526,7 +572,7 @@ void mainServerLoop()
 			//myStream->Read(i);
 			parseFunctions();
 			//printf("\n");
-		}
+		//}
 		//client->GetStatistics(packet->systemAddress);
 		//StatisticsToString(&rssSender, text,0);
 		//printf("==== RakNet Statistics ====\n");
@@ -987,14 +1033,14 @@ void parseFunctions()
 				print("------Start Packet-----\n");
 				readShort(buffer,count,packetCount);
 				print("packet no: %i\n",packetCount);
-				printf("start packet: %i\n",packetCount);
+				//printf("start packet: %i\n",packetCount);
 			break;
 			case 500:
 				print("----End Packet-----\n");
 				readShort(buffer,count,packetCount);
 				readShort(buffer,count,packetSize);
 				print("packet no: %i, sent reason: %i\n\n",packetCount,packetSize);
-				printf("finish packet: %i\n",packetCount);
+				//printf("finish packet: %i\n",packetCount);
 			return;
 		}
 /* FINISHED CREATION (<6 days)*/
@@ -1013,45 +1059,51 @@ display(void)
 }
 int main(int argc, char **argv)
 {
-    //NLboolean   isserver = NL_FALSE;
-    //NLsocket    clientsock;
-    //NLaddress   addr;
-    //NLenum      type = NL_RELIABLE; /* Change this to NL_RELIABLE for reliable connection */
-    //NLchar      string[NL_MAX_STRING_LENGTH];
-
-	//strcpy(server, "127.0.0.1:25000");
-    //if(!nlInit())
-    //    printErrorExit();
-    //print("nlGetString(NL_VERSION) = %s\n\n", nlGetString(NL_VERSION));
-    //print("nlGetString(NL_NETWORK_TYPES) = %s\n\n", nlGetString(NL_NETWORK_TYPES));
-
 	text_file = fopen("output.txt", "w");
-
-    //if(!nlSelectNetwork(NL_IP))
-    //    printErrorExit();
-
-    /* create a server socket */
-    //serversock = nlOpen(25000, type); /* just a random port number ;) */
-
-    //if(serversock == NL_INVALID)
-    //    printErrorExit();
-
-    //if(!nlListen(serversock))       /* let's listen on this socket */
-    //{
-    //    nlClose(serversock);
-     //   printErrorExit();
-    //}
-    //nlGetLocalAddr(serversock, &addr);
-    //print("Server address is %s\n", nlAddrToString(&addr, string));
 	
-	client=RakNet::RakPeerInterface::GetInstance();
+	// use this function to initialize the UDT library
+	UDT::startup();
+
+	struct addrinfo hints, *local, *peer;
+
+	memset(&hints, 0, sizeof(struct addrinfo));
+
+	hints.ai_flags = AI_PASSIVE;
+	hints.ai_family = AF_INET;
+	hints.ai_socktype = SOCK_STREAM;
+	//hints.ai_socktype = SOCK_DGRAM;
+
+	string service("9000");
+	if (2 == argc)
+      service = argv[1];
+
+	if (0 != getaddrinfo(NULL, service.c_str(), &hints, &local))
+	{
+		cout << "incorrect network address.\n" << endl;
+		return 0;
+	}
+
+	client = UDT::socket(local->ai_family, local->ai_socktype, local->ai_protocol);
+
+	#ifdef WIN32
+      UDT::setsockopt(client, 0, UDT_MSS, new int(1052), sizeof(int));
+	#endif
+
+	if (UDT::ERROR == UDT::bind(client, local->ai_addr, local->ai_addrlen))
+	{
+      cout << "bind: " << UDT::getlasterror().getErrorMessage() << endl;
+      return 0;
+	}
 	
-	client->SetTimeoutTime(5000,RakNet::UNASSIGNED_SYSTEM_ADDRESS);
-		
-	RakNet::SocketDescriptor socketDescriptor(60000,0);
-	client->SetMaximumIncomingConnections(1);
-	client->Startup(4, &socketDescriptor, 1);
-	RakSleep(500);
+	freeaddrinfo(local);
+
+	cout << "client is ready at port: " << service << endl;
+
+	if (UDT::ERROR == UDT::listen(client, 10))
+	{
+      cout << "listen: " << UDT::getlasterror().getErrorMessage() << endl;
+      return 0;
+	}
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
@@ -1061,7 +1113,43 @@ int main(int argc, char **argv)
 	glutIdleFunc(mainServerLoop);
 	glutMainLoop();
 
-    //nlShutdown();
-    return 0;
+	UDT::close(client);
+
+	// use this function to release the UDT library
+	UDT::cleanup();
+
+	return 1;
+}
+
+DWORD WINAPI monitor(LPVOID s)
+{
+   UDTSOCKET u = *(UDTSOCKET*)s;
+
+   UDT::TRACEINFO perf;
+
+   cout << "SendRate(Mb/s)\tRTT(ms)\tCWnd\tPktSndPeriod(us)\tRecvACK\tRecvNAK" << endl;
+
+   while (true)
+   {
+      #ifndef WIN32
+         sleep(1);
+      #else
+         Sleep(1000);
+      #endif
+
+      if (UDT::ERROR == UDT::perfmon(u, &perf))
+      {
+         cout << "perfmon: " << UDT::getlasterror().getErrorMessage() << endl;
+         break;
+      }
+
+      cout << perf.mbpsSendRate << "\t\t" 
+           << perf.msRTT << "\t" 
+           << perf.pktCongestionWindow << "\t" 
+           << perf.usPktSndPeriod << "\t\t\t" 
+           << perf.pktRecvACK << "\t" 
+           << perf.pktRecvNAK << endl;
+   }
+   return 0;
 }
 

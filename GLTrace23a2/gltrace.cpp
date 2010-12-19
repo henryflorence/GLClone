@@ -29,6 +29,11 @@
 #include "BitStream.h"
 #include <stdlib.h>
 #include <string.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <wspiapi.h>
+#include <iostream>
+#include "udt.h"
 #include <ctype.h>
 #include <limits.h>
 #include <sys/types.h>
@@ -47,6 +52,7 @@
 #define writeNoSwapFloat(x, y, z)     {*((NLfloat  *)((NLbyte *)&x[y])) = z; y += 4;}
 
 using namespace RakNet;
+using namespace std;
 
 RakPeerInterface *server;
 
@@ -54,6 +60,10 @@ NLsocket    serversock;
 NLbyte		netBuffer[NL_MAX_PACKET_LENGTH];
 NLuint		count = 0;
 NLuint		packetCount = 0;
+UDTSOCKET client;
+
+char *receiverIP = "127.0.0.1";
+char *receiverPort = "9000";
 
 RakNet::BitStream *bitStream;
 SystemAddress systemAddress;
@@ -62,7 +72,6 @@ struct glv GLV;
 
 char* getError();
 void OpenServerSocket(void);
-void CloseServerSocket(void);
 void OpenRakNetSocket(void);
 
 /* Misc. globals */
@@ -1422,23 +1431,49 @@ GLboolean gltraceInit()
 		((FUNCTION *) (&GLV))[i] = OpenGL_proc;
 	}
 
-	/* create a server socket */
-	//if(nlInit())
-	//	OpenServerSocket();
-	//else
-	//	print("could not initilise HawkNL\n");
-	server=RakNet::RakPeerInterface::GetInstance();
+   // use this function to initialize the UDT library
+   UDT::startup();
 
-	//bitStream = new RakNet::BitStream(NL_MAX_PACKET_LENGTH);
-	//bitStream->Write((unsigned char)ID_USER_PACKET_ENUM);
-	//bitStream->Write((int)400);
-	//bitStream->Write((int)packetCount);
+   struct addrinfo hints, *local, *peer;
+
+   memset(&hints, 0, sizeof(struct addrinfo));
+
+   hints.ai_flags = AI_PASSIVE;
+   hints.ai_family = AF_INET;
+   hints.ai_socktype = SOCK_STREAM;
+   //hints.ai_socktype = SOCK_DGRAM;
+
+   if (0 != getaddrinfo(NULL, "9000", &hints, &local))
+   {
+      cout << "incorrect network address.\n" << endl;
+      return 0;
+   }
+
+   client = UDT::socket(local->ai_family, local->ai_socktype, local->ai_protocol);
+   UDT::setsockopt(client, 0, UDT_MSS, new int(1052), sizeof(int));
+
+   freeaddrinfo(local);
+
+   if (0 != getaddrinfo(receiverIP, receiverPort, &hints, &peer))
+   {
+      cout << "incorrect server/peer address. " << receiverIP << ":" << receiverPort << endl;
+      return 0;
+   }
+
+   // connect to the server, implict bind
+   if (UDT::ERROR == UDT::connect(client, peer->ai_addr, peer->ai_addrlen))
+   {
+      cout << "connect: " << UDT::getlasterror().getErrorMessage() << endl;
+      return 0;
+   }
+
+   freeaddrinfo(peer);
 
 	netBuffer[0] = (unsigned char)ID_USER_PACKET_ENUM;
 	count = 1;
 	AddIntToStream(400);
 	AddIntToStream(packetCount);
-	OpenRakNetSocket();
+	//OpenRakNetSocket();
 
     /* Indicate start of debug trace */
 	(void)time(&elapstime);
@@ -1461,24 +1496,6 @@ GLboolean gltraceInit()
 	needInit = GL_FALSE;
     return GL_TRUE;
 }
-void CloseServerSocket()
-{
-	nlClose(serversock);
-	nlShutdown();
-}
-void OpenRakNetSocket()
-{
-	// Record the first client that connects to us so we can pass it to the ping function
-	//systemAddress
-
-	server->SetTimeoutTime(5000,RakNet::UNASSIGNED_SYSTEM_ADDRESS);
-	RakNet::SocketDescriptor socketDescriptor(0,0);
-	server->Startup(1, &socketDescriptor, 1);
-	server->SetSplitMessageProgressInterval(10000); // Get ID_DOWNLOAD_PROGRESS notifications
-	server->Connect("127.0.0.1", 60000, 0, 0);
-
-	RakSleep(500);
-}
 
 void print_error(NLenum errCode) {
 	switch(errCode) {
@@ -1491,27 +1508,36 @@ void print_error(NLenum errCode) {
 			case NL_MESSAGE_END: print("NL_MESSAGE_END"); break;
 		}
 }
+int SendPacket() {
+	int ssize = 0;
+	int ss;
+	while (ssize < NL_MAX_PACKET_LENGTH)
+	{
+		if (UDT::ERROR == (ss = UDT::send(client, netBuffer + ssize, NL_MAX_PACKET_LENGTH - ssize, 0)))
+		{
+			cout << "send:" << UDT::getlasterror().getErrorMessage() << endl;
+			break;
+		}
+		ssize += ss;
+	}
+	return 1;
+}
 int SendStream() {
 	static int pCount = 0;
-	//if(pCount++ > 19) {
-		//bitStream->Reset();
-	//	count = 0;
-	//	return 1;
-	//}
-	//printf("this: %s\n",server->GetSystemAddressFromIndex(0).ToString());
-	//bitStream->Write((int)500);
-	//bitStream->Write((int)packetCount++);
 	AddIntToStream(500);
 	AddIntToStream(packetCount++);
 
-	//bitStream->Write("hiya");
-	uint32_t msgId = server->Send(netBuffer, NL_MAX_PACKET_LENGTH, HIGH_PRIORITY, UNRELIABLE_SEQUENCED, 0, RakNet::UNASSIGNED_SYSTEM_ADDRESS, true);
-	//printf("sending packet: %i\n", msgId);
-
-	//bitStream->Reset();
+	//uint32_t msgId = server->Send(netBuffer, NL_MAX_PACKET_LENGTH, HIGH_PRIORITY, UNRELIABLE_SEQUENCED, 0, RakNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+	//char* hello = "hello world!\n";
+	//if (UDT::ERROR == UDT::send(client, hello, strlen(hello) + 1, 0))
+	//{
+	  //cout << "send: " << UDT::getlasterror().getErrorMessage();
+	  //return 0;
+	//}
+	SendPacket();
+	cout << "stream sent" << endl;
 	netBuffer[0] = (unsigned char)ID_USER_PACKET_ENUM;
-	//bitStream->Write((int)400);
-	//bitStream->Write((int)packetCount);
+
 	count = 1;
 	AddIntToStream(400);
 	AddIntToStream(packetCount);
@@ -1561,7 +1587,6 @@ BOOL WINAPI DllMain(/*@unused@*/HINSTANCE hinstDLL, DWORD fdwReason, /*@unused@*
 			print("Closing output file\n");
 			(void)fclose(text_file);
 			text_file = NULL;
-			CloseServerSocket();
 		}
         dllUnload(OpenGL_provider);
 	}
