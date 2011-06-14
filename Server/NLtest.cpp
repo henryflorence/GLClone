@@ -1,5 +1,5 @@
-#include "RakPeerInterface.h"
-#include "BitStream.h"
+//#include "RakPeerInterface.h"
+//#include "BitStream.h"
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,9 +12,9 @@
 #include "nl.h"
 #include "glut.h"
 #include <gl/glu.h>
-#include "MessageIdentifiers.h"
-#include "RakNetStatistics.h"
-#include "RakSleep.h"
+//#include "MessageIdentifiers.h"
+//#include "RakNetStatistics.h"
+//#include "RakSleep.h"
 #include "cc.h"
 
 #define NO_PACKETS 100
@@ -68,7 +68,7 @@ NLbyte *buffer;
 NLbyte *bigBuffer;
 FILE *text_file = NULL; 
 
-using namespace RakNet;
+//using namespace RakNet;
 using namespace std;
 
 //RakPeerInterface *client;
