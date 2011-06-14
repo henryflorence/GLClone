@@ -1,0 +1,174 @@
+void GLAPIENTRY glCallList (GLuint list)
+{
+	START(glCallList);
+	print_value(_GLuint, &list);
+	END;
+	GLV.glCallList (list);
+}
+
+void GLAPIENTRY glGetBooleanv (GLenum pname, GLboolean *params)
+{
+	GLV.glGetBooleanv (pname, params);
+	START(glGetBooleanv);
+	print_value(_GLenum, &pname);
+	PRINT_COMMA
+	if(pname == GL_COLOR_WRITEMASK)
+	{
+		print_value(_GLboolean4, &params);
+	}
+	else
+	{
+		print_value(_GLboolean1, &params);
+	}
+	END;
+}
+
+GLenum GLAPIENTRY glGetError ()
+{
+	GLenum result;
+
+    result = GLV.glGetError();
+	START(glGetError);
+    RESULT;
+	print_value(_GLenum, &result);
+    ENDRESULT;
+	return result;
+}
+
+void GLAPIENTRY glGetFloatv (GLenum pname, GLfloat *params)
+{
+	GLV.glGetFloatv (pname, params);
+	START(glGetFloatv);
+	print_value(_GLenum, &pname);
+	PRINT_COMMA
+	if((pname == GL_MODELVIEW_MATRIX)||(pname == GL_PROJECTION_MATRIX)||
+		(pname == GL_TEXTURE_MATRIX))
+	{
+		print_value(_GLfloat16, &params);
+	}
+	else if((pname == GL_ACCUM_CLEAR_VALUE)||(pname == GL_COLOR_CLEAR_VALUE)||
+		(pname == GL_CURRENT_COLOR)||(pname == GL_CURRENT_RASTER_COLOR)||
+		(pname == GL_CURRENT_RASTER_POSITION)||(pname == GL_CURRENT_RASTER_TEXTURE_COORDS)||
+		(pname == GL_CURRENT_TEXTURE_COORDS)||(pname == GL_FOG_COLOR)||
+		(pname == GL_LIGHT_MODEL_AMBIENT)||(pname == GL_MAP2_GRID_DOMAIN)||
+		(pname == GL_SCISSOR_BOX)||(pname == GL_VIEWPORT))
+	{
+		print_value(_GLfloat4, &params);
+	}
+	else if((pname == GL_DEPTH_RANGE)||(pname == GL_LINE_WIDTH_RANGE)||
+		(pname == GL_MAP1_GRID_DOMAIN)||(pname == GL_MAP2_GRID_SEGMENTS)||
+		(pname == GL_MAX_VIEWPORT_DIMS)||(pname == GL_POINT_SIZE_RANGE)||
+		(pname == GL_POLYGON_MODE))
+	{
+		print_value(_GLfloat2, &params);
+	}
+	else
+	{
+		print_value(_GLfloat1, &params);
+	}
+	END;
+}
+
+void GLAPIENTRY glGetIntegerv (GLenum pname, GLint *params)
+{
+	GLV.glGetIntegerv (pname, params);
+	START(glGetIntegerv);
+	print_value(_GLenum, &pname);
+	PRINT_COMMA
+	if((pname == GL_ACCUM_CLEAR_VALUE)||(pname == GL_COLOR_CLEAR_VALUE)||
+		(pname == GL_CURRENT_COLOR)||(pname == GL_CURRENT_RASTER_COLOR)||
+		(pname == GL_CURRENT_RASTER_POSITION)||(pname == GL_CURRENT_RASTER_TEXTURE_COORDS)||
+		(pname == GL_CURRENT_TEXTURE_COORDS)||(pname == GL_FOG_COLOR)||
+		(pname == GL_LIGHT_MODEL_AMBIENT)||(pname == GL_MAP2_GRID_DOMAIN)||
+		(pname == GL_SCISSOR_BOX)||(pname == GL_VIEWPORT))
+	{
+		print_value(_GLint4, &params);
+	}
+	else if((pname == GL_DEPTH_RANGE)||(pname == GL_LINE_WIDTH_RANGE)||
+		(pname == GL_MAP1_GRID_DOMAIN)||(pname == GL_MAP2_GRID_SEGMENTS)||
+		(pname == GL_MAX_VIEWPORT_DIMS)||(pname == GL_POINT_SIZE_RANGE)||
+		(pname == GL_POLYGON_MODE))
+	{
+		print_value(_GLint2, &params);
+	}
+	else
+	{
+		print_value(_GLint1, &params);
+	}
+	END;
+}
+
+const GLubyte* GLAPIENTRY glGetString (GLenum name)
+{
+	const GLubyte* result;
+
+	result = GLV.glGetString(name);
+	START(glGetString);
+	print_value(_GLenum, &name);
+    RESULT;
+	print_value(STR, &result);
+    ENDRESULT;
+	return result;
+}
+
+void GLAPIENTRY glHint (GLenum target, GLenum mode)
+{
+	START(glHint);
+	print_value(_GLenum, &target);
+	PRINT_COMMA
+	print_value(_GLenum, &mode);
+	END;
+	GLV.glHint (target, mode);
+}
+
+void GLAPIENTRY glPixelStorei (GLenum pname, GLint param)
+{
+	START(glPixelStorei);
+	print_value(_GLenum, &pname);
+	PRINT_COMMA
+	print_value(_GLint, &param);
+	END;
+	GLV.glPixelStorei (pname, param);
+}
+
+void GLAPIENTRY glPopAttrib ()
+{
+	START(glPopAttrib);
+	END;
+	GLV.glPopAttrib();
+}
+
+void GLAPIENTRY glPushAttrib (GLbitfield mask)
+{
+	START(glPushAttrib);
+	print_value(_GLbitfield, &mask);
+	END;
+	GLV.glPushAttrib (mask);
+}
+void GLAPIENTRY glScissor (GLint x, GLint y, GLsizei width, GLsizei height)
+{
+	START(glScissor);
+	print_value(_GLint, &x);
+	PRINT_COMMA
+	print_value(_GLint, &y);
+	PRINT_COMMA
+	print_value(_GLsizei, &width);
+	PRINT_COMMA
+	print_value(_GLsizei, &height);
+	END;
+	GLV.glScissor (x, y, width, height);
+}
+
+void GLAPIENTRY glTexGeni (GLenum coord, GLenum pname, GLint param)
+{
+    GLenum p = (GLenum)param;
+
+	START(glTexGeni);
+	print_value(_GLenum, &coord);
+	PRINT_COMMA
+	print_value(_GLenum, &pname);
+	PRINT_COMMA
+	print_value(_GLenum, &p);
+	END;
+	GLV.glTexGeni (coord, pname, param);
+}

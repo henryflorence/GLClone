@@ -1,0 +1,102 @@
+/*DECLARATIONS CREATED BY PERL SCRIPT*/
+	NLfloat* params_FloatV;
+	NLulong height;
+	NLulong param;
+	NLulong width;
+	NLulong x;
+	NLulong y;
+	NLushort coord;
+	NLushort list;
+	NLushort mask;
+	NLushort mode;
+	NLushort name;
+	NLushort params_Short;
+	NLushort pname;
+	NLushort target;
+	NLushort* params;
+
+	readInt(buffer,count,index);
+	while (index < 500 && count < NL_MAX_PACKET_LENGTH) {
+	printf("%s (",GLN[index]);
+
+/*SWITCH CREATED BY PERL SCRIPT*/
+		switch(index) {
+			case 8: //glCallList
+				readInt(buffer,count,list);
+				printf("%i",(int) list);
+				glCallList((GLuint) list);
+			break;
+			case 99: //glGetBooleanv
+				readShort(buffer,count,pname);
+				readShort(buffer,count,params_Short);
+				printf("%i, %i",(short) pname, (short) params_Short);
+				glGetBooleanv((GLenum) pname,(GLboolean*) params_Short);
+			break;
+			case 102: //glGetError
+				glGetError();
+			break;
+			case 103: //glGetFloatv
+				readShort(buffer,count,pname);
+				readFloatV(buffer,count,params_FloatV,1);
+				printf("%i, %f",(short) pname, *(float) params_FloatV);
+				glGetFloatv((GLenum) pname,(GLfloat*) params_FloatV);
+			break;
+			case 104: //glGetIntegerv
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params,1);
+				printf("%i, %i",(short) pname, *(int) params);
+				glGetIntegerv((GLenum) pname,(GLint*) params);
+			break;
+			case 117: //glGetString
+				readShort(buffer,count,name);
+				printf("%i",(short) name);
+				glGetString((GLenum) name);
+			break;
+			case 128: //glHint
+				readShort(buffer,count,target);
+				readShort(buffer,count,mode);
+				printf("%i, %i",(short) target, (short) mode);
+				glHint((GLenum) target,(GLenum) mode);
+			break;
+			case 195: //glPixelStorei
+				readShort(buffer,count,pname);
+				readLong(buffer,count,param);
+				printf("%i, %i",(short) pname, (long) param);
+				glPixelStorei((GLenum) pname,(GLint) param);
+			break;
+			case 203: //glPopAttrib
+				glPopAttrib();
+			break;
+			case 208: //glPushAttrib
+				readInt(buffer,count,mask);
+				printf("%i",(int) mask);
+				glPushAttrib((GLbitfield) mask);
+			break;
+			case 251: //glScissor
+				readLong(buffer,count,x);
+				readLong(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+				printf("%i, %i, %i, %i",(long) x, (long) y, (long) width, (long) height);
+				glScissor((GLint) x,(GLint) y,(GLsizei) width,(GLsizei) height);
+			break;
+			case 298: //glTexGeni
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readLong(buffer,count,param);
+				printf("%i, %i, %i",(short) coord, (short) pname, (long) param);
+				glTexGeni((GLenum) coord,(GLenum) pname,(GLint) param);
+			break;
+		}
+/* FINISHED CREATION (<6 days)*/
+/* MACRO NAMEs to be completed*/
+//used 1 times
+#define readFloatV(x,y,z,n)		{z = 0;y += 1}
+//used 2 times
+#define readInt(x,y,z)		{z = 0;y += 1}
+//used 1 times
+#define readIntV(x,y,z,n)		{z = 0;y += 1}
+//used 6 times
+#define readLong(x,y,z)		{z = 0;y += 1}
+//used 10 times
+#define readShort(x,y,z)		{z = 0;y += 1}

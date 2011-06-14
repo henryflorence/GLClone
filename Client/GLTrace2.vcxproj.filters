@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{f76bf7b0-9537-44bf-aa26-1538216d1276}</UniqueIdentifier>
+      <Extensions>.c</Extensions>
+    </Filter>
+    <Filter Include="Include files">
+      <UniqueIdentifier>{d4e8b1aa-4f9e-4e1d-8d4d-b75b482cb01f}</UniqueIdentifier>
+      <Extensions>.h</Extensions>
+    </Filter>
+    <Filter Include="Misc files">
+      <UniqueIdentifier>{0a80a536-c963-4316-9609-82c007cb0fbb}</UniqueIdentifier>
+      <Extensions>.txt .ini</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dll.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="input.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="log.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="font.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="gltrace.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="glwrapper.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dll.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="ext.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="gl.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="gltrace.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="udt.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="nl.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="cc.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+    <ClInclude Include="packet.h">
+      <Filter>Include files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="GLTRACE.INI">
+      <Filter>Misc files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="readme.txt">
+      <Filter>Misc files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gltrace.def" />
+  </ItemGroup>
+</Project>

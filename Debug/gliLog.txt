@@ -1,3 +1,0 @@
-GL Intercept Log. Version : 0.5    Compile Date: Dec  3 2005    Run on: Sun Dec 19 13:15:13 2010
-
-===================================================
