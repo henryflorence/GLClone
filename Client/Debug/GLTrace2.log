@@ -1,25 +1,29 @@
-﻿Build started 1/5/2002 12:02:00 AM.
+﻿Build started 1/2/2002 4:52:47 AM.
      1>Project "Y:\Projects\GLClone\Client\GLTrace2.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating ".\Debug\GLTrace2.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _WINDLL /Gm /EHsc /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt glwrapper.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _WINDLL /Gm /EHsc /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt dll.c font.cpp glwrapper.cpp input.c log.c
+         log.c
+     1>y:\projects\glclone\client\log.c(212): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>y:\projects\glclone\client\log.c(220): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'vsprintf'
+     1>y:\projects\glclone\client\log.c(238): warning C4100: 'pixels' : unreferenced formal parameter
+     1>y:\projects\glclone\client\log.c(238): warning C4100: 'nBytes' : unreferenced formal parameter
+     1>y:\projects\glclone\client\log.c(652): warning C4244: '=' : conversion from 'int' to 'NLushort', possible loss of data
+     1>y:\projects\glclone\client\log.c(870): warning C4244: '=' : conversion from 'time_t' to 'int', possible loss of data
+     1>y:\projects\glclone\client\log.c(879): warning C4244: '=' : conversion from 'time_t' to 'int', possible loss of data
+         input.c
          glwrapper.cpp
      1>y:\projects\glclone\client\glwrapper.cpp(121): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'vsprintf'
      1>y:\projects\glclone\client\glwrapper.cpp(4349): warning C4189: 'p' : local variable is initialized but not referenced
-     1>y:\projects\glclone\client\glwrapper.cpp(4602): warning C4189: 'sBytes' : local variable is initialized but not referenced
-     1>y:\projects\glclone\client\glwrapper.cpp(4602): warning C4101: 'nBytes' : unreferenced local variable
      1>y:\projects\glclone\client\glwrapper.cpp(4602): warning C4101: 'i' : unreferenced local variable
-     1>y:\projects\glclone\client\glwrapper.cpp(4603): warning C4189: 'ptr' : local variable is initialized but not referenced
-     1>y:\projects\glclone\client\glwrapper.cpp(4602): warning C4101: 'typeModifier' : unreferenced local variable
-     1>y:\projects\glclone\client\glwrapper.cpp(4602): warning C4101: 'tBytes' : unreferenced local variable
-     1>y:\projects\glclone\client\glwrapper.cpp(4794): warning C4189: 'sBytes' : local variable is initialized but not referenced
-     1>y:\projects\glclone\client\glwrapper.cpp(4794): warning C4101: 'nBytes' : unreferenced local variable
-     1>y:\projects\glclone\client\glwrapper.cpp(4794): warning C4101: 'i' : unreferenced local variable
-     1>y:\projects\glclone\client\glwrapper.cpp(4795): warning C4189: 'ptr' : local variable is initialized but not referenced
-     1>y:\projects\glclone\client\glwrapper.cpp(4794): warning C4101: 'typeModifier' : unreferenced local variable
-     1>y:\projects\glclone\client\glwrapper.cpp(4794): warning C4101: 'tBytes' : unreferenced local variable
+     1>y:\projects\glclone\client\glwrapper.cpp(4786): warning C4101: 'i' : unreferenced local variable
+         font.cpp
+         dll.c
+         Generating Code...
        ManifestResourceCompile:
          All outputs are up-to-date.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(Y:\Projects\GLClone\Client\.\Debug\GLTrace2.dll) does not match the Linker's OutputFile property value (Y:\Projects\GLClone\Client\Debug\opengl32.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
@@ -52,4 +56,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.90
+Time Elapsed 00:00:05.75

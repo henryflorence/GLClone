@@ -23,13 +23,17 @@
 		switch(index) {
 			case 8: //glCallList
 				readInt(buffer,count,list);
-				printf("%i",(int) list);
+#ifdef LOGTOFILE
+				print("%i",(int) list);
+#endif
 				glCallList((GLuint) list);
 			break;
 			case 99: //glGetBooleanv
 				readShort(buffer,count,pname);
 				readShort(buffer,count,params_Short);
-				printf("%i, %i",(short) pname, (short) params_Short);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) pname, (short) params_Short);
+#endif
 				glGetBooleanv((GLenum) pname,(GLboolean*) params_Short);
 			break;
 			case 102: //glGetError
@@ -38,30 +42,40 @@
 			case 103: //glGetFloatv
 				readShort(buffer,count,pname);
 				readFloatV(buffer,count,params_FloatV,1);
-				printf("%i, %f",(short) pname, *(float) params_FloatV);
+#ifdef LOGTOFILE
+				print("%i, %f",(short) pname, *(float) params_FloatV);
+#endif
 				glGetFloatv((GLenum) pname,(GLfloat*) params_FloatV);
 			break;
 			case 104: //glGetIntegerv
 				readShort(buffer,count,pname);
 				readIntV(buffer,count,params,1);
-				printf("%i, %i",(short) pname, *(int) params);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) pname, *(int) params);
+#endif
 				glGetIntegerv((GLenum) pname,(GLint*) params);
 			break;
 			case 117: //glGetString
 				readShort(buffer,count,name);
-				printf("%i",(short) name);
+#ifdef LOGTOFILE
+				print("%i",(short) name);
+#endif
 				glGetString((GLenum) name);
 			break;
 			case 128: //glHint
 				readShort(buffer,count,target);
 				readShort(buffer,count,mode);
-				printf("%i, %i",(short) target, (short) mode);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) target, (short) mode);
+#endif
 				glHint((GLenum) target,(GLenum) mode);
 			break;
 			case 195: //glPixelStorei
 				readShort(buffer,count,pname);
 				readLong(buffer,count,param);
-				printf("%i, %i",(short) pname, (long) param);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) pname, (long) param);
+#endif
 				glPixelStorei((GLenum) pname,(GLint) param);
 			break;
 			case 203: //glPopAttrib
@@ -69,7 +83,9 @@
 			break;
 			case 208: //glPushAttrib
 				readInt(buffer,count,mask);
-				printf("%i",(int) mask);
+#ifdef LOGTOFILE
+				print("%i",(int) mask);
+#endif
 				glPushAttrib((GLbitfield) mask);
 			break;
 			case 251: //glScissor
@@ -77,14 +93,18 @@
 				readLong(buffer,count,y);
 				readLong(buffer,count,width);
 				readLong(buffer,count,height);
-				printf("%i, %i, %i, %i",(long) x, (long) y, (long) width, (long) height);
+#ifdef LOGTOFILE
+				print("%i, %i, %i, %i",(long) x, (long) y, (long) width, (long) height);
+#endif
 				glScissor((GLint) x,(GLint) y,(GLsizei) width,(GLsizei) height);
 			break;
 			case 298: //glTexGeni
 				readShort(buffer,count,coord);
 				readShort(buffer,count,pname);
 				readLong(buffer,count,param);
-				printf("%i, %i, %i",(short) coord, (short) pname, (long) param);
+#ifdef LOGTOFILE
+				print("%i, %i, %i",(short) coord, (short) pname, (long) param);
+#endif
 				glTexGeni((GLenum) coord,(GLenum) pname,(GLint) param);
 			break;
 		}

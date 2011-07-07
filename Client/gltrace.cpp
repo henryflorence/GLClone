@@ -66,7 +66,7 @@ extern int			count;
 extern int			packetCount;
 UDTSOCKET client;
 
-char *receiverIP = "192.168.1.105";
+char *receiverIP = "192.168.1.103";
 char *receiverPort = "9000";
 
 //RakNet::BitStream *bitStream;

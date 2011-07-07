@@ -655,6 +655,7 @@ void parseFunctions()
 	NLfloat z;
 	NLfloat* m;
 	NLfloat* params;
+	NLfloat* params_FloatV;
 	NLfloat* v;
 	static NLulong border;
 	NLlong elementCount;
@@ -671,6 +672,7 @@ void parseFunctions()
 	static NLulong yoffset;
 	NLushort arrayType;
 	NLushort cap;
+	NLushort coord;
 	NLushort dfactor;
 	NLushort face;
 	NLushort flag;
@@ -681,10 +683,12 @@ void parseFunctions()
 	NLushort mask;
 	NLushort mode;
 	NLushort name;
+	NLushort params_Short;
 	NLushort pname;
 	NLushort p;
 	NLushort sfactor;
 	static NLushort target;
+	NLushort *params_ShortV;
 	NLushort texture;
 	static NLushort type;
 	NLushort* textures;
@@ -703,16 +707,18 @@ void parseFunctions()
 	
 	if(dataMode != None) {
 		int i, tBytes = PACKET_LENGTH - rBytes > 0 ? rBytes : PACKET_LENGTH;
-		//memcpy(ptr,buffer,tBytes);
+		memcpy(ptr,buffer,tBytes);
 		
 		ptr += tBytes;
 		rBytes -= tBytes;
 
 		//cout << rBytes << " " << nBytes << " " << (int)ptr << endl;
+		print("%i %i %i\n",rBytes,nBytes,(int)ptr);
 		if(rBytes <= 0) {
 			switch (dataMode) {
 			case TexImage2D:
 				glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
+				printf("%i, %i, %i, %i, %i, %i, %i, %i, \n",(short) target, (long) level, (long) internalformat, (long) width, (long) height, (long) border, (short) format, (short) type );
 				break;
 			case TexSubImage2D:
 				glTexSubImage2D((GLenum) target,(GLint) level,(GLint) xoffset,(GLint) yoffset,(GLsizei) width,(GLsizei) height,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
@@ -784,6 +790,13 @@ void parseFunctions()
 				print("%i, %i",(short) sfactor, (short) dfactor);
 #endif
 				glBlendFunc((GLenum) sfactor,(GLenum) dfactor);
+			break;
+			case 8: //glCallList
+				readInt(buffer,count,list);
+#ifdef LOGTOFILE
+				print("%i",(int) list);
+#endif
+				glCallList((GLuint) list);
 			break;
 			case 10: //glClear
 				readInt(buffer,count,mask);
@@ -956,21 +969,47 @@ void parseFunctions()
 #endif
 				glGenTextures((GLsizei) n,(GLuint*) textureList);
 			break;
+			case 99: //glGetBooleanv
+				readShort(buffer,count,pname);
+				readShort(buffer,count,params_Short);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) pname, (short) params_Short);
+#endif
+				glGetBooleanv((GLenum) pname,(GLboolean*) params_Short);
+			break;
 			case 102: //glGetError
 				glGetError();
 			break;
-			/*case 103: //glGetFloatv
+			case 103: //glGetFloatv
 				readShort(buffer,count,pname);
-				readFloatV(buffer,count,params,1);
-				//#ifdef LOGTOFILE  print("%i, %f",(short) pname, *(float) params);
-				glGetFloatv((GLenum) pname,(GLfloat*) params);
-			break;*/
+				readFloatV(buffer,count,params_FloatV,1);
+#ifdef LOGTOFILE
+				print("%i, %f",(short) pname, (float*) params_FloatV);
+#endif
+				glGetFloatv((GLenum) pname,(GLfloat*) params_FloatV);
+			break;
+			case 104: //glGetIntegerv
+				readShort(buffer,count,pname);
+				readIntV(buffer,count,params_ShortV,1);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) pname, (int*) params_ShortV);
+#endif
+				glGetIntegerv((GLenum) pname,(GLint*) params_ShortV);
+			break;
 			case 117: //glGetString
 				readShort(buffer,count,name);
 #ifdef LOGTOFILE
 				print("%i",(short) name);
 #endif
 				glGetString((GLenum) name);
+			break;
+			case 128: //glHint
+				readShort(buffer,count,target);
+				readShort(buffer,count,mode);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) target, (short) mode);
+#endif
+				glHint((GLenum) target,(GLenum) mode);
 			break;
 			case 130: //glIndexPointer
 				readShort(buffer,count,type);
@@ -1102,6 +1141,14 @@ void parseFunctions()
 				//glOrtho((GLdouble) left,(GLdouble) right,(GLdouble) bottom,(GLdouble) top,(GLdouble) zNear,(GLdouble) zFar);
 				glOrtho((GLdouble) left,1280,1024,(GLdouble) top,(GLdouble) zNear,(GLdouble) zFar);
 			break;
+			case 195: //glPixelStorei
+				readShort(buffer,count,pname);
+				readLong(buffer,count,param);
+#ifdef LOGTOFILE
+				print("%i, %i",(short) pname, (long) param);
+#endif
+				glPixelStorei((GLenum) pname,(GLint) param);
+			break;
 			case 199: //glPointSize
 				readFloat(buffer,count,size);
 #ifdef LOGTOFILE  
@@ -1117,8 +1164,18 @@ void parseFunctions()
 #endif
 				glPolygonMode((GLenum) face,(GLenum) mode);
 			break;
+			case 203: //glPopAttrib
+				glPopAttrib();
+			break;
 			case 205: //glPopMatrix
 				glPopMatrix();
+			break;
+			case 208: //glPushAttrib
+				readInt(buffer,count,mask);
+#ifdef LOGTOFILE
+				print("%i",(int) mask);
+#endif
+				glPushAttrib((GLbitfield) mask);
 			break;
 			case 210: //glPushMatrix
 				glPushMatrix();
@@ -1141,6 +1198,16 @@ void parseFunctions()
 				print("%f, %f, %f",(float) x, (float) y, (float) z);
 #endif
 				glScalef((GLfloat) x,(GLfloat) y,(GLfloat) z);
+			break;
+			case 251: //glScissor
+				readLong(buffer,count,x);
+				readLong(buffer,count,y);
+				readLong(buffer,count,width);
+				readLong(buffer,count,height);
+#ifdef LOGTOFILE
+				print("%i, %i, %i, %i",(long) x, (long) y, (long) width, (long) height);
+#endif
+				glScissor((GLint) x,(GLint) y,(GLsizei) width,(GLsizei) height);
 			break;
 			case 253: //glShadeModel
 				readShort(buffer,count,mode);
@@ -1173,6 +1240,15 @@ void parseFunctions()
 				//printf("%i, %i, %i",(short) target, (short) pname, (long) param);
 				glTexEnvi((GLenum) target,(GLenum) pname,(GLint) param);
 			break;
+			case 298: //glTexGeni
+				readShort(buffer,count,coord);
+				readShort(buffer,count,pname);
+				readLong(buffer,count,param);
+#ifdef LOGTOFILE
+				print("%i, %i, %i",(short) coord, (short) pname, (long) param);
+#endif
+				glTexGeni((GLenum) coord,(GLenum) pname,(GLint) param);
+			break;
 			case 301: //glTexImage2D
 				//printf("receiving texture: ");
 				readShort(buffer,count,target);
@@ -1185,27 +1261,27 @@ void parseFunctions()
 				readShort(buffer,count,type);
 				// unknown type for: pixels
 				
-				typeModifier = 4;
+				typeModifier = 8;
 				switch(type) {
 					case GL_UNSIGNED_SHORT:
 					case GL_SHORT:
-						typeModifier = 2;
+						typeModifier = 8;
 						break;
 					case GL_UNSIGNED_INT:
-						typeModifier = 4;
+						typeModifier = 8;
 				}
 				pixels = malloc(width * height * typeModifier);
 				ptr = (NLbyte*)pixels;
 				
-				for(int i = 0; i < width * height / 10; i++)
-					((GLubyte*) pixels)[i*40] = ((GLubyte*) pixels)[i*40+1] = ((GLubyte*) pixels)[i*40+2] = 255;
+				//for(int i = 0; i < width * height / 10; i++)
+				//	((GLubyte*) pixels)[i*40] = ((GLubyte*) pixels)[i*40+1] = ((GLubyte*) pixels)[i*40+2] = 255;
 				
-				glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) pixels);
-				free(pixels);
+				//glTexImage2D((GLenum) target,(GLint) level,(GLint) internalformat,(GLsizei) width,(GLsizei) height,(GLint) border,(GLenum) format,(GLenum) type,(GLvoid*) ptr);
+				//free(pixels);
 				
-				//rBytes = nBytes = width * height * typeModifier;
-				//dataMode = TexImage2D;
-				//count += width * height;
+				rBytes = nBytes = width * height * typeModifier;
+				dataMode = TexImage2D;
+				count += width * height;
 #ifdef LOGTOFILE  
 				print("%i, %i, %i, %i, %i, %i, %i, %i, )\n",(short) target, (long) level, (long) internalformat, (long) width, (long) height, (long) border, (short) format, (short) type );
 #endif

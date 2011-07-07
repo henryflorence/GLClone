@@ -61,7 +61,7 @@ extern glv GLV;
 
 #define DISPLAYLOCAL
 #define LOGTOFILE
-//#define SENDTEX
+#define SENDTEX
 
 #ifdef LOGTOFILE
 
@@ -4604,7 +4604,7 @@ void GLAPIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, 
 	//if(texCount > 1000) return;
 	//texCount++;
 
-	//printf("glTexImage2D\n");
+	print("----------glTexImage2D--------------\n");
 	START(glTexImage2D);
 	print_value(_GLenum, &target);
 	PRINT_COMMA
@@ -4623,12 +4623,6 @@ void GLAPIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, 
 	print_value(_GLenum, &type);
 	PRINT_COMMA
 
-	
-	//for(i = 0; i < width * height; i++) {
-	//	AddByteToStream((((NLbyte*)pixels)[i]));
-	//}
-	//StreamTexBytes(width * height, pixels);
-	
 	//textures in distinct packets atm
 #ifdef SENDTEX
 	SendStream();
@@ -4642,7 +4636,7 @@ void GLAPIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, 
 			typeModifier = 4;
 	}
 	nBytes = width * height * typeModifier;
-	//cout << "texture type: " << type << ": " << width << ", " << height << ": " << nBytes << endl;
+	cout << "texture type: " << type << ": " << width << ", " << height << ": " << nBytes << endl;
 	while(sBytes < nBytes) {
 		tBytes = nBytes - sBytes > PACKET_LENGTH ? PACKET_LENGTH : nBytes - sBytes;
 		memcpy((NLubyte *)netBuffer, (NLubyte *)ptr, tBytes);
@@ -4650,14 +4644,12 @@ void GLAPIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, 
 		SendPacket();
 		ptr = ptr + tBytes;
 		sBytes += tBytes;
-		//printf("%i < %i\n",sBytes,nBytes);
+		printf("%i < %i\n",sBytes,nBytes);
 	}
-	//printf("\n");
-	netBuffer[0] = (unsigned char)ID_USER_PACKET_ENUM;
+	printf("\n");
 
-	count = 1;
+	count = 0;
 	AddIntToStream(400);
-	AddIntToStream(packetCount);
 #endif
 	END;
 #ifdef DISPLAYLOCAL

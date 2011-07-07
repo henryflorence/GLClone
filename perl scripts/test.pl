@@ -627,7 +627,9 @@ CASELINE: for($i = 0; $i < @funcIndex; $i++) {
 		$paramString .= "(@{ $types{$f}}[$j]) @{ $names{$f}}[$j]";
 		$paramString .= "," if($j < @{ $names{$f}} - 1);
 	}
-	print FILE $t,"\tprintf(\"$formatString\",$formatArgs);\n" if($formatString ne "");
+    print FILE "#ifdef LOGTOFILE\n" if($formatString ne "");
+	print FILE $t,"\tprint(\"$formatString\",$formatArgs);\n" if($formatString ne "");
+    print FILE "#endif\n" if($formatString ne "");
 	print FILE $t,"\t$f($paramString);\n";
 	#"$i - ", $f = $funcIndex[$i], " - @{ $types{$f}} - v:$numv{$f} - @{ $names{$f}}\n";
 	print FILE $t,"break;\n";
